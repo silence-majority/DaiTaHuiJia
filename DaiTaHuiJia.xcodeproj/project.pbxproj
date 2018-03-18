@@ -13,6 +13,11 @@
 		9FFC1823205E637100CCAEC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FFC1822205E637100CCAEC3 /* Assets.xcassets */; };
 		9FFC1826205E637100CCAEC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFC1824205E637100CCAEC3 /* LaunchScreen.storyboard */; };
 		9FFC1829205E637100CCAEC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC1828205E637100CCAEC3 /* main.m */; };
+		9FFC1832205E66CA00CCAEC3 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC1831205E66CA00CCAEC3 /* BaseTabBarController.m */; };
+		9FFC1835205E66FB00CCAEC3 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC1834205E66FB00CCAEC3 /* BaseNavigationController.m */; };
+		9FFC1838205E671000CCAEC3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC1837205E671000CCAEC3 /* BaseViewController.m */; };
+		9FFC183C205E9AFC00CCAEC3 /* BYPublishTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC183B205E9AFC00CCAEC3 /* BYPublishTabBar.m */; };
+		9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC183E205EAC0100CCAEC3 /* MainTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,17 @@
 		9FFC1825205E637100CCAEC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FFC1827205E637100CCAEC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FFC1828205E637100CCAEC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9FFC1830205E66CA00CCAEC3 /* BaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		9FFC1831205E66CA00CCAEC3 /* BaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		9FFC1833205E66FB00CCAEC3 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		9FFC1834205E66FB00CCAEC3 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		9FFC1836205E671000CCAEC3 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		9FFC1837205E671000CCAEC3 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		9FFC183A205E9AFC00CCAEC3 /* BYPublishTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYPublishTabBar.h; sourceTree = "<group>"; };
+		9FFC183B205E9AFC00CCAEC3 /* BYPublishTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYPublishTabBar.m; sourceTree = "<group>"; };
+		9FFC183D205EAC0100CCAEC3 /* MainTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBar.h; sourceTree = "<group>"; };
+		9FFC183E205EAC0100CCAEC3 /* MainTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBar.m; sourceTree = "<group>"; };
+		9FFC1840205EBA5500CCAEC3 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +74,10 @@
 		9FFC1818205E637100CCAEC3 /* DaiTaHuiJia */ = {
 			isa = PBXGroup;
 			children = (
+				9FFC1839205E672200CCAEC3 /* Utils */,
+				9FFC182F205E667800CCAEC3 /* BaseView */,
 				9FFC1819205E637100CCAEC3 /* AppDelegate.h */,
+				9FFC1840205EBA5500CCAEC3 /* PrefixHeader.pch */,
 				9FFC181A205E637100CCAEC3 /* AppDelegate.m */,
 				9FFC181C205E637100CCAEC3 /* ViewController.h */,
 				9FFC181D205E637100CCAEC3 /* ViewController.m */,
@@ -69,6 +88,30 @@
 				9FFC1828205E637100CCAEC3 /* main.m */,
 			);
 			path = DaiTaHuiJia;
+			sourceTree = "<group>";
+		};
+		9FFC182F205E667800CCAEC3 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				9FFC1830205E66CA00CCAEC3 /* BaseTabBarController.h */,
+				9FFC1831205E66CA00CCAEC3 /* BaseTabBarController.m */,
+				9FFC1833205E66FB00CCAEC3 /* BaseNavigationController.h */,
+				9FFC1834205E66FB00CCAEC3 /* BaseNavigationController.m */,
+				9FFC1836205E671000CCAEC3 /* BaseViewController.h */,
+				9FFC1837205E671000CCAEC3 /* BaseViewController.m */,
+				9FFC183A205E9AFC00CCAEC3 /* BYPublishTabBar.h */,
+				9FFC183B205E9AFC00CCAEC3 /* BYPublishTabBar.m */,
+				9FFC183D205EAC0100CCAEC3 /* MainTabBar.h */,
+				9FFC183E205EAC0100CCAEC3 /* MainTabBar.m */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		9FFC1839205E672200CCAEC3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
+				9FFC1832205E66CA00CCAEC3 /* BaseTabBarController.m in Sources */,
+				9FFC183C205E9AFC00CCAEC3 /* BYPublishTabBar.m in Sources */,
+				9FFC1838205E671000CCAEC3 /* BaseViewController.m in Sources */,
 				9FFC181E205E637100CCAEC3 /* ViewController.m in Sources */,
 				9FFC1829205E637100CCAEC3 /* main.m in Sources */,
 				9FFC181B205E637100CCAEC3 /* AppDelegate.m in Sources */,
+				9FFC1835205E66FB00CCAEC3 /* BaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +327,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DaiTaHuiJia/PrefixHeader.pch";
 				INFOPLIST_FILE = DaiTaHuiJia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zjicm603.DaiTaHuiJia;
@@ -292,6 +342,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DaiTaHuiJia/PrefixHeader.pch";
 				INFOPLIST_FILE = DaiTaHuiJia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zjicm603.DaiTaHuiJia;

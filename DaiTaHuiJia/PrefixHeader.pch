@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.pch
+//  DaiTaHuiJia
+//
+//  Created by 徐小平 on 2018/3/18.
+//  Copyright © 2018年 徐谦. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define themeColor [UIColor colorWithRed:255 green:84 blue:114 alpha:1];
+
+#endif /* PrefixHeader_pch */
