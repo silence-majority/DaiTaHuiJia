@@ -7,10 +7,12 @@
 //
 
 #import "MainTabBar.h"
+#import <Masonry/Masonry.h>
 static const CGFloat pulishViewWidth = 40;
 static const CGFloat contentViewWidth = 50;
 
 @interface MainTabBar()
+@property (nonatomic,strong) UIView *tabBarShadowLayerView;
 @property (nonatomic,strong) UIView *contentView;
 @property (nonatomic,strong) UIView *publishView;
 @property (nonatomic,strong) UILabel *titleLabel;
@@ -21,17 +23,30 @@ static const CGFloat contentViewWidth = 50;
 
 - (void)setPublishBar{
     NSLog(@"子类被调用了");
+    [self addSubview:self.tabBarShadowLayerView];
+    [_tabBarShadowLayerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self);
+    }];
+    
     [self addSubview:self.contentView];
     [self addSubview:self.titleLabel];
 }
+
+- (UIView *)tabBarShadowLayerView{
+    if (!_tabBarShadowLayerView) {
+        UIView *view = [[UIView alloc] init];
+        view.backgroundColor = [UIColor whiteColor];
+        _tabBarShadowLayerView = view;
+    }
+    return _tabBarShadowLayerView;
+}
+
 
 - (UIView *)contentView{
     if (!_contentView) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, contentViewWidth, contentViewWidth)];
         view.backgroundColor = [UIColor whiteColor];
         view.layer.cornerRadius = contentViewWidth/2;
-        view.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        view.layer.borderWidth = 0.8;
         _contentView = view;
     }
     return _contentView;
@@ -61,7 +76,7 @@ static const CGFloat contentViewWidth = 50;
 
 - (UILabel *)addLabel{
     if (!_addLabel) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pulishViewWidth, pulishViewWidth)];
+        UILabel *label = [[UILabel alloc] init];
         label.text = @"+";
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:30];
@@ -85,9 +100,35 @@ static const CGFloat contentViewWidth = 50;
     [self addSubview:self.publishView];
     self.publishView.center = self.contentView.center;
     
-    [self addSubview:self.addLabel];
-    self.addLabel.center = self.contentView.center;
+    [self.publishView addSubview:self.addLabel];
+    [_addLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(_publishView.mas_centerX);
+        make.centerY.equalTo(_publishView.mas_centerY).offset(-2);
+    }];
+//    self.addLabel.center = self.contentView.center;
+
+    self.contentView.layer.shadowPath = [self publishViewShadowPathWithShadowRadiu:25].CGPath;
+    self.contentView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    self.contentView.layer.shadowOpacity = 0.4;
+    self.contentView.layer.shadowOffset = CGSizeMake(0, -1);
+    self.contentView.layer.shadowRadius = 1;
     
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0) {
+        self.subviews[0].subviews[0].hidden = YES;
+    }
+    self.tabBarShadowLayerView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    self.tabBarShadowLayerView.layer.shadowOffset = CGSizeMake(0, -1);
+    self.tabBarShadowLayerView.layer.shadowRadius = 1;
+    self.tabBarShadowLayerView.layer.shadowOpacity = 0.4;
 }
+
+- (UIBezierPath *)publishViewShadowPathWithShadowRadiu:(CGFloat)shadowRadiu{
+    UIBezierPath *shadowPath = [UIBezierPath bezierPath];
+    [shadowPath moveToPoint:CGPointMake(1, shadowRadiu-7)];
+    [shadowPath addArcWithCenter:CGPointMake(shadowRadiu, shadowRadiu) radius:shadowRadiu startAngle:(1+0.083)*M_PI endAngle:(2-0.083)*M_PI clockwise:true];
+    
+    return shadowPath;
+}
+
 
 @end

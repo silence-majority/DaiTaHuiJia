@@ -37,6 +37,7 @@
     baseNavB.tabBarItem = tabBarItemB;
     
     self.viewControllers = @[baseNavA,baseNavB];
+    
 }
 
 - (void)didReceiveMemoryWarning {
