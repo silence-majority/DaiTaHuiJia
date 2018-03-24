@@ -19,6 +19,10 @@
 		9FFC1838205E671000CCAEC3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC1837205E671000CCAEC3 /* BaseViewController.m */; };
 		9FFC183C205E9AFC00CCAEC3 /* BYPublishTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC183B205E9AFC00CCAEC3 /* BYPublishTabBar.m */; };
 		9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC183E205EAC0100CCAEC3 /* MainTabBar.m */; };
+		9FFC18492066504000CCAEC3 /* PublishItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC18482066504000CCAEC3 /* PublishItemView.m */; };
+		9FFC184E2066A62500CCAEC3 /* ChoosePublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC184D2066A62500CCAEC3 /* ChoosePublishViewController.m */; };
+		9FFC18532066C9F800CCAEC3 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC18522066C9F800CCAEC3 /* MainPageViewController.m */; };
+		9FFC18562066CA0500CCAEC3 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC18552066CA0500CCAEC3 /* MineViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,14 @@
 		9FFC183D205EAC0100CCAEC3 /* MainTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBar.h; sourceTree = "<group>"; };
 		9FFC183E205EAC0100CCAEC3 /* MainTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBar.m; sourceTree = "<group>"; };
 		9FFC1840205EBA5500CCAEC3 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9FFC18472066504000CCAEC3 /* PublishItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublishItemView.h; sourceTree = "<group>"; };
+		9FFC18482066504000CCAEC3 /* PublishItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublishItemView.m; sourceTree = "<group>"; };
+		9FFC184C2066A62500CCAEC3 /* ChoosePublishViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoosePublishViewController.h; sourceTree = "<group>"; };
+		9FFC184D2066A62500CCAEC3 /* ChoosePublishViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoosePublishViewController.m; sourceTree = "<group>"; };
+		9FFC18512066C9F800CCAEC3 /* MainPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainPageViewController.h; sourceTree = "<group>"; };
+		9FFC18522066C9F800CCAEC3 /* MainPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
+		9FFC18542066CA0500CCAEC3 /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		9FFC18552066CA0500CCAEC3 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		F11CE97E0962DA773AE88C58 /* Pods-DaiTaHuiJia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaiTaHuiJia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DaiTaHuiJia/Pods-DaiTaHuiJia.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +101,9 @@
 		9FFC1818205E637100CCAEC3 /* DaiTaHuiJia */ = {
 			isa = PBXGroup;
 			children = (
+				9FFC18502066C9E200CCAEC3 /* Main */,
+				9FFC184F2066C9D300CCAEC3 /* MainPage */,
+				9FFC18452066501000CCAEC3 /* publish */,
 				9FFC1839205E672200CCAEC3 /* Utils */,
 				9FFC182F205E667800CCAEC3 /* BaseView */,
 				9FFC1819205E637100CCAEC3 /* AppDelegate.h */,
@@ -127,6 +142,51 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		9FFC18452066501000CCAEC3 /* publish */ = {
+			isa = PBXGroup;
+			children = (
+				9FFC184A2066A5F700CCAEC3 /* Controller */,
+				9FFC18462066501C00CCAEC3 /* View */,
+			);
+			path = publish;
+			sourceTree = "<group>";
+		};
+		9FFC18462066501C00CCAEC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9FFC18472066504000CCAEC3 /* PublishItemView.h */,
+				9FFC18482066504000CCAEC3 /* PublishItemView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9FFC184A2066A5F700CCAEC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9FFC184C2066A62500CCAEC3 /* ChoosePublishViewController.h */,
+				9FFC184D2066A62500CCAEC3 /* ChoosePublishViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9FFC184F2066C9D300CCAEC3 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				9FFC18512066C9F800CCAEC3 /* MainPageViewController.h */,
+				9FFC18522066C9F800CCAEC3 /* MainPageViewController.m */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		9FFC18502066C9E200CCAEC3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9FFC18542066CA0500CCAEC3 /* MineViewController.h */,
+				9FFC18552066CA0500CCAEC3 /* MineViewController.m */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		EE15E5C1C5334AE9C6E4C76D /* Pods */ = {
@@ -263,6 +323,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FFC18492066504000CCAEC3 /* PublishItemView.m in Sources */,
+				9FFC184E2066A62500CCAEC3 /* ChoosePublishViewController.m in Sources */,
+				9FFC18532066C9F800CCAEC3 /* MainPageViewController.m in Sources */,
+				9FFC18562066CA0500CCAEC3 /* MineViewController.m in Sources */,
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
 				9FFC1832205E66CA00CCAEC3 /* BaseTabBarController.m in Sources */,
 				9FFC183C205E9AFC00CCAEC3 /* BYPublishTabBar.m in Sources */,
@@ -406,9 +470,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UE3A9NVXE8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DaiTaHuiJia/PrefixHeader.pch";
 				INFOPLIST_FILE = DaiTaHuiJia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zjicm603.DaiTaHuiJia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,9 +488,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UE3A9NVXE8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DaiTaHuiJia/PrefixHeader.pch";
 				INFOPLIST_FILE = DaiTaHuiJia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zjicm603.DaiTaHuiJia;
 				PRODUCT_NAME = "$(TARGET_NAME)";

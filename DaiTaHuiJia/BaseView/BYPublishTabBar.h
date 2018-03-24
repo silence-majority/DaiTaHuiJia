@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BYPublishTabBarDelegate<NSObject>
+- (void)didTouchPublishView;
+@end
+
 @interface BYPublishTabBar : UITabBar
 
 /*
@@ -19,5 +23,7 @@
  * 设置自定义的bar
  */
 - (void)setPublishBar;
+
+@property (nonatomic,weak) id<BYPublishTabBarDelegate> publishDelegate;
 
 @end

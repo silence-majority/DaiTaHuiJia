@@ -16,7 +16,7 @@ static const CGFloat contentViewWidth = 50;
 @property (nonatomic,strong) UIView *contentView;
 @property (nonatomic,strong) UIView *publishView;
 @property (nonatomic,strong) UILabel *titleLabel;
-@property (nonatomic,strong) UILabel *addLabel;
+@property (nonatomic,strong) UIButton *publishBtn;
 @end
 
 @implementation MainTabBar
@@ -55,7 +55,7 @@ static const CGFloat contentViewWidth = 50;
 - (UIView *)publishView{
     if (!_publishView) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, pulishViewWidth, pulishViewWidth)];
-        view.backgroundColor = [UIColor colorWithRed:255/255.0 green:84/255.0 blue:114/255.0 alpha:1];
+        view.backgroundColor = COLOR_THEME;
         view.layer.cornerRadius = pulishViewWidth/2;
         _publishView = view;
     }
@@ -67,23 +67,11 @@ static const CGFloat contentViewWidth = 50;
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 20)];
         label.text = @"发布";
         label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont systemFontOfSize:9];
-        label.textColor = [UIColor darkGrayColor];
+        label.font = [UIFont systemFontOfSize:10];
+        label.textColor = [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1];
         _titleLabel = label;
     }
     return _titleLabel;
-}
-
-- (UILabel *)addLabel{
-    if (!_addLabel) {
-        UILabel *label = [[UILabel alloc] init];
-        label.text = @"+";
-        label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont systemFontOfSize:30];
-        label.textColor = [UIColor whiteColor];
-        _addLabel = label;
-    }
-    return _addLabel;
 }
 
 - (void)layoutSubviews{
@@ -100,12 +88,11 @@ static const CGFloat contentViewWidth = 50;
     [self addSubview:self.publishView];
     self.publishView.center = self.contentView.center;
     
-    [self.publishView addSubview:self.addLabel];
-    [_addLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_publishView.mas_centerX);
-        make.centerY.equalTo(_publishView.mas_centerY).offset(-2);
+    [self.publishView addSubview:self.publishBtn];
+    [_publishBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(25, 25));
+        make.center.offset(0);
     }];
-//    self.addLabel.center = self.contentView.center;
 
     self.contentView.layer.shadowPath = [self publishViewShadowPathWithShadowRadiu:25].CGPath;
     self.contentView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
@@ -130,5 +117,20 @@ static const CGFloat contentViewWidth = 50;
     return shadowPath;
 }
 
+- (UIButton *)publishBtn{
+    if (!_publishBtn) {
+        UIButton *button = [[UIButton alloc] init];
+        [button setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(publishAction) forControlEvents:UIControlEventTouchUpInside];
+        _publishBtn = button;
+    }
+    return _publishBtn;
+}
+
+- (void)publishAction{
+    if (self.publishDelegate && [self.publishDelegate respondsToSelector:@selector(didTouchPublishView)]) {
+        [self.publishDelegate didTouchPublishView];
+    }
+}
 
 @end

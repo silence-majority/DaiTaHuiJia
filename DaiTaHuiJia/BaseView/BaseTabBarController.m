@@ -11,7 +11,10 @@
 #import "BaseViewController.h"
 #import "BYPublishTabBar.h"
 #import "MainTabBar.h"
-@interface BaseTabBarController ()
+#import "ChoosePublishViewController.h"
+#import "MainPageViewController.h"
+#import "MineViewController.h"
+@interface BaseTabBarController ()<BYPublishTabBarDelegate>
 
 @end
 
@@ -21,27 +24,52 @@
     [super viewDidLoad];
     
     MainTabBar *publishBar = [[MainTabBar alloc] init];
+    publishBar.publishDelegate = self;
     publishBar.commonBarCount = 2;
     [self setValue:publishBar forKey:@"tabBar"];
     
-    BaseViewController *baseVCA = [[BaseViewController alloc] init];
+    MainPageViewController *baseVCA = [[MainPageViewController alloc] init];
     baseVCA.view.backgroundColor = [UIColor whiteColor];
     BaseNavigationController *baseNavA = [[BaseNavigationController alloc] initWithRootViewController:baseVCA];
-    UITabBarItem *tabBarItemA = [[UITabBarItem alloc] initWithTabBarSystemItem:(UITabBarSystemItemMore) tag:0];
-    baseNavA.tabBarItem = tabBarItemA;
+    UITabBarItem *homeBarItem = [self tabBarItemWithTitle:@"主页" TitleColor:[UIColor redColor] image:@"homeBarItem_normal" selectedImage:@"homeBarItem_focu"];
+    baseNavA.tabBarItem = homeBarItem;
     
-    BaseViewController *baseVCB = [[BaseViewController alloc] init];
+    MineViewController *baseVCB = [[MineViewController alloc] init];
     baseVCB.view.backgroundColor = [UIColor whiteColor];
     BaseNavigationController *baseNavB = [[BaseNavigationController alloc] initWithRootViewController:baseVCB];
-    UITabBarItem *tabBarItemB = [[UITabBarItem alloc] initWithTabBarSystemItem:(UITabBarSystemItemHistory) tag:1];
-    baseNavB.tabBarItem = tabBarItemB;
+    UITabBarItem *mineBarItem = [self tabBarItemWithTitle:@"我的" TitleColor:[UIColor redColor] image:@"mineBarItem_normal" selectedImage:@"mineBarItem_focu"];
+    
+    baseNavB.tabBarItem = mineBarItem;
     
     self.viewControllers = @[baseNavA,baseNavB];
-    
 }
+
+- (UITabBarItem*)tabBarItemWithTitle:(NSString*)title
+                          TitleColor:(UIColor*)titleColor
+                               image:(NSString*)image
+                       selectedImage:(NSString*)selectedImage{
+    UITabBarItem *tabBarItem;
+    tabBarItem = [[UITabBarItem alloc] initWithTitle:title
+                                               image:[self renderImageWithName:image]
+                                       selectedImage:[self renderImageWithName:selectedImage]];
+    //改变tabBar字体颜色
+    [tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:255/255.0 green:132/255.0 blue:123/255.0 alpha:1],NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+    return tabBarItem;
+}
+
+- (UIImage*)renderImageWithName:(NSString*)imageName {
+    UIImage * image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    return image;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)didTouchPublishView{
+    ChoosePublishViewController *target = [[ChoosePublishViewController alloc] init];
+    [self presentViewController:target animated:false completion:nil];
 }
 
 
