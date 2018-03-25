@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		51345D6035DDE44C9B560BD4 /* libPods-DaiTaHuiJia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EDA2CACE07B19F8D9778A1 /* libPods-DaiTaHuiJia.a */; };
+		9F3FF75920679B6B006DBA49 /* UIColor+UIColor_Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */; };
+		9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75B20679F59006DBA49 /* FunctionTableViewCell.m */; };
+		9F3FF75F2067D13C006DBA49 /* UserBriefTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */; };
 		9FFC181B205E637100CCAEC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC181A205E637100CCAEC3 /* AppDelegate.m */; };
 		9FFC181E205E637100CCAEC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC181D205E637100CCAEC3 /* ViewController.m */; };
 		9FFC1821205E637100CCAEC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFC181F205E637100CCAEC3 /* Main.storyboard */; };
@@ -28,6 +31,12 @@
 /* Begin PBXFileReference section */
 		40EDA2CACE07B19F8D9778A1 /* libPods-DaiTaHuiJia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DaiTaHuiJia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		554155AF977F4C4F8B84F8F3 /* Pods-DaiTaHuiJia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaiTaHuiJia.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaiTaHuiJia/Pods-DaiTaHuiJia.release.xcconfig"; sourceTree = "<group>"; };
+		9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColor_Hex.m"; sourceTree = "<group>"; };
+		9F3FF75820679B6B006DBA49 /* UIColor+UIColor_Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColor_Hex.h"; sourceTree = "<group>"; };
+		9F3FF75A20679F59006DBA49 /* FunctionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionTableViewCell.h; sourceTree = "<group>"; };
+		9F3FF75B20679F59006DBA49 /* FunctionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionTableViewCell.m; sourceTree = "<group>"; };
+		9F3FF75D2067D13C006DBA49 /* UserBriefTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserBriefTableViewCell.h; sourceTree = "<group>"; };
+		9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserBriefTableViewCell.m; sourceTree = "<group>"; };
 		9FFC1816205E637100CCAEC3 /* DaiTaHuiJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaiTaHuiJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFC1819205E637100CCAEC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9FFC181A205E637100CCAEC3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,6 +89,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9F3FF74E206793BB006DBA49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F3FF75A20679F59006DBA49 /* FunctionTableViewCell.h */,
+				9F3FF75B20679F59006DBA49 /* FunctionTableViewCell.m */,
+				9F3FF75D2067D13C006DBA49 /* UserBriefTableViewCell.h */,
+				9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9FFC180D205E637100CCAEC3 = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +121,7 @@
 		9FFC1818205E637100CCAEC3 /* DaiTaHuiJia */ = {
 			isa = PBXGroup;
 			children = (
-				9FFC18502066C9E200CCAEC3 /* Main */,
+				9FFC18502066C9E200CCAEC3 /* Mine */,
 				9FFC184F2066C9D300CCAEC3 /* MainPage */,
 				9FFC18452066501000CCAEC3 /* publish */,
 				9FFC1839205E672200CCAEC3 /* Utils */,
@@ -140,6 +160,8 @@
 		9FFC1839205E672200CCAEC3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9F3FF75820679B6B006DBA49 /* UIColor+UIColor_Hex.h */,
+				9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -180,13 +202,14 @@
 			path = MainPage;
 			sourceTree = "<group>";
 		};
-		9FFC18502066C9E200CCAEC3 /* Main */ = {
+		9FFC18502066C9E200CCAEC3 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				9F3FF74E206793BB006DBA49 /* View */,
 				9FFC18542066CA0500CCAEC3 /* MineViewController.h */,
 				9FFC18552066CA0500CCAEC3 /* MineViewController.m */,
 			);
-			path = Main;
+			path = Mine;
 			sourceTree = "<group>";
 		};
 		EE15E5C1C5334AE9C6E4C76D /* Pods */ = {
@@ -330,10 +353,13 @@
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
 				9FFC1832205E66CA00CCAEC3 /* BaseTabBarController.m in Sources */,
 				9FFC183C205E9AFC00CCAEC3 /* BYPublishTabBar.m in Sources */,
+				9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */,
 				9FFC1838205E671000CCAEC3 /* BaseViewController.m in Sources */,
 				9FFC181E205E637100CCAEC3 /* ViewController.m in Sources */,
 				9FFC1829205E637100CCAEC3 /* main.m in Sources */,
+				9F3FF75920679B6B006DBA49 /* UIColor+UIColor_Hex.m in Sources */,
 				9FFC181B205E637100CCAEC3 /* AppDelegate.m in Sources */,
+				9F3FF75F2067D13C006DBA49 /* UserBriefTableViewCell.m in Sources */,
 				9FFC1835205E66FB00CCAEC3 /* BaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

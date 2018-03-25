@@ -14,6 +14,7 @@
 #define horizentalHalf 15
 #define verticalHalf 75
 @interface ChoosePublishViewController ()
+@property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) PublishItemView *seekPeoplePublishView;
 @property (nonatomic,strong) PublishItemView *seekHomePublishView;
 @property (nonatomic,strong) PublishItemView *registPublishView;
@@ -58,6 +59,12 @@
         make.size.mas_equalTo(CGSizeMake(25, 25));
         make.centerX.offset(0);
         make.centerY.mas_equalTo(self.view.mas_bottom).offset(-41);
+    }];
+    
+    [self.view addSubview:self.titleLabel];
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.offset(65);
+        make.left.offset(20);
     }];
     [self prepareAnimation];
 }
@@ -125,6 +132,17 @@
     return _exitBtn;
 }
 
+- (UILabel *)titleLabel{
+    if (!_titleLabel) {
+        UILabel *label = [[UILabel alloc] init];
+        label.font = [UIFont boldSystemFontOfSize:17];
+        label.textColor = [UIColor darkGrayColor];
+        label.text = @"您的坚持，他一定会感受到！";
+        _titleLabel = label;
+    }
+    return _titleLabel;
+}
+
 - (void)exitBtnAction{
     [self disappearAnimation];
     dispatch_time_t timer = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
@@ -134,6 +152,7 @@
 }
 
 - (void)prepareAnimation{
+    self.titleLabel.alpha = 0;
     CGFloat height = screenH;
     height = height/2+150;
     self.seekPeoplePublishView.transform = CGAffineTransformMakeTranslation(0, height);
@@ -146,6 +165,10 @@
         self.exitBtn.transform = CGAffineTransformMakeRotation(-M_PI/4.0);
     } completion:^(BOOL finished) {
         
+    }];
+    
+    [UIView animateWithDuration:1 animations:^{
+        self.titleLabel.alpha = 1;
     }];
     
     [self appearAnimationWithObject:self.seekPeoplePublishView delay:0.2];
