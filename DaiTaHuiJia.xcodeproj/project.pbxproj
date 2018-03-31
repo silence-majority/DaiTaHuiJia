@@ -11,6 +11,9 @@
 		9F3FF75920679B6B006DBA49 /* UIColor+UIColor_Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */; };
 		9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75B20679F59006DBA49 /* FunctionTableViewCell.m */; };
 		9F3FF75F2067D13C006DBA49 /* UserBriefTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */; };
+		9F828EE0206FE16600E440F2 /* BYSearchSegmentNavgationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */; };
+		9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE6206FF6E600E440F2 /* BYSegmentBadgeButton.m */; };
+		9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */; };
 		9FFC181B205E637100CCAEC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC181A205E637100CCAEC3 /* AppDelegate.m */; };
 		9FFC181E205E637100CCAEC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC181D205E637100CCAEC3 /* ViewController.m */; };
 		9FFC1821205E637100CCAEC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFC181F205E637100CCAEC3 /* Main.storyboard */; };
@@ -37,6 +40,12 @@
 		9F3FF75B20679F59006DBA49 /* FunctionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionTableViewCell.m; sourceTree = "<group>"; };
 		9F3FF75D2067D13C006DBA49 /* UserBriefTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserBriefTableViewCell.h; sourceTree = "<group>"; };
 		9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserBriefTableViewCell.m; sourceTree = "<group>"; };
+		9F828EDE206FE16600E440F2 /* BYSearchSegmentNavgationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYSearchSegmentNavgationBar.h; sourceTree = "<group>"; };
+		9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYSearchSegmentNavgationBar.m; sourceTree = "<group>"; };
+		9F828EE4206FF6E600E440F2 /* BYSegmentBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYSegmentBadgeButton.h; sourceTree = "<group>"; };
+		9F828EE5206FF6E600E440F2 /* BYSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYSegmentControl.h; sourceTree = "<group>"; };
+		9F828EE6206FF6E600E440F2 /* BYSegmentBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYSegmentBadgeButton.m; sourceTree = "<group>"; };
+		9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYSegmentControl.m; sourceTree = "<group>"; };
 		9FFC1816205E637100CCAEC3 /* DaiTaHuiJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaiTaHuiJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFC1819205E637100CCAEC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9FFC181A205E637100CCAEC3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -100,6 +109,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9F828EE3206FF68E00E440F2 /* BYSegement */ = {
+			isa = PBXGroup;
+			children = (
+				9F828EE4206FF6E600E440F2 /* BYSegmentBadgeButton.h */,
+				9F828EE6206FF6E600E440F2 /* BYSegmentBadgeButton.m */,
+				9F828EE5206FF6E600E440F2 /* BYSegmentControl.h */,
+				9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */,
+			);
+			path = BYSegement;
+			sourceTree = "<group>";
+		};
 		9FFC180D205E637100CCAEC3 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +163,7 @@
 		9FFC182F205E667800CCAEC3 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
+				9F828EE3206FF68E00E440F2 /* BYSegement */,
 				9FFC1830205E66CA00CCAEC3 /* BaseTabBarController.h */,
 				9FFC1831205E66CA00CCAEC3 /* BaseTabBarController.m */,
 				9FFC1833205E66FB00CCAEC3 /* BaseNavigationController.h */,
@@ -153,6 +174,8 @@
 				9FFC183B205E9AFC00CCAEC3 /* BYPublishTabBar.m */,
 				9FFC183D205EAC0100CCAEC3 /* MainTabBar.h */,
 				9FFC183E205EAC0100CCAEC3 /* MainTabBar.m */,
+				9F828EDE206FE16600E440F2 /* BYSearchSegmentNavgationBar.h */,
+				9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -350,10 +373,13 @@
 				9FFC184E2066A62500CCAEC3 /* ChoosePublishViewController.m in Sources */,
 				9FFC18532066C9F800CCAEC3 /* MainPageViewController.m in Sources */,
 				9FFC18562066CA0500CCAEC3 /* MineViewController.m in Sources */,
+				9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */,
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
 				9FFC1832205E66CA00CCAEC3 /* BaseTabBarController.m in Sources */,
 				9FFC183C205E9AFC00CCAEC3 /* BYPublishTabBar.m in Sources */,
+				9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */,
 				9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */,
+				9F828EE0206FE16600E440F2 /* BYSearchSegmentNavgationBar.m in Sources */,
 				9FFC1838205E671000CCAEC3 /* BaseViewController.m in Sources */,
 				9FFC181E205E637100CCAEC3 /* ViewController.m in Sources */,
 				9FFC1829205E637100CCAEC3 /* main.m in Sources */,

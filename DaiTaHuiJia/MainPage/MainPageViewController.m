@@ -7,8 +7,9 @@
 //
 
 #import "MainPageViewController.h"
-
+#import "BYSearchSegmentNavgationBar.h"
 @interface MainPageViewController ()
+@property (nonatomic,strong) BYSearchSegmentNavgationBar *navigationBar;
 
 @end
 
@@ -16,12 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"主页";
-    self.view.backgroundColor = [UIColor orangeColor];
+    [self.navigationController setNavigationBarHidden:true];
+    self.navigationBar.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 106);
+    self.navigationBar.backgroundColor = [UIColor redColor];
+    self.navigationBar.translucent = false;
+    [self.view addSubview:self.navigationBar];
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (BYSearchSegmentNavgationBar *)navigationBar{
+    if (!_navigationBar) {
+        _navigationBar = [[BYSearchSegmentNavgationBar alloc] initWithFrame:CGRectZero];
+    }
+    return _navigationBar;
 }
 
 
