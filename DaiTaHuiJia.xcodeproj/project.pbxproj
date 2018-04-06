@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		51345D6035DDE44C9B560BD4 /* libPods-DaiTaHuiJia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EDA2CACE07B19F8D9778A1 /* libPods-DaiTaHuiJia.a */; };
+		9F2713F620774E5F000FC8E5 /* MainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2713F520774E5F000FC8E5 /* MainCollectionViewCell.m */; };
+		9F2713FC20779AD4000FC8E5 /* LostorDetaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2713FB20779AD4000FC8E5 /* LostorDetaiViewController.m */; };
+		9F2713FF20779BB7000FC8E5 /* BYNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2713FE20779BB7000FC8E5 /* BYNavigationBar.m */; };
+		9F2714042077AEA1000FC8E5 /* LostorBirefView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2714032077AEA1000FC8E5 /* LostorBirefView.m */; };
 		9F3FF75920679B6B006DBA49 /* UIColor+UIColor_Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */; };
 		9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75B20679F59006DBA49 /* FunctionTableViewCell.m */; };
 		9F3FF75F2067D13C006DBA49 /* UserBriefTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */; };
@@ -35,6 +39,14 @@
 /* Begin PBXFileReference section */
 		40EDA2CACE07B19F8D9778A1 /* libPods-DaiTaHuiJia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DaiTaHuiJia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		554155AF977F4C4F8B84F8F3 /* Pods-DaiTaHuiJia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaiTaHuiJia.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaiTaHuiJia/Pods-DaiTaHuiJia.release.xcconfig"; sourceTree = "<group>"; };
+		9F2713F420774E5F000FC8E5 /* MainCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainCollectionViewCell.h; sourceTree = "<group>"; };
+		9F2713F520774E5F000FC8E5 /* MainCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainCollectionViewCell.m; sourceTree = "<group>"; };
+		9F2713FA20779AD4000FC8E5 /* LostorDetaiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostorDetaiViewController.h; sourceTree = "<group>"; };
+		9F2713FB20779AD4000FC8E5 /* LostorDetaiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostorDetaiViewController.m; sourceTree = "<group>"; };
+		9F2713FD20779BB7000FC8E5 /* BYNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYNavigationBar.h; sourceTree = "<group>"; };
+		9F2713FE20779BB7000FC8E5 /* BYNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYNavigationBar.m; sourceTree = "<group>"; };
+		9F2714022077AEA1000FC8E5 /* LostorBirefView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostorBirefView.h; sourceTree = "<group>"; };
+		9F2714032077AEA1000FC8E5 /* LostorBirefView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostorBirefView.m; sourceTree = "<group>"; };
 		9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColor_Hex.m"; sourceTree = "<group>"; };
 		9F3FF75820679B6B006DBA49 /* UIColor+UIColor_Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColor_Hex.h"; sourceTree = "<group>"; };
 		9F3FF75A20679F59006DBA49 /* FunctionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionTableViewCell.h; sourceTree = "<group>"; };
@@ -99,6 +111,37 @@
 				40EDA2CACE07B19F8D9778A1 /* libPods-DaiTaHuiJia.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F2713F720774E66000FC8E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F2713F420774E5F000FC8E5 /* MainCollectionViewCell.h */,
+				9F2713F520774E5F000FC8E5 /* MainCollectionViewCell.m */,
+				9F2714022077AEA1000FC8E5 /* LostorBirefView.h */,
+				9F2714032077AEA1000FC8E5 /* LostorBirefView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F2713F820774E6D000FC8E5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9FFC18512066C9F800CCAEC3 /* MainPageViewController.h */,
+				9FFC18522066C9F800CCAEC3 /* MainPageViewController.m */,
+				9F828EEA2070B6D300E440F2 /* DataListViewController.h */,
+				9F828EEB2070B6D300E440F2 /* DataListViewController.m */,
+				9F2713FA20779AD4000FC8E5 /* LostorDetaiViewController.h */,
+				9F2713FB20779AD4000FC8E5 /* LostorDetaiViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9F2713F920774E75000FC8E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9F3FF74E206793BB006DBA49 /* View */ = {
@@ -179,6 +222,8 @@
 				9FFC183E205EAC0100CCAEC3 /* MainTabBar.m */,
 				9F828EDE206FE16600E440F2 /* BYSearchSegmentNavgationBar.h */,
 				9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */,
+				9F2713FD20779BB7000FC8E5 /* BYNavigationBar.h */,
+				9F2713FE20779BB7000FC8E5 /* BYNavigationBar.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -222,10 +267,9 @@
 		9FFC184F2066C9D300CCAEC3 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				9FFC18512066C9F800CCAEC3 /* MainPageViewController.h */,
-				9FFC18522066C9F800CCAEC3 /* MainPageViewController.m */,
-				9F828EEA2070B6D300E440F2 /* DataListViewController.h */,
-				9F828EEB2070B6D300E440F2 /* DataListViewController.m */,
+				9F2713F920774E75000FC8E5 /* Model */,
+				9F2713F820774E6D000FC8E5 /* Controller */,
+				9F2713F720774E66000FC8E5 /* View */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -380,8 +424,12 @@
 				9FFC18532066C9F800CCAEC3 /* MainPageViewController.m in Sources */,
 				9FFC18562066CA0500CCAEC3 /* MineViewController.m in Sources */,
 				9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */,
+				9F2713FF20779BB7000FC8E5 /* BYNavigationBar.m in Sources */,
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
+				9F2713F620774E5F000FC8E5 /* MainCollectionViewCell.m in Sources */,
+				9F2713FC20779AD4000FC8E5 /* LostorDetaiViewController.m in Sources */,
 				9FFC1832205E66CA00CCAEC3 /* BaseTabBarController.m in Sources */,
+				9F2714042077AEA1000FC8E5 /* LostorBirefView.m in Sources */,
 				9FFC183C205E9AFC00CCAEC3 /* BYPublishTabBar.m in Sources */,
 				9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */,
 				9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */,
@@ -527,8 +575,9 @@
 			baseConfigurationReference = F11CE97E0962DA773AE88C58 /* Pods-DaiTaHuiJia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UE3A9NVXE8;
+				DEVELOPMENT_TEAM = XS7VE74UZS;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DaiTaHuiJia/PrefixHeader.pch";
 				INFOPLIST_FILE = DaiTaHuiJia/Info.plist;
@@ -536,6 +585,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zjicm603.DaiTaHuiJia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -545,8 +595,9 @@
 			baseConfigurationReference = 554155AF977F4C4F8B84F8F3 /* Pods-DaiTaHuiJia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UE3A9NVXE8;
+				DEVELOPMENT_TEAM = XS7VE74UZS;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DaiTaHuiJia/PrefixHeader.pch";
 				INFOPLIST_FILE = DaiTaHuiJia/Info.plist;
@@ -554,6 +605,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zjicm603.DaiTaHuiJia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

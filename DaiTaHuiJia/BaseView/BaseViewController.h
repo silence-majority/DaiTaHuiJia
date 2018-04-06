@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BYNavigationBar.h"
 @interface BaseViewController : UIViewController
-
+@property (nonatomic,strong) UIView *by_navigationBar;
+@property (nonatomic,strong) UIButton *backButton;
 @end

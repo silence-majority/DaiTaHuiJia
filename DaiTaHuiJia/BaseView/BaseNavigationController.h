@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseNavigationController : UINavigationController
-
+@property (nonatomic, assign) BOOL isInteractivePopGestureRecognizerEnable;
 @end

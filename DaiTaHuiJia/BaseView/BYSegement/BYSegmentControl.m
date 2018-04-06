@@ -36,6 +36,7 @@
         _normalSegmentFont = [UIFont systemFontOfSize:15];
         _focusSegmentFont = [UIFont systemFontOfSize:15];
         _segmentTitles = titles;
+        _slider = [[UIView alloc] init];
     }
     return self;
 }
@@ -60,7 +61,6 @@
         [self addSubview:button];
     }
     
-    _slider = [[UIView alloc] init];
     [self addSubview:_slider];
     
     _segmentMaxWidth = [self getMaxSegmentWidth:_segmentTitles font:_normalSegmentFont];

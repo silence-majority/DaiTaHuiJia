@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DaiTaHuiJia/BaseView/BYSearchSegmentNavgationBar.m"
+            timestampString = "544710941.991396"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-updateFrameWithVelocity:contentOffset:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BYSearchSegmentNavgationBar updateFrameWithVelocity:contentOffset:]"
+                  moduleName = "DaiTaHuiJia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xuxiaoping/DaiTaHuiJia/DaiTaHuiJia/BaseView/BYSearchSegmentNavgationBar.m"
+                  timestampString = "544721331.253336"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "724">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__69-[BYSearchSegmentNavgationBar updateFrameWithVelocity:contentOffset:]_block_invoke.101"
+                  moduleName = "DaiTaHuiJia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xuxiaoping/DaiTaHuiJia/DaiTaHuiJia/BaseView/BYSearchSegmentNavgationBar.m"
+                  timestampString = "544721331.254849"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -11,6 +11,8 @@
 @interface BYSearchSegmentNavgationBar : UINavigationBar
 @property (nonatomic,strong) UITextField *searchTextField;
 @property (nonatomic,strong) BYSegmentControl *segmentControl;
+
+@property (nonatomic,assign) CGFloat beginDragingOffsetY;
 - (void)updateFrameWithOffset:(CGFloat)offset;
 - (void)updateFrameWithVelocity:(CGPoint)velocity contentOffset:(CGPoint)contentOffset;
 @end

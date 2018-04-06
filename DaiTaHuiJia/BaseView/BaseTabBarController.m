@@ -27,7 +27,6 @@
     publishBar.publishDelegate = self;
     publishBar.commonBarCount = 2;
     [self setValue:publishBar forKey:@"tabBar"];
-    
     MainPageViewController *baseVCA = [[MainPageViewController alloc] init];
     BaseNavigationController *baseNavA = [[BaseNavigationController alloc] initWithRootViewController:baseVCA];
     UITabBarItem *homeBarItem = [self tabBarItemWithTitle:@"主页" TitleColor:[UIColor redColor] image:@"homeBarItem_normal" selectedImage:@"homeBarItem_focu"];

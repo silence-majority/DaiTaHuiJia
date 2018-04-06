@@ -68,7 +68,15 @@ extern CGFloat const NavBarHeight;
             previousOffset = offset;
             return;
         }else{
-            
+            CGFloat topOffset = _beginDragingOffsetY;
+            CGFloat bottomOffset = _beginDragingOffsetY-(NavBarHeight-64);
+            if (offset <= topOffset && offset > bottomOffset) {
+                CGRect frame = self.frame;
+                frame.origin.y = offset-_beginDragingOffsetY;
+                self.frame = frame;
+                self.searchTextField.alpha = 1 - -(offset-_beginDragingOffsetY)/(NavBarHeight-64);\
+                return;
+            }
         }
     }else{
         self.isDownDrag = true;
@@ -88,7 +96,7 @@ extern CGFloat const NavBarHeight;
 
 - (void)updateFrameWithVelocity:(CGPoint)velocity contentOffset:(CGPoint)contentOffset{
     if (velocity.y < 0) {
-        [UIView animateWithDuration:(0.2) animations:^{
+        [UIView animateWithDuration:(0.1) animations:^{
             self.animationExecuting = true;
             CGRect frame = self.frame;
             frame.origin.y = 0;
@@ -99,7 +107,7 @@ extern CGFloat const NavBarHeight;
         }];
     }
     if (velocity.y > 0){
-        [UIView animateWithDuration:0.2 animations:^{
+        [UIView animateWithDuration:0.1 animations:^{
             self.animationExecuting = true;
             CGRect frame = self.frame;
             frame.origin.y = -(NavBarHeight-64);
@@ -111,8 +119,8 @@ extern CGFloat const NavBarHeight;
     }
     if (velocity.y == 0) {
         if (_isDownDrag) {
-            if (self.frame.origin.y != 0 && contentOffset.y < (NavBarHeight-64)/2.0) {
-                [UIView animateWithDuration:(0.2) animations:^{
+            if (self.frame.origin.y != 0 && contentOffset.y <= 0) {
+                [UIView animateWithDuration:(0.1) animations:^{
                     self.animationExecuting = true;
                     CGRect frame = self.frame;
                     frame.origin.y = 0;
@@ -121,11 +129,10 @@ extern CGFloat const NavBarHeight;
                 } completion:^(BOOL finished) {
                     self.animationExecuting = false;
                 }];
-
             }
         }else{
             if (self.frame.origin.y != -(NavBarHeight-64)){
-                [UIView animateWithDuration:0.2 animations:^{
+                [UIView animateWithDuration:0.1 animations:^{
                     self.animationExecuting = true;
                     CGRect frame = self.frame;
                     frame.origin.y = -(NavBarHeight-64);
