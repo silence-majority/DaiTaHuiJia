@@ -9,6 +9,11 @@
 #import "LostorDetaiViewController.h"
 #import "LostorBirefView.h"
 #import <Masonry/Masonry.h>
+#import "LostorFocusInfoTableViewCell.h"
+#import "MorePhotoTableViewCell.h"
+#import "TitleTableViewCell.h"
+#import "ClueChainTableViewCell.h"
+#import "BottomOperateTableViewCell.h"
 extern CGFloat NavBarHeight;
 @interface LostorDetaiViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *tableView;
@@ -41,24 +46,26 @@ extern CGFloat NavBarHeight;
         tableView.contentInset = UIEdgeInsetsMake(64-20, 0, 40, 0);
         [tableView setContentOffset:CGPointMake(0, -(64-20))];
         if (@available(iOS 11.0, *)) {
-            tableView.estimatedRowHeight = 0;
             tableView.estimatedSectionFooterHeight = 0;
             tableView.estimatedSectionHeaderHeight = 0;
         }
-        
+        tableView.estimatedRowHeight = 100;
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        [tableView registerClass:[LostorFocusInfoTableViewCell class] forCellReuseIdentifier:@"LostorFocusInfoTableViewCellId"];
+        [tableView registerClass:[MorePhotoTableViewCell class] forCellReuseIdentifier:@"MorePhotoTableViewCellId"];
+        [tableView registerClass:[TitleTableViewCell class] forCellReuseIdentifier:@"TitleTableViewCellId"];
+        [tableView registerClass:[ClueChainTableViewCell class] forCellReuseIdentifier:@"ClueChainTableViewCellId"];
+         [tableView registerClass:[BottomOperateTableViewCell class] forCellReuseIdentifier:@"BottomOperateTableViewCellId"];
         _lostorBriefView = [[LostorBirefView alloc] initWithFrame:CGRectMake(0, 0, screenW, 180)];
         tableView.tableHeaderView = _lostorBriefView;
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView = tableView;
     }
     return _tableView;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 200;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 3+5+1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -66,13 +73,27 @@ extern CGFloat NavBarHeight;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 0.01;
+    return 0.01f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:@"cell"];
-    cell.textLabel.text = [NSString stringWithFormat:@"第%ld个cell",(long)indexPath.row];
-    return cell;
+    if (indexPath.row == 0) {
+        LostorFocusInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LostorFocusInfoTableViewCellId" forIndexPath:indexPath];
+        return cell;
+    }else if (indexPath.row == 1){
+        MorePhotoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MorePhotoTableViewCellId" forIndexPath:indexPath];
+        return cell;
+    }else if (indexPath.row == 2) {
+        TitleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCellId" forIndexPath:indexPath];
+        return cell;
+    }else if (indexPath.row < 8){
+        ClueChainTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"ClueChainTableViewCellId" forIndexPath:indexPath];
+        return cell;
+    }else{
+        BottomOperateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BottomOperateTableViewCellId" forIndexPath:indexPath];
+        cell.titleLabel.text = @"为他提供线索";
+        return cell;
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

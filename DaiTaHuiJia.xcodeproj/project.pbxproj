@@ -19,6 +19,12 @@
 		9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE6206FF6E600E440F2 /* BYSegmentBadgeButton.m */; };
 		9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */; };
 		9F828EEC2070B6D300E440F2 /* DataListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EEB2070B6D300E440F2 /* DataListViewController.m */; };
+		9FDA92AD207899F50086C583 /* LostorFocusInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA92AC207899F50086C583 /* LostorFocusInfoTableViewCell.m */; };
+		9FDA92B02078B2FE0086C583 /* MorePhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA92AF2078B2FE0086C583 /* MorePhotoTableViewCell.m */; };
+		9FDA92B32078C6860086C583 /* TitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA92B22078C6860086C583 /* TitleTableViewCell.m */; };
+		9FDA92B62078CAD30086C583 /* ClueChainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA92B52078CAD30086C583 /* ClueChainTableViewCell.m */; };
+		9FDA92BA2078E0910086C583 /* UITableViewCell+BottomLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA92B92078E0910086C583 /* UITableViewCell+BottomLine.m */; };
+		9FDA92BD2078F3390086C583 /* BottomOperateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA92BC2078F3390086C583 /* BottomOperateTableViewCell.m */; };
 		9FFC181B205E637100CCAEC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC181A205E637100CCAEC3 /* AppDelegate.m */; };
 		9FFC181E205E637100CCAEC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFC181D205E637100CCAEC3 /* ViewController.m */; };
 		9FFC1821205E637100CCAEC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFC181F205E637100CCAEC3 /* Main.storyboard */; };
@@ -61,6 +67,18 @@
 		9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYSegmentControl.m; sourceTree = "<group>"; };
 		9F828EEA2070B6D300E440F2 /* DataListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataListViewController.h; sourceTree = "<group>"; };
 		9F828EEB2070B6D300E440F2 /* DataListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataListViewController.m; sourceTree = "<group>"; };
+		9FDA92AB207899F50086C583 /* LostorFocusInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostorFocusInfoTableViewCell.h; sourceTree = "<group>"; };
+		9FDA92AC207899F50086C583 /* LostorFocusInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostorFocusInfoTableViewCell.m; sourceTree = "<group>"; };
+		9FDA92AE2078B2FE0086C583 /* MorePhotoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MorePhotoTableViewCell.h; sourceTree = "<group>"; };
+		9FDA92AF2078B2FE0086C583 /* MorePhotoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MorePhotoTableViewCell.m; sourceTree = "<group>"; };
+		9FDA92B12078C6860086C583 /* TitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleTableViewCell.h; sourceTree = "<group>"; };
+		9FDA92B22078C6860086C583 /* TitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleTableViewCell.m; sourceTree = "<group>"; };
+		9FDA92B42078CAD30086C583 /* ClueChainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClueChainTableViewCell.h; sourceTree = "<group>"; };
+		9FDA92B52078CAD30086C583 /* ClueChainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClueChainTableViewCell.m; sourceTree = "<group>"; };
+		9FDA92B82078E0910086C583 /* UITableViewCell+BottomLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+BottomLine.h"; sourceTree = "<group>"; };
+		9FDA92B92078E0910086C583 /* UITableViewCell+BottomLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+BottomLine.m"; sourceTree = "<group>"; };
+		9FDA92BB2078F3390086C583 /* BottomOperateTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomOperateTableViewCell.h; sourceTree = "<group>"; };
+		9FDA92BC2078F3390086C583 /* BottomOperateTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BottomOperateTableViewCell.m; sourceTree = "<group>"; };
 		9FFC1816205E637100CCAEC3 /* DaiTaHuiJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaiTaHuiJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFC1819205E637100CCAEC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9FFC181A205E637100CCAEC3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,6 +138,16 @@
 				9F2713F520774E5F000FC8E5 /* MainCollectionViewCell.m */,
 				9F2714022077AEA1000FC8E5 /* LostorBirefView.h */,
 				9F2714032077AEA1000FC8E5 /* LostorBirefView.m */,
+				9FDA92AB207899F50086C583 /* LostorFocusInfoTableViewCell.h */,
+				9FDA92AC207899F50086C583 /* LostorFocusInfoTableViewCell.m */,
+				9FDA92AE2078B2FE0086C583 /* MorePhotoTableViewCell.h */,
+				9FDA92AF2078B2FE0086C583 /* MorePhotoTableViewCell.m */,
+				9FDA92B12078C6860086C583 /* TitleTableViewCell.h */,
+				9FDA92B22078C6860086C583 /* TitleTableViewCell.m */,
+				9FDA92B42078CAD30086C583 /* ClueChainTableViewCell.h */,
+				9FDA92B52078CAD30086C583 /* ClueChainTableViewCell.m */,
+				9FDA92BB2078F3390086C583 /* BottomOperateTableViewCell.h */,
+				9FDA92BC2078F3390086C583 /* BottomOperateTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,6 +261,8 @@
 			children = (
 				9F3FF75820679B6B006DBA49 /* UIColor+UIColor_Hex.h */,
 				9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */,
+				9FDA92B82078E0910086C583 /* UITableViewCell+BottomLine.h */,
+				9FDA92B92078E0910086C583 /* UITableViewCell+BottomLine.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -418,19 +448,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FDA92BA2078E0910086C583 /* UITableViewCell+BottomLine.m in Sources */,
 				9FFC18492066504000CCAEC3 /* PublishItemView.m in Sources */,
+				9FDA92BD2078F3390086C583 /* BottomOperateTableViewCell.m in Sources */,
 				9F828EEC2070B6D300E440F2 /* DataListViewController.m in Sources */,
 				9FFC184E2066A62500CCAEC3 /* ChoosePublishViewController.m in Sources */,
 				9FFC18532066C9F800CCAEC3 /* MainPageViewController.m in Sources */,
+				9FDA92B32078C6860086C583 /* TitleTableViewCell.m in Sources */,
 				9FFC18562066CA0500CCAEC3 /* MineViewController.m in Sources */,
 				9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */,
 				9F2713FF20779BB7000FC8E5 /* BYNavigationBar.m in Sources */,
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
+				9FDA92B62078CAD30086C583 /* ClueChainTableViewCell.m in Sources */,
 				9F2713F620774E5F000FC8E5 /* MainCollectionViewCell.m in Sources */,
 				9F2713FC20779AD4000FC8E5 /* LostorDetaiViewController.m in Sources */,
 				9FFC1832205E66CA00CCAEC3 /* BaseTabBarController.m in Sources */,
+				9FDA92AD207899F50086C583 /* LostorFocusInfoTableViewCell.m in Sources */,
 				9F2714042077AEA1000FC8E5 /* LostorBirefView.m in Sources */,
 				9FFC183C205E9AFC00CCAEC3 /* BYPublishTabBar.m in Sources */,
+				9FDA92B02078B2FE0086C583 /* MorePhotoTableViewCell.m in Sources */,
 				9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */,
 				9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */,
 				9F828EE0206FE16600E440F2 /* BYSearchSegmentNavgationBar.m in Sources */,

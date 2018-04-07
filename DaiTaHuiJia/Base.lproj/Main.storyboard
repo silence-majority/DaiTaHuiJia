@@ -32,7 +32,7 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hVh-k0-qR7">
                                 <rect key="frame" x="204" y="38" width="155" height="194"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.595894455909729" green="0.59998124837875366" blue="0.60405367612838745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.47843137254901957" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
