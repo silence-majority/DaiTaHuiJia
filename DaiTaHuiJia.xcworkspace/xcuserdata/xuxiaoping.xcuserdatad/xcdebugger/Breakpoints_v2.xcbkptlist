@@ -26,12 +26,12 @@
                   moduleName = "DaiTaHuiJia"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/xuxiaoping/DaiTaHuiJia/DaiTaHuiJia/BaseView/BYSearchSegmentNavgationBar.m"
-                  timestampString = "544799937.8917021"
+                  timestampString = "545410739.806415"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "123"
                   endingLineNumber = "123"
-                  offsetFromSymbolStart = "724">
+                  offsetFromSymbolStart = "799">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,11 +41,11 @@
                   moduleName = "DaiTaHuiJia"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/xuxiaoping/DaiTaHuiJia/DaiTaHuiJia/BaseView/BYSearchSegmentNavgationBar.m"
-                  timestampString = "544799937.893218"
+                  timestampString = "545410739.808877"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
                   offsetFromSymbolStart = "20">
                </Location>
             </Locations>

@@ -111,8 +111,8 @@
 - (UILabel *)describeLabel{
     if (!_describeLabel) {
         UILabel *label = [[UILabel alloc] init];
-        label.font = [UIFont systemFontOfSize:10];
-        label.textColor = [UIColor colorWithHexString:@"0x787878"];
+        label.font = [UIFont systemFontOfSize:12];
+        label.textColor = [UIColor darkGrayColor];
         _describeLabel = label;
     }
     return _describeLabel;

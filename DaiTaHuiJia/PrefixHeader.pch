@@ -17,6 +17,6 @@
 
 #define  screenW   [UIScreen mainScreen].bounds.size.width
 #define  screenH   [UIScreen mainScreen].bounds.size.height
-
+#define  COLOR_THEME_STR @"0xFF847B"
 
 #endif /* PrefixHeader_pch */

@@ -10,10 +10,10 @@
 
 @implementation UITableViewCell (BottomLine)
 
-- (void)drawBottomLineWithLineWidth:(CGFloat)lineWidth lineColor:(UIColor *)lineColor gap:(CGFloat)gap{
+- (void)drawLineWithStart:(CGPoint)startPoint end:(CGPoint)endPoint lineWidth:(CGFloat)lineWidth lineColor:(UIColor *)lineColor gap:(CGFloat)gap{
     UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(gap, self.bounds.size.height-lineWidth)];
-    [path addLineToPoint:CGPointMake(self.bounds.size.width-gap, self.bounds.size.height-lineWidth)];
+    [path moveToPoint:startPoint];
+    [path addLineToPoint:endPoint];
     [path closePath];
     CAShapeLayer *layer = [CAShapeLayer layer];
     layer.path = path.CGPath;
@@ -22,12 +22,29 @@
     [self.layer addSublayer:layer];
 }
 
+- (void)drawBottomLineWithLineWidth:(CGFloat)lineWidth lineColor:(UIColor *)lineColor gap:(CGFloat)gap{
+    [self drawLineWithStart:CGPointMake(gap, self.bounds.size.height-lineWidth) end:CGPointMake(self.bounds.size.width-gap, self.bounds.size.height-lineWidth) lineWidth:lineWidth lineColor:lineColor gap:gap];
+}
+
 - (void)drawBottomLineWithGap:(CGFloat)gap{
     [self drawBottomLineWithLineWidth:0.6 lineColor:[UIColor colorWithHexString:@"0xC8C8C8"] gap:gap];
 }
 
 - (void)drawBottomLine{
     [self drawBottomLineWithLineWidth:0.6 lineColor:[UIColor colorWithHexString:@"0xC8C8C8"] gap:0];
+}
+
+
+- (void)drawTopLineWithLineWidth:(CGFloat)lineWidth lineColor:(UIColor *)lineColor gap:(CGFloat)gap{
+    [self drawLineWithStart:CGPointMake(gap, 0) end:CGPointMake(self.bounds.size.width-gap, 0) lineWidth:lineWidth lineColor:lineColor gap:gap];
+}
+
+- (void)drawTopLineWithGap:(CGFloat)gap{
+    [self drawTopLineWithLineWidth:0.6 lineColor:[UIColor colorWithHexString:@"0xC8C8C8"] gap:gap];
+}
+
+- (void)drawTopLine{
+    [self drawTopLineWithLineWidth:0.6 lineColor:[UIColor colorWithHexString:@"0xC8C8C8"] gap:0];
 }
 
 @end

@@ -14,6 +14,7 @@
 #import "TitleTableViewCell.h"
 #import "ClueChainTableViewCell.h"
 #import "BottomOperateTableViewCell.h"
+#import "CommentTableViewCell.h"
 extern CGFloat NavBarHeight;
 @interface LostorDetaiViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *tableView;
@@ -55,7 +56,8 @@ extern CGFloat NavBarHeight;
         [tableView registerClass:[MorePhotoTableViewCell class] forCellReuseIdentifier:@"MorePhotoTableViewCellId"];
         [tableView registerClass:[TitleTableViewCell class] forCellReuseIdentifier:@"TitleTableViewCellId"];
         [tableView registerClass:[ClueChainTableViewCell class] forCellReuseIdentifier:@"ClueChainTableViewCellId"];
-         [tableView registerClass:[BottomOperateTableViewCell class] forCellReuseIdentifier:@"BottomOperateTableViewCellId"];
+        [tableView registerClass:[BottomOperateTableViewCell class] forCellReuseIdentifier:@"BottomOperateTableViewCellId"];
+        [tableView registerClass:[CommentTableViewCell class] forCellReuseIdentifier:@"CommentTableViewCellId"];
         _lostorBriefView = [[LostorBirefView alloc] initWithFrame:CGRectMake(0, 0, screenW, 180)];
         tableView.tableHeaderView = _lostorBriefView;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -64,8 +66,20 @@ extern CGFloat NavBarHeight;
     return _tableView;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 4;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3+5+1;
+    if (section == 0) {
+        return 1;
+    } else if (section == 1) {
+        return 1;
+    } else if (section == 2) {
+        return 5+1;
+    } else {
+        return 3+1;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -77,22 +91,35 @@ extern CGFloat NavBarHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         LostorFocusInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LostorFocusInfoTableViewCellId" forIndexPath:indexPath];
         return cell;
-    }else if (indexPath.row == 1){
+    } else if (indexPath.section == 1){
         MorePhotoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MorePhotoTableViewCellId" forIndexPath:indexPath];
         return cell;
-    }else if (indexPath.row == 2) {
-        TitleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCellId" forIndexPath:indexPath];
-        return cell;
-    }else if (indexPath.row < 8){
-        ClueChainTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"ClueChainTableViewCellId" forIndexPath:indexPath];
-        return cell;
-    }else{
-        BottomOperateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BottomOperateTableViewCellId" forIndexPath:indexPath];
-        cell.titleLabel.text = @"为他提供线索";
-        return cell;
+    } else if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
+            TitleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCellId" forIndexPath:indexPath];
+            cell.titleLabel.text = @"线索链";
+            return cell;
+        } else if (indexPath.row <= 5){
+            ClueChainTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"ClueChainTableViewCellId" forIndexPath:indexPath];
+            return cell;
+        } else {
+            BottomOperateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BottomOperateTableViewCellId" forIndexPath:indexPath];
+            cell.titleLabel.text = @"为他提供线索";
+            return cell;
+        }
+    } else {
+        if (indexPath.row == 0) {
+            TitleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCellId" forIndexPath:indexPath];
+            cell.titleLabel.text = @"留言板";
+            return cell;
+        } else {
+            CommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentTableViewCellId" forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }
     }
 }
 

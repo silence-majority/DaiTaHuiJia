@@ -122,7 +122,7 @@
 
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    [self drawBottomLineWithGap:20];
+//    [self drawBottomLineWithGap:20];
 }
 
 @end

@@ -1,4 +1,4 @@
-//
+    //
 //  UITableViewCell+BottomLine.h
 //  DaiTaHuiJia
 //
@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface UITableViewCell (BottomLine)
+- (void)drawLineWithStart:(CGPoint)startPoint end:(CGPoint)endPoint lineWidth:(CGFloat)lineWidth lineColor:(UIColor *)lineColor gap:(CGFloat)gap;
 - (void)drawBottomLineWithLineWidth:(CGFloat)lineWidth lineColor:(UIColor *)lineColor gap:(CGFloat)gap;
 - (void)drawBottomLineWithGap:(CGFloat)gap;
 - (void)drawBottomLine;
+
+- (void)drawTopLineWithLineWidth:(CGFloat)lineWidth lineColor:(UIColor *)lineColor gap:(CGFloat)gap;
+- (void)drawTopLineWithGap:(CGFloat)gap;
+- (void)drawTopLine;
 @end

@@ -9,7 +9,7 @@
 #import "TitleTableViewCell.h"
 #import <Masonry/Masonry.h>
 #import "UIColor+UIColor_Hex.h"
-
+#import "UITableViewCell+BottomLine.h"
 @implementation TitleTableViewCell
 
 - (void)awakeFromNib {
@@ -31,12 +31,7 @@
             make.bottom.offset(-12);
         }];
     }
-    [self testData];
     return self;
-}
-
-- (void)testData{
-    _titleLabel.text = @"线索链";
 }
 
 - (UILabel *)titleLabel{
@@ -47,6 +42,11 @@
         _titleLabel = label;
     }
     return _titleLabel;
+}
+
+- (void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
+    [self drawTopLineWithGap:20];
 }
 
 @end
