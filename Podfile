@@ -9,5 +9,5 @@ target 'DaiTaHuiJia' do
   pod 'Masonry'
   pod 'SDWebImage'
   pod 'AFNetworking'
-
+  pod 'ReactiveCocoa', '~> 2.3.0'
 end

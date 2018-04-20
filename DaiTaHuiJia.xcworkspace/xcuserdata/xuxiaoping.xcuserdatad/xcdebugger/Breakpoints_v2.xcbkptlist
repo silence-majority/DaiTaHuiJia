@@ -9,46 +9,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DaiTaHuiJia/BaseView/BYSearchSegmentNavgationBar.m"
-            timestampString = "544710941.991396"
+            filePath = "DaiTaHuiJia/MainPage/View/ReportPopView.m"
+            timestampString = "545909109.9845279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-updateFrameWithVelocity:contentOffset:"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "-init"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[BYSearchSegmentNavgationBar updateFrameWithVelocity:contentOffset:]"
-                  moduleName = "DaiTaHuiJia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xuxiaoping/DaiTaHuiJia/DaiTaHuiJia/BaseView/BYSearchSegmentNavgationBar.m"
-                  timestampString = "545410739.806415"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "123"
-                  endingLineNumber = "123"
-                  offsetFromSymbolStart = "799">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__69-[BYSearchSegmentNavgationBar updateFrameWithVelocity:contentOffset:]_block_invoke.101"
-                  moduleName = "DaiTaHuiJia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xuxiaoping/DaiTaHuiJia/DaiTaHuiJia/BaseView/BYSearchSegmentNavgationBar.m"
-                  timestampString = "545410739.808877"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "123"
-                  endingLineNumber = "123"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DaiTaHuiJia/MainPage/View/ReportPopView.m"
+            timestampString = "545909109.984596"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "-init"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DaiTaHuiJia/MainPage/View/ReportPopView.m"
+            timestampString = "545909109.984962"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "-init"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

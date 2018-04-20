@@ -15,6 +15,7 @@
 #import "ClueChainTableViewCell.h"
 #import "BottomOperateTableViewCell.h"
 #import "CommentTableViewCell.h"
+#import "ReportPopView.h"
 extern CGFloat NavBarHeight;
 @interface LostorDetaiViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *tableView;
@@ -121,6 +122,11 @@ extern CGFloat NavBarHeight;
             return cell;
         }
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ReportPopView *popView = [[ReportPopView alloc] init];
+    [[UIApplication sharedApplication].keyWindow addSubview:popView];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

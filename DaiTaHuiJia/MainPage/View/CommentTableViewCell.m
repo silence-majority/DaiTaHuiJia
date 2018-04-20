@@ -12,6 +12,7 @@
 #import "UITableViewCell+BottomLine.h"
 #import "BYEvaluateStar.h"
 #import "BYDialogBox.h"
+#import "PraiseButton.h"
 @interface CommentTableViewCell()
 @property (nonatomic,strong) UIImageView *portraitImageView;
 @property (nonatomic,strong) UILabel *nameLabel;
@@ -19,7 +20,7 @@
 @property (nonatomic,strong) UILabel *creditScoreLabel;
 @property (nonatomic,strong) UILabel *contentLabel;
 @property (nonatomic,strong) UILabel *dateLabel;
-@property (nonatomic,strong) UIButton *appriseBtn;
+@property (nonatomic,strong) PraiseButton *appriseBtn;
 @property (nonatomic,strong) UILabel *appriseCountLabel;
 @property (nonatomic,strong) UIButton *moreOperateBtn;
 @property (nonatomic,strong) BYEvaluateStar *evaluateStar;
@@ -204,10 +205,15 @@
     return _moreOperateBtn;
 }
 
-- (UIButton *)appriseBtn{
+- (PraiseButton *)appriseBtn{
     if (!_appriseBtn) {
-        UIButton *button = [[UIButton alloc] init];
+        PraiseButton *button = [[PraiseButton alloc] initWithFrame:CGRectZero];
+        button.particleImage = [UIImage imageNamed:@"finish_Theme"];
+        button.particleScale = 0.05f;
+        button.particleScaleRange = 0.02f;
         [button setImage:[UIImage imageNamed:@"点赞"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"点赞-2"] forState:UIControlStateSelected];
+        [button addTarget:self action:@selector(praiseAction:) forControlEvents:UIControlEventTouchUpInside];
         [button setImageEdgeInsets:UIEdgeInsetsMake(6, 6, 6, 6)];
         _appriseBtn = button;
     }
@@ -235,7 +241,7 @@
 
 - (BYDialogBox *)dialogBox{
     if (!_dialogBox) {
-        _dialogBox = [[BYDialogBox alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
+        _dialogBox = [[BYDialogBox alloc] initWithFrame:CGRectMake(0, 0, 65, 45)];
         _dialogBox.ratio = 1;
         _dialogBox.themeAlpha = 0.8;
         _dialogBox.themeColor = [UIColor blackColor];
@@ -255,6 +261,17 @@
 
 - (void)moreOperateAction{
     _dialogBox.hidden = !_dialogBox.hidden;
+}
+
+- (void)praiseAction:(PraiseButton *)button {
+    if (button.selected) {
+        [button popInsideWithDuration:0.4f];
+    }
+    else {
+        [button popOutsideWithDuration:0.5f];
+        [button animate];
+    }
+    button.selected = !button.selected;
 }
 
 @end
