@@ -26,7 +26,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self.contentView addSubview:self.contentLabel];
         [_contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsMake(0, 20, 16, 20));
+            make.edges.mas_equalTo(UIEdgeInsetsMake(16, 20, 16, 20));
         }];
         [self setContent:@""];
     }

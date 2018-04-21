@@ -174,14 +174,14 @@
     if (!_isSperad) {
         height = 0;
     } else {
-        height = 60;
+        height = 60+16;
     }
     
     [_focuView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(20);
         make.centerX.offset(0);
 //        make.top.mas_equalTo(_operateCollecitonView.mas_bottom).offset(16);
-        make.top.offset(130);
+        make.top.offset(70+44);
         make.height.mas_equalTo(height);
         make.bottom.offset(0);
     }];
@@ -231,7 +231,13 @@
 - (UIView *)focuView{
     if (!_focuView) {
         _focuView = [[UIView alloc] init];
-        _focuView.backgroundColor = [UIColor redColor];
+        UIView *view = [[UIView alloc] init];
+        view.backgroundColor = [UIColor redColor];
+        [_focuView addSubview:view];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsMake(16, 0, 0, 0));
+        }];
+        _focuView.backgroundColor = [UIColor clearColor];
     }
     return _focuView;
 }
