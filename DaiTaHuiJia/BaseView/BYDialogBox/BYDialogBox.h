@@ -30,4 +30,7 @@ typedef NS_ENUM(NSUInteger,BYDialogBoxOrientation){
 @property (nonatomic,strong) UIView *contentView;
 
 @property (nonatomic,strong) UILabel *titleLabel;
+
+@property (nonatomic,copy) void (^touchBlock)(void);
+
 @end

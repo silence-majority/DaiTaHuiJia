@@ -10,17 +10,34 @@
 @property (nonatomic,strong) CAShapeLayer *arrowMarkLayer;
 //BYDialogBox的顶点相对于自己的坐标，通过ratio和bound来计算
 @property (nonatomic,assign) CGPoint peakPoint;
+
+@property (nonatomic,strong) UITapGestureRecognizer *gesture;
 @end
 
 @implementation BYDialogBox
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){
         self.backgroundColor = [UIColor clearColor];
+        [self addGestureRecognizer:self.gesture];
         _arrowMarkHeight = 10;
         [self addSubview:self.contentView];
         [self.contentView addSubview:self.titleLabel];
     }
     return self;
+}
+
+- (UITapGestureRecognizer *)gesture{
+    if (!_gesture) {
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchAction)];
+        _gesture = gesture;
+    }
+    return _gesture;
+}
+
+- (void)touchAction{
+    if (_touchBlock) {
+        _touchBlock();
+    }
 }
 
 - (UIView *)contentView{

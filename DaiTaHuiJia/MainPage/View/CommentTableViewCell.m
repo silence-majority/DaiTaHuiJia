@@ -13,6 +13,7 @@
 #import "BYEvaluateStar.h"
 #import "BYDialogBox.h"
 #import "PraiseButton.h"
+#import "ReportPopView.h"
 @interface CommentTableViewCell()
 @property (nonatomic,strong) UIImageView *portraitImageView;
 @property (nonatomic,strong) UILabel *nameLabel;
@@ -129,6 +130,15 @@
     _creditTitleLabel.text = @"信用分";
     _evaluateStar.score = 3.8;
     _creditScoreLabel.text = @"70.0";
+    __weak typeof(self) weakSelf = self;
+    [_dialogBox setTouchBlock:^{
+        [weakSelf moreOperateAction];
+        ReportPopView *popView = [[ReportPopView alloc] init];
+        [popView setEventBlock:^(NSInteger eventId, NSDictionary *eventParamDic) {
+            
+        }];
+        [[UIApplication sharedApplication].keyWindow addSubview:popView];
+    }];
 }
 
 - (UIImageView *)portraitImageView{
@@ -260,7 +270,20 @@
 }
 
 - (void)moreOperateAction{
-    _dialogBox.hidden = !_dialogBox.hidden;
+    if (_dialogBox.hidden) {
+        _dialogBox.hidden = false;
+        _dialogBox.alpha = 0;
+        [UIView animateWithDuration:0.4 animations:^{
+             _dialogBox.alpha = 1;
+        } completion:^(BOOL finished) {
+        }];
+    } else {
+        [UIView animateWithDuration:0.4 animations:^{
+            _dialogBox.alpha = 0;
+        } completion:^(BOOL finished) {
+            _dialogBox.hidden = !_dialogBox.hidden;
+        }];
+    }
 }
 
 - (void)praiseAction:(PraiseButton *)button {

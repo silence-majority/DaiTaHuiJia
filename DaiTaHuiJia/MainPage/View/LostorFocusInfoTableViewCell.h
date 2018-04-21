@@ -24,4 +24,6 @@
 
 @interface LostorFocusInfoTableViewCell : UITableViewCell
 
+@property (nonatomic,assign) BOOL isSperad;
+
 @end

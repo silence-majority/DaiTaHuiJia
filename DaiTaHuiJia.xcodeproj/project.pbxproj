@@ -23,6 +23,8 @@
 		9FC445F12089CF40009BF75E /* PraiseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F02089CF40009BF75E /* PraiseButton.m */; };
 		9FC445F52089DB14009BF75E /* BYBasePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F42089DB14009BF75E /* BYBasePopView.m */; };
 		9FC445FA2089E295009BF75E /* ReportPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F92089E295009BF75E /* ReportPopView.m */; };
+		9FC445FD208B0EBE009BF75E /* BYCenterTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445FC208B0EBE009BF75E /* BYCenterTitleTableViewCell.m */; };
+		9FC44600208B8783009BF75E /* BYContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445FF208B8783009BF75E /* BYContentTableViewCell.m */; };
 		9FCA49352081D8CC008DF13F /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA49342081D8CC008DF13F /* CommentTableViewCell.m */; };
 		9FCA493D2082014A008DF13F /* BYEvaluateStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA493B2082014A008DF13F /* BYEvaluateStar.m */; };
 		9FCA493E2082014A008DF13F /* BYStarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA493C2082014A008DF13F /* BYStarButton.m */; };
@@ -83,6 +85,10 @@
 		9FC445F42089DB14009BF75E /* BYBasePopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYBasePopView.m; sourceTree = "<group>"; };
 		9FC445F82089E295009BF75E /* ReportPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportPopView.h; sourceTree = "<group>"; };
 		9FC445F92089E295009BF75E /* ReportPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportPopView.m; sourceTree = "<group>"; };
+		9FC445FB208B0EBE009BF75E /* BYCenterTitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYCenterTitleTableViewCell.h; sourceTree = "<group>"; };
+		9FC445FC208B0EBE009BF75E /* BYCenterTitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYCenterTitleTableViewCell.m; sourceTree = "<group>"; };
+		9FC445FE208B8783009BF75E /* BYContentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYContentTableViewCell.h; sourceTree = "<group>"; };
+		9FC445FF208B8783009BF75E /* BYContentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYContentTableViewCell.m; sourceTree = "<group>"; };
 		9FCA49332081D8CC008DF13F /* CommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		9FCA49342081D8CC008DF13F /* CommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		9FCA49392082014A008DF13F /* BYStarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYStarButton.h; sourceTree = "<group>"; };
@@ -164,6 +170,8 @@
 				9F2714032077AEA1000FC8E5 /* LostorBirefView.m */,
 				9FDA92AB207899F50086C583 /* LostorFocusInfoTableViewCell.h */,
 				9FDA92AC207899F50086C583 /* LostorFocusInfoTableViewCell.m */,
+				9FC445FE208B8783009BF75E /* BYContentTableViewCell.h */,
+				9FC445FF208B8783009BF75E /* BYContentTableViewCell.m */,
 				9FDA92AE2078B2FE0086C583 /* MorePhotoTableViewCell.h */,
 				9FDA92AF2078B2FE0086C583 /* MorePhotoTableViewCell.m */,
 				9FDA92B12078C6860086C583 /* TitleTableViewCell.h */,
@@ -176,6 +184,8 @@
 				9FCA49342081D8CC008DF13F /* CommentTableViewCell.m */,
 				9FC445F82089E295009BF75E /* ReportPopView.h */,
 				9FC445F92089E295009BF75E /* ReportPopView.m */,
+				9FC445FB208B0EBE009BF75E /* BYCenterTitleTableViewCell.h */,
+				9FC445FC208B0EBE009BF75E /* BYCenterTitleTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -546,7 +556,9 @@
 				9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */,
 				9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */,
 				9F828EE0206FE16600E440F2 /* BYSearchSegmentNavgationBar.m in Sources */,
+				9FC445FD208B0EBE009BF75E /* BYCenterTitleTableViewCell.m in Sources */,
 				9FFC1838205E671000CCAEC3 /* BaseViewController.m in Sources */,
+				9FC44600208B8783009BF75E /* BYContentTableViewCell.m in Sources */,
 				9FFC181E205E637100CCAEC3 /* ViewController.m in Sources */,
 				9FFC1829205E637100CCAEC3 /* main.m in Sources */,
 				9FC445FA2089E295009BF75E /* ReportPopView.m in Sources */,

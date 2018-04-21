@@ -16,6 +16,7 @@
 #import "BottomOperateTableViewCell.h"
 #import "CommentTableViewCell.h"
 #import "ReportPopView.h"
+#import "BYContentTableViewCell.h"
 extern CGFloat NavBarHeight;
 @interface LostorDetaiViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *tableView;
@@ -59,6 +60,7 @@ extern CGFloat NavBarHeight;
         [tableView registerClass:[ClueChainTableViewCell class] forCellReuseIdentifier:@"ClueChainTableViewCellId"];
         [tableView registerClass:[BottomOperateTableViewCell class] forCellReuseIdentifier:@"BottomOperateTableViewCellId"];
         [tableView registerClass:[CommentTableViewCell class] forCellReuseIdentifier:@"CommentTableViewCellId"];
+        [tableView registerClass:[BYContentTableViewCell class] forCellReuseIdentifier:@"BYContentTableViewCellId"];
         _lostorBriefView = [[LostorBirefView alloc] initWithFrame:CGRectMake(0, 0, screenW, 180)];
         tableView.tableHeaderView = _lostorBriefView;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -73,7 +75,7 @@ extern CGFloat NavBarHeight;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 1;
+        return 2;
     } else if (section == 1) {
         return 1;
     } else if (section == 2) {
@@ -93,8 +95,15 @@ extern CGFloat NavBarHeight;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        LostorFocusInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LostorFocusInfoTableViewCellId" forIndexPath:indexPath];
-        return cell;
+        if (indexPath.row == 0) {
+            LostorFocusInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LostorFocusInfoTableViewCellId" forIndexPath:indexPath];
+            return cell;
+        } else {
+            BYContentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BYContentTableViewCellId" forIndexPath:indexPath];
+        
+            return cell;
+        }
+        
     } else if (indexPath.section == 1){
         MorePhotoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MorePhotoTableViewCellId" forIndexPath:indexPath];
         return cell;
@@ -125,8 +134,17 @@ extern CGFloat NavBarHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    ReportPopView *popView = [[ReportPopView alloc] init];
-    [[UIApplication sharedApplication].keyWindow addSubview:popView];
+    
+    if (@available(iOS 11.0, *)) {
+        [tableView performBatchUpdates:^{
+            LostorFocusInfoTableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            cell.isSperad = !cell.isSperad;
+        } completion:^(BOOL finished) {
+//            [tableView reloadData];
+        }];
+    } else {
+        
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

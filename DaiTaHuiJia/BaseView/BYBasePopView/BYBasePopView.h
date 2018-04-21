@@ -30,5 +30,5 @@ typedef void (^BYPopViewEventBlock)(NSInteger eventId,NSDictionary *eventParamDi
 @property (nonatomic,assign) BOOL hiddenByTouchCurtain;
 @property (nonatomic,copy) BYPopViewAnimationBlock animationBlock;
 @property (nonatomic,copy) BYPopViewEventBlock eventBlock;
-
+- (void)dismissPopView;
 @end

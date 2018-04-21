@@ -122,6 +122,7 @@
 @interface LostorFocusInfoTableViewCell()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong) UICollectionView *collecitonView;
 @property (nonatomic,strong) UICollectionView *operateCollecitonView;
+@property (nonatomic,strong) UIView *focuView;
 @property (nonatomic,strong) UILabel *describeLabel;
 @end
 
@@ -155,12 +156,13 @@
             make.height.mas_equalTo(44);
         }];
         
-        [self.contentView addSubview:self.describeLabel];
-        [_describeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(_operateCollecitonView.mas_bottom).offset(16);
+        [self.contentView addSubview:self.focuView];
+        [_focuView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.offset(20);
-            make.right.offset(-20);
-            make.bottom.offset(-16);
+            make.centerX.offset(0);
+            make.top.mas_equalTo(_operateCollecitonView.mas_bottom).offset(16);
+            make.height.mas_equalTo(60);
+            make.bottom.offset(0);
         }];
     }
     [self testData];
@@ -168,12 +170,28 @@
 }
 
 - (void)testData{
-    NSString *plainText = @"孩子当天下午在家门口玩耍，玩到傍晚还没回来，家里人就去找孩子，找到夜晚还没找到。据路人回忆说，一个中年陌生男人抱着一个小孩迅速钻进车里然后消失了，恳请知道线索的好心人告知我，感激不尽！";
-    NSMutableAttributedString *attributeText = [[NSMutableAttributedString alloc] initWithString:plainText];
-    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
-    paraStyle.lineSpacing = 8;
-    [attributeText addAttribute:NSParagraphStyleAttributeName value:paraStyle range:NSMakeRange(0, plainText.length)];
-    _describeLabel.attributedText = attributeText;
+    CGFloat height = 0;
+    if (!_isSperad) {
+        height = 0;
+    } else {
+        height = 60;
+    }
+    
+    [_focuView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(20);
+        make.centerX.offset(0);
+//        make.top.mas_equalTo(_operateCollecitonView.mas_bottom).offset(16);
+        make.top.offset(130);
+        make.height.mas_equalTo(height);
+        make.bottom.offset(0);
+    }];
+    
+
+}
+
+- (void)setIsSperad:(BOOL)isSperad{
+    _isSperad = isSperad;
+    [self testData];
 }
 
 - (UICollectionView *)collecitonView{
@@ -208,6 +226,14 @@
         _operateCollecitonView = collectionView;
     }
     return _operateCollecitonView;
+}
+
+- (UIView *)focuView{
+    if (!_focuView) {
+        _focuView = [[UIView alloc] init];
+        _focuView.backgroundColor = [UIColor redColor];
+    }
+    return _focuView;
 }
 
 - (UILabel *)describeLabel{
@@ -254,7 +280,7 @@
 
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    [self drawBottomLineWithGap:20];
+//    [self drawBottomLineWithGap:20];
 }
 
 @end
