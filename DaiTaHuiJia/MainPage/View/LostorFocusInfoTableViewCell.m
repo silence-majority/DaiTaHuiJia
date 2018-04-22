@@ -9,6 +9,7 @@
 #import "LostorFocusInfoTableViewCell.h"
 #import <Masonry/Masonry.h>
 #import "UITableViewCell+BottomLine.h"
+#import "FocusTipView.h"
 @interface LostorFocusInfoCollectionViewCell()
 
 @end
@@ -122,7 +123,7 @@
 @interface LostorFocusInfoTableViewCell()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong) UICollectionView *collecitonView;
 @property (nonatomic,strong) UICollectionView *operateCollecitonView;
-@property (nonatomic,strong) UIView *focuView;
+@property (nonatomic,strong) FocusTipView *focusTipView;
 @property (nonatomic,strong) UILabel *describeLabel;
 @end
 
@@ -156,8 +157,8 @@
             make.height.mas_equalTo(44);
         }];
         
-        [self.contentView addSubview:self.focuView];
-        [_focuView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.contentView addSubview:self.focusTipView];
+        [_focusTipView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.offset(20);
             make.centerX.offset(0);
             make.top.mas_equalTo(_operateCollecitonView.mas_bottom).offset(16);
@@ -174,19 +175,16 @@
     if (!_isSperad) {
         height = 0;
     } else {
-        height = 60+16;
+        height = 70+16;
     }
     
-    [_focuView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [_focusTipView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(20);
         make.centerX.offset(0);
-//        make.top.mas_equalTo(_operateCollecitonView.mas_bottom).offset(16);
         make.top.offset(70+44);
         make.height.mas_equalTo(height);
         make.bottom.offset(0);
     }];
-    
-
 }
 
 - (void)setIsSperad:(BOOL)isSperad{
@@ -228,18 +226,11 @@
     return _operateCollecitonView;
 }
 
-- (UIView *)focuView{
-    if (!_focuView) {
-        _focuView = [[UIView alloc] init];
-        UIView *view = [[UIView alloc] init];
-        view.backgroundColor = [UIColor redColor];
-        [_focuView addSubview:view];
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsMake(16, 0, 0, 0));
-        }];
-        _focuView.backgroundColor = [UIColor clearColor];
+- (FocusTipView *)focusTipView{
+    if (!_focusTipView) {
+        _focusTipView = [[FocusTipView alloc] init];
     }
-    return _focuView;
+    return _focusTipView;
 }
 
 - (UILabel *)describeLabel{
