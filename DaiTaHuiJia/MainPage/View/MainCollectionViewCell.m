@@ -24,9 +24,13 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:self.imageView];
         [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsZero);
+            make.top.offset(0);
+            make.left.offset(0);
+            make.right.offset(0);
+            make.height.mas_equalTo(_imageView.mas_width);
         }];
         
         [self.contentView addSubview:self.blurView];
@@ -91,6 +95,8 @@
 - (UIImageView *)imageView{
     if (!_imageView) {
         UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.clipsToBounds = true;
         _imageView = imageView;
     }
     return _imageView;

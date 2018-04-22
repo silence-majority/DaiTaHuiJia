@@ -33,10 +33,10 @@ extern CGFloat NavBarHeight;
 - (UICollectionView *)collecitonView{
     if (!_collecitonView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.itemSize = CGSizeMake((screenW-15)/2.0, (screenW-15)/2.0/3.0*4); //宽高比 3:4
-        layout.minimumLineSpacing = 5;
-        layout.minimumInteritemSpacing = 4.9f;
-        layout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5);
+        layout.itemSize = CGSizeMake((screenW-30)/2.0, (screenW-30)/2.0/3.0*4); //宽高比 3:4
+        layout.minimumLineSpacing = 10;
+        layout.minimumInteritemSpacing = 9.9f;
+        layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10);
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [collectionView registerClass:[MainCollectionViewCell class] forCellWithReuseIdentifier:@"MainCollectionViewCellId"];
         [collectionView setContentInset:UIEdgeInsetsMake(NavBarHeight-64, 0, 49, 0)];
@@ -44,6 +44,7 @@ extern CGFloat NavBarHeight;
         collectionView.backgroundColor = [UIColor whiteColor];
         collectionView.delegate = self;
         collectionView.dataSource = self;
+        collectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         _collecitonView = collectionView;
     }
     return _collecitonView;
