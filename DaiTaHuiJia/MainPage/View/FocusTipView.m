@@ -44,7 +44,7 @@
         
         [_contentView addSubview:self.describeLabel];
         [_describeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.offset(45);
+            make.top.offset(52);
             make.right.offset(-12);
         }];
         
@@ -102,8 +102,8 @@
 - (CAShapeLayer *)middleLineLayer{
     if (!_middleLineLayer) {
         UIBezierPath *path = [UIBezierPath bezierPath];
-        [path moveToPoint:CGPointMake(12, 36)];
-        [path addLineToPoint:CGPointMake(screenW-12-40, 36)];
+        [path moveToPoint:CGPointMake(12, 40)];
+        [path addLineToPoint:CGPointMake(screenW-12-40, 40)];
         CAShapeLayer *layer = [CAShapeLayer layer];
         layer.lineWidth = 0.4;
         layer.strokeColor = [UIColor colorWithHexString:COLOR_THEME_STR alpha:0.8].CGColor;

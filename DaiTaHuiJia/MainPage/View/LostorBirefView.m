@@ -69,7 +69,7 @@
 
 - (void)testData{
     _nameLabel.text = @"林枚章";
-    _imageView.image = [UIImage imageNamed:@"aloneChild"];
+    _imageView.image = [UIImage imageNamed:@"sunyizhen"];
     _firstLineLabel.text = @"男 / 13岁";
     _secondLineLabel.text = @"智力正常 / 无残疾";
     
@@ -126,6 +126,8 @@
     if (!_imageView) {
         UIImageView *imageView =  [[UIImageView alloc] init];
         imageView.layer.cornerRadius = 5;
+        imageView.clipsToBounds = true;
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = true;
         _imageView = imageView;
     }

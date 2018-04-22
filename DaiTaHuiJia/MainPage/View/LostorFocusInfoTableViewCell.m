@@ -169,13 +169,13 @@
     if (!_isSperad) {
         height = 0;
     } else {
-        height = 70+16;
+        height = 80+16;
     }
     
     [_focusTipView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(20);
         make.centerX.offset(0);
-        make.top.offset(70+44);
+        make.top.offset(80+44);
         make.height.mas_equalTo(height);
         make.bottom.offset(0);
     }];

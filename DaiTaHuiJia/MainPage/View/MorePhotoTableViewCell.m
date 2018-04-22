@@ -23,7 +23,7 @@
             make.edges.mas_equalTo(UIEdgeInsetsZero);
         }];
     }
-    _imageView.image = [UIImage imageNamed:@"aloneChild"];
+    _imageView.image = [UIImage imageNamed:@"sunyizhen"];
     return self;
 }
 
@@ -31,6 +31,7 @@
 - (UIImageView *)imageView{
     if (!_imageView) {
         UIImageView *imageView =  [[UIImageView alloc] init];
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.layer.cornerRadius = 4;
         imageView.clipsToBounds = true;
         _imageView = imageView;
