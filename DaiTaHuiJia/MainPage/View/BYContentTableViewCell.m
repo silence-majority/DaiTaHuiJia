@@ -8,7 +8,7 @@
 
 #import "BYContentTableViewCell.h"
 #import <Masonry/Masonry.h>
-
+#import "UITableViewCell+BottomLine.h"
 @implementation BYContentTableViewCell
 
 - (void)awakeFromNib {
@@ -51,7 +51,11 @@
     paraStyle.lineSpacing = 8;
     [attributeText addAttribute:NSParagraphStyleAttributeName value:paraStyle range:NSMakeRange(0, plainText.length)];
     _contentLabel.attributedText = attributeText;
+}
 
+- (void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
+    [self drawBottomLineWithGap:20];
 }
 
 @end

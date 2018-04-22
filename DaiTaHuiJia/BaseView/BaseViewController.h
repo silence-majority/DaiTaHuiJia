@@ -11,4 +11,6 @@
 @interface BaseViewController : UIViewController
 @property (nonatomic,strong) UIView *by_navigationBar;
 @property (nonatomic,strong) UIButton *backButton;
+@property (nonatomic,strong) UILabel *navTitleLabel;
+@property (nonatomic,copy) NSString *navTitle;
 @end

@@ -17,10 +17,14 @@
 #import "CommentTableViewCell.h"
 #import "ReportPopView.h"
 #import "BYContentTableViewCell.h"
+
+#import "LostorDetailViewModel.h"
+
 extern CGFloat NavBarHeight;
 @interface LostorDetaiViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)LostorBirefView *lostorBriefView;
+@property (nonatomic,strong)LostorDetailViewModel *viewModel;
 @end
 
 @implementation LostorDetaiViewController
@@ -34,11 +38,28 @@ extern CGFloat NavBarHeight;
      [self.view bringSubviewToFront:self.by_navigationBar];
     self.by_navigationBar.backgroundColor = [UIColor colorWithHexString:@"0xFFFFFF" alpha:0];
     _tableView.backgroundColor = [UIColor colorWithHexString:@"0xFF7A95"];
+    [self bindViewModel];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
    
+}
+
+- (void)bindViewModel{
+    _viewModel = [[LostorDetailViewModel alloc] init];
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] animated:false scrollPosition:(UITableViewScrollPositionNone)];
+    [RACObserve(self.viewModel, isFocusTipSpread) subscribeNext:^(id x) {
+        if (@available(iOS 11.0, *)) {
+            [self.tableView performBatchUpdates:^{
+                LostorFocusInfoTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+                cell.isSperad = [x boolValue];
+            } completion:^(BOOL finished) {
+                [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] animated:false scrollPosition:(UITableViewScrollPositionNone)];
+            }];
+        } else {
+        }
+    }];
 }
 
 - (UITableView *)tableView{
@@ -97,32 +118,40 @@ extern CGFloat NavBarHeight;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             LostorFocusInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LostorFocusInfoTableViewCellId" forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.viewModel = self.viewModel;
             return cell;
         } else {
             BYContentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BYContentTableViewCellId" forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
             return cell;
         }
         
     } else if (indexPath.section == 1){
         MorePhotoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MorePhotoTableViewCellId" forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
             TitleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCellId" forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.titleLabel.text = @"线索链";
             return cell;
         } else if (indexPath.row <= 5){
             ClueChainTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"ClueChainTableViewCellId" forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
         } else {
             BottomOperateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BottomOperateTableViewCellId" forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.titleLabel.text = @"为他提供线索";
             return cell;
         }
     } else {
         if (indexPath.row == 0) {
             TitleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleTableViewCellId" forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.titleLabel.text = @"留言板";
             return cell;
         } else {
@@ -134,16 +163,8 @@ extern CGFloat NavBarHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (@available(iOS 11.0, *)) {
-        [tableView performBatchUpdates:^{
-            LostorFocusInfoTableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-            cell.isSperad = !cell.isSperad;
-        } completion:^(BOOL finished) {
-//            [tableView reloadData];
-        }];
-    } else {
-        
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] animated:false scrollPosition:(UITableViewScrollPositionNone)];
     }
 }
 

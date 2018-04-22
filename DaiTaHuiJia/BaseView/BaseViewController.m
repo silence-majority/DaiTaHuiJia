@@ -17,7 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setHidesBottomBarWhenPushed:true];
+    CGRect frame = self.view.frame;
+    frame.size = [UIScreen mainScreen].bounds.size;
+    self.view.frame = frame;
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = false;
     [self.view addSubview:self.by_navigationBar];
@@ -38,6 +40,7 @@
     _by_navigationBar.backgroundColor = [UIColor redColor];
 //    [self.view bringSubviewToFront:_by_navigationBar];
 }
+
 
 - (void)setIsNaviInteractivePopGestureRecognizerEnable:(BOOL)isNaviInteractivePopGestureRecognizerEnable{
     if (!isNaviInteractivePopGestureRecognizerEnable) {

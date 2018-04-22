@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class LostorDetailViewModel;
 
 @interface LostorFocusInfoCollectionViewCell : UICollectionViewCell
 
@@ -25,5 +26,6 @@
 @interface LostorFocusInfoTableViewCell : UITableViewCell
 
 @property (nonatomic,assign) BOOL isSperad;
+@property (nonatomic,strong) LostorDetailViewModel *viewModel;
 
 @end

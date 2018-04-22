@@ -10,6 +10,7 @@
 #import <Masonry/Masonry.h>
 #import "UITableViewCell+BottomLine.h"
 #import "FocusTipView.h"
+#import "LostorDetailViewModel.h"
 @interface LostorFocusInfoCollectionViewCell()
 
 @end
@@ -158,13 +159,6 @@
         }];
         
         [self.contentView addSubview:self.focusTipView];
-        [_focusTipView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.offset(20);
-            make.centerX.offset(0);
-            make.top.mas_equalTo(_operateCollecitonView.mas_bottom).offset(16);
-            make.height.mas_equalTo(60);
-            make.bottom.offset(0);
-        }];
     }
     [self testData];
     return self;
@@ -275,9 +269,12 @@
     }
 }
 
-- (void)drawRect:(CGRect)rect{
-    [super drawRect:rect];
-//    [self drawBottomLineWithGap:20];
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (collectionView == _operateCollecitonView) {
+        if (indexPath.item == 1) {
+            self.viewModel.isFocusTipSpread = !self.viewModel.isFocusTipSpread;
+        }
+    }
 }
 
 @end

@@ -17,6 +17,7 @@
 @property (nonatomic,strong) UILabel *subTitleLabel;
 @property (nonatomic,strong) CAShapeLayer *middleLineLayer;
 
+
 @end
 
 @implementation FocusTipView

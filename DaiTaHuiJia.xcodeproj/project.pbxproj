@@ -26,6 +26,7 @@
 		9FC445FD208B0EBE009BF75E /* BYCenterTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445FC208B0EBE009BF75E /* BYCenterTitleTableViewCell.m */; };
 		9FC44600208B8783009BF75E /* BYContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445FF208B8783009BF75E /* BYContentTableViewCell.m */; };
 		9FC44603208C3387009BF75E /* FocusTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC44602208C3387009BF75E /* FocusTipView.m */; };
+		9FC44607208C65B7009BF75E /* LostorDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC44606208C65B7009BF75E /* LostorDetailViewModel.m */; };
 		9FCA49352081D8CC008DF13F /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA49342081D8CC008DF13F /* CommentTableViewCell.m */; };
 		9FCA493D2082014A008DF13F /* BYEvaluateStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA493B2082014A008DF13F /* BYEvaluateStar.m */; };
 		9FCA493E2082014A008DF13F /* BYStarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA493C2082014A008DF13F /* BYStarButton.m */; };
@@ -92,6 +93,8 @@
 		9FC445FF208B8783009BF75E /* BYContentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYContentTableViewCell.m; sourceTree = "<group>"; };
 		9FC44601208C3387009BF75E /* FocusTipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FocusTipView.h; sourceTree = "<group>"; };
 		9FC44602208C3387009BF75E /* FocusTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FocusTipView.m; sourceTree = "<group>"; };
+		9FC44605208C65B7009BF75E /* LostorDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostorDetailViewModel.h; sourceTree = "<group>"; };
+		9FC44606208C65B7009BF75E /* LostorDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostorDetailViewModel.m; sourceTree = "<group>"; };
 		9FCA49332081D8CC008DF13F /* CommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		9FCA49342081D8CC008DF13F /* CommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		9FCA49392082014A008DF13F /* BYStarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYStarButton.h; sourceTree = "<group>"; };
@@ -257,6 +260,15 @@
 			path = BYBasePopView;
 			sourceTree = "<group>";
 		};
+		9FC44604208C657E009BF75E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9FC44605208C65B7009BF75E /* LostorDetailViewModel.h */,
+				9FC44606208C65B7009BF75E /* LostorDetailViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		9FCA493820820116008DF13F /* BYEvaluateStar */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +396,7 @@
 		9FFC184F2066C9D300CCAEC3 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				9FC44604208C657E009BF75E /* ViewModel */,
 				9F2713F920774E75000FC8E5 /* Model */,
 				9F2713F820774E6D000FC8E5 /* Controller */,
 				9F2713F720774E66000FC8E5 /* View */,
@@ -548,6 +561,7 @@
 				9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */,
 				9F2713FF20779BB7000FC8E5 /* BYNavigationBar.m in Sources */,
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
+				9FC44607208C65B7009BF75E /* LostorDetailViewModel.m in Sources */,
 				9FDA92B62078CAD30086C583 /* ClueChainTableViewCell.m in Sources */,
 				9F2713F620774E5F000FC8E5 /* MainCollectionViewCell.m in Sources */,
 				9FC445F52089DB14009BF75E /* BYBasePopView.m in Sources */,
