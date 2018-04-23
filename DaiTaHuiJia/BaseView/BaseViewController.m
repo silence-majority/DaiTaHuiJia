@@ -37,7 +37,7 @@
         make.size.mas_equalTo(CGSizeMake(25, 25));
     }];
 
-    _by_navigationBar.backgroundColor = [UIColor redColor];
+    _by_navigationBar.backgroundColor = [UIColor whiteColor];
 //    [self.view bringSubviewToFront:_by_navigationBar];
 }
 

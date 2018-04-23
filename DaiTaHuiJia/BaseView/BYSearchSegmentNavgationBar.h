@@ -8,11 +8,28 @@
 
 #import <UIKit/UIKit.h>
 #import "BYSegmentControl.h"
+//@protocol BYSearchSegmentNavgationBarDelegate<NSObject>
+//
+//@end
+
+typedef NS_ENUM(NSUInteger,BYSearchSegmentNavgationBarStyle){
+    BYSearchSegmentNavgationBarStyleNormal = 0,
+    BYSearchSegmentNavgationBarStyleSearching
+};
+
+typedef NS_ENUM(NSUInteger,BYSearchSegmentNavgationBarEvent){
+    BYSearchSegmentNavgationBarEventSort = 0,
+    BYSearchSegmentNavgationBarEventExitSearch
+};
+
 @interface BYSearchSegmentNavgationBar : UINavigationBar
 @property (nonatomic,strong) UITextField *searchTextField;
 @property (nonatomic,strong) BYSegmentControl *segmentControl;
-
+@property (nonatomic,strong) UIButton *sortButton;
+@property (nonatomic,strong) UIButton *exitSearchButton;
 @property (nonatomic,assign) CGFloat beginDragingOffsetY;
+@property (nonatomic,assign) BYSearchSegmentNavgationBarStyle by_searchSegmentBarStyle;
+@property (nonatomic,copy) void (^eventBlock) (BYSearchSegmentNavgationBarEvent event);
 - (void)updateFrameWithOffset:(CGFloat)offset;
 - (void)updateFrameWithVelocity:(CGPoint)velocity contentOffset:(CGPoint)contentOffset;
 @end

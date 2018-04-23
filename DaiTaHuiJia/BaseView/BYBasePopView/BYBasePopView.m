@@ -10,7 +10,6 @@
 
 @interface BYBasePopView ()
 
-@property (nonatomic,strong) UIView *curtainView;
 @property (nonatomic,strong) UITapGestureRecognizer *gesture;
 
 @end
@@ -18,19 +17,26 @@
 @implementation BYBasePopView
 
 - (instancetype)init{
-    if (self = [super initWithFrame:[UIApplication sharedApplication].keyWindow.frame]) {
+    return [self initWithFrame:[UIScreen mainScreen].bounds];
+}
+
+- (instancetype) initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
         [self addSubview:self.curtainView];
         [self.curtainView addGestureRecognizer:self.gesture];
         self.curtainAlpha = 0.6;
         self.animationDuration = 0.3;
         self.hiddenByTouchCurtain = true;
+        self.curtainAnimated = true;
     }
     return self;
 }
 
 - (void)layoutSubviews{
     [UIView animateWithDuration:_animationDuration delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        _curtainView.alpha = _curtainAlpha;
+        if (_curtainAnimated) {
+            _curtainView.alpha = _curtainAlpha;
+        } 
         if (_animationBlock) {
             _animationBlock(0);
         }

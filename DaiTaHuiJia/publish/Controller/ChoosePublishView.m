@@ -1,19 +1,20 @@
 //
-//  ChoosePublishViewController.m
+//  ChoosePublishView.m
 //  DaiTaHuiJia
 //
-//  Created by 徐小平 on 2018/3/24.
+//  Created by 徐小平 on 2018/4/22.
 //  Copyright © 2018年 徐谦. All rights reserved.
 //
 
-#import "ChoosePublishViewController.h"
+#import "ChoosePublishView.h"
 #import "PublishItemView.h"
 #import <Masonry/Masonry.h>
 
 #define publishItemSize CGSizeMake(160, 100)
 #define horizentalHalf 15
 #define verticalHalf 75
-@interface ChoosePublishViewController ()
+@interface ChoosePublishView()
+@property (nonatomic,strong) UIVisualEffectView *blurView;
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) PublishItemView *seekPeoplePublishView;
 @property (nonatomic,strong) PublishItemView *seekHomePublishView;
@@ -22,62 +23,71 @@
 @property (nonatomic,strong) UIButton *exitBtn;
 @end
 
-@implementation ChoosePublishViewController
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.backButton.hidden = true;
-    self.view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.seekPeoplePublishView];
-    [_seekPeoplePublishView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(publishItemSize);
-        make.right.mas_equalTo(self.view.mas_centerX).offset(-horizentalHalf);
-        make.centerY.offset(-verticalHalf);
-    }];
-    
-    [self.view addSubview:self.seekHomePublishView];
-    [_seekHomePublishView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(publishItemSize);
-        make.left.mas_equalTo(self.view.mas_centerX).offset(horizentalHalf);
-        make.centerY.offset(-verticalHalf);
-    }];
-    
-    [self.view addSubview:self.registPublishView];
-    [_registPublishView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(publishItemSize);
-        make.right.mas_equalTo(self.view.mas_centerX).offset(-horizentalHalf);
-        make.centerY.offset(verticalHalf);
-    }];
-    
-    [self.view addSubview:self.thankPublishView];
-    [_thankPublishView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(publishItemSize);
-        make.left.mas_equalTo(self.view.mas_centerX).offset(horizentalHalf);
-        make.centerY.offset(verticalHalf);
-    }];
-    
-    [self.view addSubview:self.exitBtn];
-    [_exitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(25, 25));
-        make.centerX.offset(0);
-        make.centerY.mas_equalTo(self.view.mas_bottom).offset(-41);
-    }];
-    
-    [self.view addSubview:self.titleLabel];
-    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(65);
-        make.left.offset(20);
-    }];
-    [self prepareAnimation];
+
+@implementation ChoosePublishView
+
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor clearColor];
+        [self addSubview:self.blurView];
+        [_blurView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(self);
+        }];
+        [self addSubview:self.seekPeoplePublishView];
+        [_seekPeoplePublishView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(publishItemSize);
+            make.right.mas_equalTo(self.mas_centerX).offset(-horizentalHalf);
+            make.centerY.offset(-verticalHalf);
+        }];
+        
+        [self addSubview:self.seekHomePublishView];
+        [_seekHomePublishView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(publishItemSize);
+            make.left.mas_equalTo(self.mas_centerX).offset(horizentalHalf);
+            make.centerY.offset(-verticalHalf);
+        }];
+        
+        [self addSubview:self.registPublishView];
+        [_registPublishView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(publishItemSize);
+            make.right.mas_equalTo(self.mas_centerX).offset(-horizentalHalf);
+            make.centerY.offset(verticalHalf);
+        }];
+        
+        [self addSubview:self.thankPublishView];
+        [_thankPublishView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(publishItemSize);
+            make.left.mas_equalTo(self.mas_centerX).offset(horizentalHalf);
+            make.centerY.offset(verticalHalf);
+        }];
+        
+        [self addSubview:self.exitBtn];
+        [_exitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(25, 25));
+            make.centerX.offset(0);
+            make.centerY.mas_equalTo(self.mas_bottom).offset(-42);
+        }];
+        
+        [self addSubview:self.titleLabel];
+        [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.offset(65);
+            make.left.offset(20);
+        }];
+        [self prepareAnimation];
+        [self appearAnimation];
+    }
+    return self;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [self appearAnimation];
+- (UIVisualEffectView *)blurView{
+    if (!_blurView) {
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        _blurView = visualEffectView;
+    }
+    return _blurView;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
- 
-}
 
 - (PublishItemView *)seekPeoplePublishView{
     if (!_seekPeoplePublishView) {
@@ -148,7 +158,8 @@
     [self disappearAnimation];
     dispatch_time_t timer = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
     dispatch_after(timer, dispatch_get_main_queue(), ^{
-        [self dismissViewControllerAnimated:false completion:nil];
+//        [self dismissViewControllerAnimated:false completion:nil];
+        [self removeFromSuperview];
     });
 }
 

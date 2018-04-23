@@ -28,6 +28,8 @@ typedef void (^BYPopViewEventBlock)(NSInteger eventId,NSDictionary *eventParamDi
 @property (nonatomic,assign) CGFloat curtainAlpha;
 @property (nonatomic,assign) NSTimeInterval animationDuration;
 @property (nonatomic,assign) BOOL hiddenByTouchCurtain;
+@property (nonatomic,assign) BOOL curtainAnimated;
+@property (nonatomic,strong) UIView *curtainView;
 @property (nonatomic,copy) BYPopViewAnimationBlock animationBlock;
 @property (nonatomic,copy) BYPopViewEventBlock eventBlock;
 - (void)dismissPopView;

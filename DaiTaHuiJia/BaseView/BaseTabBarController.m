@@ -14,6 +14,7 @@
 #import "ChoosePublishViewController.h"
 #import "MainPageViewController.h"
 #import "MineViewController.h"
+#import "ChoosePublishView.h"
 @interface BaseTabBarController ()<BYPublishTabBarDelegate>
 
 @end
@@ -65,8 +66,10 @@
 }
 
 - (void)didTouchPublishView{
-    ChoosePublishViewController *target = [[ChoosePublishViewController alloc] init];
-    [self presentViewController:target animated:false completion:nil];
+//    ChoosePublishViewController *target = [[ChoosePublishViewController alloc] init];
+//    [self presentViewController:target animated:false completion:nil];
+    ChoosePublishView *view = [[ChoosePublishView alloc] initWithFrame:CGRectMake(0, 0, screenW, screenH)];
+    [[UIApplication sharedApplication].keyWindow addSubview:view];
 }
 
 

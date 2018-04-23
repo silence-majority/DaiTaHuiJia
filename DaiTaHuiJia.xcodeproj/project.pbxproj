@@ -27,6 +27,12 @@
 		9FC44600208B8783009BF75E /* BYContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445FF208B8783009BF75E /* BYContentTableViewCell.m */; };
 		9FC44603208C3387009BF75E /* FocusTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC44602208C3387009BF75E /* FocusTipView.m */; };
 		9FC44607208C65B7009BF75E /* LostorDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC44606208C65B7009BF75E /* LostorDetailViewModel.m */; };
+		9FC4460A208CCC54009BF75E /* ChoosePublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC44609208CCC54009BF75E /* ChoosePublishView.m */; };
+		9FC44612208DB3EF009BF75E /* BYTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC4460F208DB3EF009BF75E /* BYTagsView.m */; };
+		9FC44613208DB3EF009BF75E /* BYTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC44611208DB3EF009BF75E /* BYTagCollectionViewCell.m */; };
+		9FC44616208DB418009BF75E /* BYCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC44614208DB418009BF75E /* BYCollectionViewFlowLayout.m */; };
+		9FC44619208DBAB7009BF75E /* SearchPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC44618208DBAB7009BF75E /* SearchPopView.m */; };
+		9FC44620208DE9D1009BF75E /* SearchCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC4461F208DE9D1009BF75E /* SearchCollectionHeaderView.m */; };
 		9FCA49352081D8CC008DF13F /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA49342081D8CC008DF13F /* CommentTableViewCell.m */; };
 		9FCA493D2082014A008DF13F /* BYEvaluateStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA493B2082014A008DF13F /* BYEvaluateStar.m */; };
 		9FCA493E2082014A008DF13F /* BYStarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA493C2082014A008DF13F /* BYStarButton.m */; };
@@ -95,6 +101,18 @@
 		9FC44602208C3387009BF75E /* FocusTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FocusTipView.m; sourceTree = "<group>"; };
 		9FC44605208C65B7009BF75E /* LostorDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostorDetailViewModel.h; sourceTree = "<group>"; };
 		9FC44606208C65B7009BF75E /* LostorDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostorDetailViewModel.m; sourceTree = "<group>"; };
+		9FC44608208CCC54009BF75E /* ChoosePublishView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoosePublishView.h; sourceTree = "<group>"; };
+		9FC44609208CCC54009BF75E /* ChoosePublishView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoosePublishView.m; sourceTree = "<group>"; };
+		9FC4460E208DB3EF009BF75E /* BYTagCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYTagCollectionViewCell.h; sourceTree = "<group>"; };
+		9FC4460F208DB3EF009BF75E /* BYTagsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYTagsView.m; sourceTree = "<group>"; };
+		9FC44610208DB3EF009BF75E /* BYTagsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYTagsView.h; sourceTree = "<group>"; };
+		9FC44611208DB3EF009BF75E /* BYTagCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYTagCollectionViewCell.m; sourceTree = "<group>"; };
+		9FC44614208DB418009BF75E /* BYCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		9FC44615208DB418009BF75E /* BYCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		9FC44617208DBAB7009BF75E /* SearchPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchPopView.h; sourceTree = "<group>"; };
+		9FC44618208DBAB7009BF75E /* SearchPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchPopView.m; sourceTree = "<group>"; };
+		9FC4461E208DE9D1009BF75E /* SearchCollectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCollectionHeaderView.h; sourceTree = "<group>"; };
+		9FC4461F208DE9D1009BF75E /* SearchCollectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionHeaderView.m; sourceTree = "<group>"; };
 		9FCA49332081D8CC008DF13F /* CommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		9FCA49342081D8CC008DF13F /* CommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		9FCA49392082014A008DF13F /* BYStarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYStarButton.h; sourceTree = "<group>"; };
@@ -194,6 +212,10 @@
 				9FC445FC208B0EBE009BF75E /* BYCenterTitleTableViewCell.m */,
 				9FC44601208C3387009BF75E /* FocusTipView.h */,
 				9FC44602208C3387009BF75E /* FocusTipView.m */,
+				9FC44617208DBAB7009BF75E /* SearchPopView.h */,
+				9FC44618208DBAB7009BF75E /* SearchPopView.m */,
+				9FC4461E208DE9D1009BF75E /* SearchCollectionHeaderView.h */,
+				9FC4461F208DE9D1009BF75E /* SearchCollectionHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -269,6 +291,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		9FC4460D208DB3A3009BF75E /* BYTagsView */ = {
+			isa = PBXGroup;
+			children = (
+				9FC44615208DB418009BF75E /* BYCollectionViewFlowLayout.h */,
+				9FC44614208DB418009BF75E /* BYCollectionViewFlowLayout.m */,
+				9FC4460E208DB3EF009BF75E /* BYTagCollectionViewCell.h */,
+				9FC44611208DB3EF009BF75E /* BYTagCollectionViewCell.m */,
+				9FC44610208DB3EF009BF75E /* BYTagsView.h */,
+				9FC4460F208DB3EF009BF75E /* BYTagsView.m */,
+			);
+			path = BYTagsView;
+			sourceTree = "<group>";
+		};
 		9FCA493820820116008DF13F /* BYEvaluateStar */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +367,7 @@
 		9FFC182F205E667800CCAEC3 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
+				9FC4460D208DB3A3009BF75E /* BYTagsView */,
 				9FC445F22089DAEF009BF75E /* BYBasePopView */,
 				9FC445EB2089CEBB009BF75E /* FireworksView */,
 				9FCA4941208216CB008DF13F /* BYDialogBox */,
@@ -389,6 +425,8 @@
 			children = (
 				9FFC184C2066A62500CCAEC3 /* ChoosePublishViewController.h */,
 				9FFC184D2066A62500CCAEC3 /* ChoosePublishViewController.m */,
+				9FC44608208CCC54009BF75E /* ChoosePublishView.h */,
+				9FC44609208CCC54009BF75E /* ChoosePublishView.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -550,12 +588,15 @@
 			files = (
 				9FDA92BA2078E0910086C583 /* UITableViewCell+BottomLine.m in Sources */,
 				9FFC18492066504000CCAEC3 /* PublishItemView.m in Sources */,
+				9FC44613208DB3EF009BF75E /* BYTagCollectionViewCell.m in Sources */,
 				9FDA92BD2078F3390086C583 /* BottomOperateTableViewCell.m in Sources */,
 				9F828EEC2070B6D300E440F2 /* DataListViewController.m in Sources */,
 				9FFC184E2066A62500CCAEC3 /* ChoosePublishViewController.m in Sources */,
 				9FFC18532066C9F800CCAEC3 /* MainPageViewController.m in Sources */,
 				9FDA92B32078C6860086C583 /* TitleTableViewCell.m in Sources */,
+				9FC44612208DB3EF009BF75E /* BYTagsView.m in Sources */,
 				9FC445F12089CF40009BF75E /* PraiseButton.m in Sources */,
+				9FC44620208DE9D1009BF75E /* SearchCollectionHeaderView.m in Sources */,
 				9FFC18562066CA0500CCAEC3 /* MineViewController.m in Sources */,
 				9FC44603208C3387009BF75E /* FocusTipView.m in Sources */,
 				9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */,
@@ -563,6 +604,7 @@
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
 				9FC44607208C65B7009BF75E /* LostorDetailViewModel.m in Sources */,
 				9FDA92B62078CAD30086C583 /* ClueChainTableViewCell.m in Sources */,
+				9FC4460A208CCC54009BF75E /* ChoosePublishView.m in Sources */,
 				9F2713F620774E5F000FC8E5 /* MainCollectionViewCell.m in Sources */,
 				9FC445F52089DB14009BF75E /* BYBasePopView.m in Sources */,
 				9FCA49352081D8CC008DF13F /* CommentTableViewCell.m in Sources */,
@@ -574,6 +616,8 @@
 				9FFC183C205E9AFC00CCAEC3 /* BYPublishTabBar.m in Sources */,
 				9FDA92B02078B2FE0086C583 /* MorePhotoTableViewCell.m in Sources */,
 				9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */,
+				9FC44616208DB418009BF75E /* BYCollectionViewFlowLayout.m in Sources */,
+				9FC44619208DBAB7009BF75E /* SearchPopView.m in Sources */,
 				9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */,
 				9F828EE0206FE16600E440F2 /* BYSearchSegmentNavgationBar.m in Sources */,
 				9FC445FD208B0EBE009BF75E /* BYCenterTitleTableViewCell.m in Sources */,

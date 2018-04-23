@@ -24,7 +24,16 @@ extern CGFloat const NavBarHeight;
 
         [self addSubview:self.searchTextField];
         self.searchTextField.text = @"搜索";
-        self.searchTextField.frame = CGRectMake(10, 25, 380, 30);
+        self.searchTextField.frame = CGRectMake(10, 25, screenW - 60, 30);
+        
+        [self addSubview:self.sortButton];
+        _sortButton.frame = CGRectMake(screenW - 40, 25, 30, 30);
+        [_sortButton addTarget:self action:@selector(sortAction) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self addSubview:self.exitSearchButton];
+        _exitSearchButton.frame = CGRectMake(screenW - 40, 25, 30, 30);
+        _exitSearchButton.hidden = true;
+        [_exitSearchButton addTarget:self action:@selector(exitSearchAction) forControlEvents:UIControlEventTouchUpInside];
         self.segmentControl = [[BYSegmentControl alloc] initWithFrame:CGRectMake(0, 65, [UIScreen mainScreen].bounds.size.width, 40)segmentTitles:@[@"广场",@"寻人",@"寻家"]];
         self.segmentControl.horizontalMargin = 50;
         self.segmentControl.focusSegmentColor = COLOR_THEME;
@@ -55,6 +64,26 @@ extern CGFloat const NavBarHeight;
     return _searchTextField;
 }
 
+- (UIButton *)sortButton{
+    if (!_sortButton) {
+        UIButton *button = [[UIButton alloc] init];
+        [button setImage:[UIImage imageNamed:@"筛选"] forState:UIControlStateNormal];
+        _sortButton = button;
+    }
+    return _sortButton;
+}
+
+- (UIButton *)exitSearchButton{
+    if (!_exitSearchButton) {
+        UIButton *button = [[UIButton alloc] init];
+        [button setTitle:@"返回" forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:14];
+        [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        _exitSearchButton = button;
+    }
+    return _exitSearchButton;
+}
+
 - (void)updateFrameWithOffset:(CGFloat)offset{
     static CGFloat previousOffset = 0;
     if (_animationExecuting) {
@@ -74,7 +103,8 @@ extern CGFloat const NavBarHeight;
                 CGRect frame = self.frame;
                 frame.origin.y = offset-_beginDragingOffsetY;
                 self.frame = frame;
-                self.searchTextField.alpha = 1 - -(offset-_beginDragingOffsetY)/(NavBarHeight-64);\
+                self.searchTextField.alpha = 1 - -(offset-_beginDragingOffsetY)/(NavBarHeight-64);
+                self.sortButton.alpha = 1 - -(offset-_beginDragingOffsetY)/(NavBarHeight-64);
                 return;
             }
         }
@@ -90,6 +120,7 @@ extern CGFloat const NavBarHeight;
         frame.origin.y = offset;
         self.frame = frame;
         self.searchTextField.alpha = 1 - (-offset)/(NavBarHeight-64);
+        self.sortButton.alpha = 1 - (-offset)/(NavBarHeight-64);
     }
     previousOffset = offset;
 }
@@ -102,6 +133,7 @@ extern CGFloat const NavBarHeight;
             frame.origin.y = 0;
             self.frame = frame;
             self.searchTextField.alpha = 1;
+            self.sortButton.alpha = 1;
         } completion:^(BOOL finished) {
             self.animationExecuting = false;
         }];
@@ -113,6 +145,7 @@ extern CGFloat const NavBarHeight;
             frame.origin.y = -(NavBarHeight-64);
             self.frame = frame;
             self.searchTextField.alpha = 0;
+            self.sortButton.alpha = 0;
         } completion:^(BOOL finished) {
             self.animationExecuting = false;
         }];
@@ -126,6 +159,7 @@ extern CGFloat const NavBarHeight;
                     frame.origin.y = 0;
                     self.frame = frame;
                     self.searchTextField.alpha = 1;
+                    self.sortButton.alpha = 1;
                 } completion:^(BOOL finished) {
                     self.animationExecuting = false;
                 }];
@@ -138,13 +172,54 @@ extern CGFloat const NavBarHeight;
                     frame.origin.y = -(NavBarHeight-64);
                     self.frame = frame;
                     self.searchTextField.alpha = 0;
+                    self.sortButton.alpha = 1;
                 } completion:^(BOOL finished) {
                     self.animationExecuting = false;
                 }];
             }
         }
     }
-    
+}
+
+- (void)setBy_searchSegmentBarStyle:(BYSearchSegmentNavgationBarStyle)by_searchSegmentBarStyle{
+    if (_by_searchSegmentBarStyle != by_searchSegmentBarStyle) {
+        switch (by_searchSegmentBarStyle) {
+            case BYSearchSegmentNavgationBarStyleNormal:{
+                _exitSearchButton.hidden = true;
+                _sortButton.hidden = false;
+                [UIView animateWithDuration:0.4 animations:^{
+                    _sortButton.alpha = 1;
+                } completion:^(BOOL finished) {
+                    _exitSearchButton.alpha = 0;
+                }];
+            }
+                break;
+            case BYSearchSegmentNavgationBarStyleSearching:{
+                _exitSearchButton.hidden = false;
+                _sortButton.hidden = true;
+                [UIView animateWithDuration:0.4 animations:^{
+                    _exitSearchButton.alpha = 1;
+                } completion:^(BOOL finished) {
+                    _sortButton.alpha = 0;
+                }];
+            }
+                break;
+        }
+    }
+    _by_searchSegmentBarStyle = by_searchSegmentBarStyle;
+}
+
+- (void)sortAction{
+    if (_eventBlock) {
+        _eventBlock(BYSearchSegmentNavgationBarEventSort);
+    }
+}
+
+- (void)exitSearchAction{
+    [_searchTextField resignFirstResponder];
+    if (_eventBlock) {
+        _eventBlock(BYSearchSegmentNavgationBarEventExitSearch);
+    }
 }
 
 - (void)layoutSubviews {
