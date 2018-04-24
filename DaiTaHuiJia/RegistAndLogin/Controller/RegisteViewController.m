@@ -9,6 +9,7 @@
 #import "RegisteViewController.h"
 #import <Masonry/Masonry.h>
 #import "UIColor+UIColor_Hex.h"
+#import "RegisteFlowViewController.h"
 @interface RegisteViewController ()<UIScrollViewDelegate>
 @property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) UILabel *titleLabel;
@@ -133,6 +134,7 @@
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:16];
         [button setTitle:@"同意并注册" forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(registeAction) forControlEvents:UIControlEventTouchUpInside];
         _aggreeButton = button;
     }
     return _aggreeButton;
@@ -140,8 +142,8 @@
 
 - (void)updateTime{
     static NSInteger second = 0;
-    if (second <= 30) {
-        NSString *title = [NSString stringWithFormat:@"同意并注册%lds",(30-second)];
+    if (second <= 5) {
+        NSString *title = [NSString stringWithFormat:@"同意并注册%lds",(5-second)];
         [self.aggreeButton setTitle:title forState:UIControlStateNormal];
         second++;
     } else {
@@ -151,7 +153,11 @@
         [self.aggreeButton setTitle:@"同意并注册" forState:UIControlStateNormal];
         self.aggreeButton.backgroundColor = [UIColor colorWithHexString:COLOR_THEME_STR alpha:1];
     }
-    
+}
+
+- (void)registeAction{
+    RegisteFlowViewController *target = [[RegisteFlowViewController alloc] init];
+    [self.navigationController pushViewController:target animated:true];
 }
 
 #pragma mark UIScrollViewDelegate

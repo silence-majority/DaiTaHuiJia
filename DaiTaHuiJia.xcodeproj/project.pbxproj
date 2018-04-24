@@ -20,6 +20,9 @@
 		9F660559208F574D00E829CA /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F660558208F574D00E829CA /* LoginViewModel.m */; };
 		9F660561208F635600E829CA /* VerifyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F660560208F635600E829CA /* VerifyCodeViewController.m */; };
 		9F660564208F68F700E829CA /* RegisteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F660563208F68F700E829CA /* RegisteViewController.m */; };
+		9F660567208F7FB600E829CA /* RegisteFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F660566208F7FB600E829CA /* RegisteFlowViewController.m */; };
+		9F66056D208F8B6B00E829CA /* RegisteFlowBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F66056C208F8B6B00E829CA /* RegisteFlowBaseView.m */; };
+		9F660570208F8DF800E829CA /* RegisteMobileFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F66056F208F8DF800E829CA /* RegisteMobileFlowView.m */; };
 		9F828EE0206FE16600E440F2 /* BYSearchSegmentNavgationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */; };
 		9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE6206FF6E600E440F2 /* BYSegmentBadgeButton.m */; };
 		9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */; };
@@ -92,6 +95,12 @@
 		9F660560208F635600E829CA /* VerifyCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifyCodeViewController.m; sourceTree = "<group>"; };
 		9F660562208F68F700E829CA /* RegisteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteViewController.h; sourceTree = "<group>"; };
 		9F660563208F68F700E829CA /* RegisteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteViewController.m; sourceTree = "<group>"; };
+		9F660565208F7FB600E829CA /* RegisteFlowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteFlowViewController.h; sourceTree = "<group>"; };
+		9F660566208F7FB600E829CA /* RegisteFlowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteFlowViewController.m; sourceTree = "<group>"; };
+		9F66056B208F8B6B00E829CA /* RegisteFlowBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteFlowBaseView.h; sourceTree = "<group>"; };
+		9F66056C208F8B6B00E829CA /* RegisteFlowBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteFlowBaseView.m; sourceTree = "<group>"; };
+		9F66056E208F8DF800E829CA /* RegisteMobileFlowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteMobileFlowView.h; sourceTree = "<group>"; };
+		9F66056F208F8DF800E829CA /* RegisteMobileFlowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteMobileFlowView.m; sourceTree = "<group>"; };
 		9F828EDE206FE16600E440F2 /* BYSearchSegmentNavgationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYSearchSegmentNavgationBar.h; sourceTree = "<group>"; };
 		9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYSearchSegmentNavgationBar.m; sourceTree = "<group>"; };
 		9F828EE4206FF6E600E440F2 /* BYSegmentBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYSegmentBadgeButton.h; sourceTree = "<group>"; };
@@ -280,6 +289,10 @@
 		9F660551208F14CD00E829CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9F66056B208F8B6B00E829CA /* RegisteFlowBaseView.h */,
+				9F66056C208F8B6B00E829CA /* RegisteFlowBaseView.m */,
+				9F66056E208F8DF800E829CA /* RegisteMobileFlowView.h */,
+				9F66056F208F8DF800E829CA /* RegisteMobileFlowView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,6 +306,8 @@
 				9F660560208F635600E829CA /* VerifyCodeViewController.m */,
 				9F660562208F68F700E829CA /* RegisteViewController.h */,
 				9F660563208F68F700E829CA /* RegisteViewController.m */,
+				9F660565208F7FB600E829CA /* RegisteFlowViewController.h */,
+				9F660566208F7FB600E829CA /* RegisteFlowViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -666,6 +681,7 @@
 				9FFC18562066CA0500CCAEC3 /* MineViewController.m in Sources */,
 				9FC44603208C3387009BF75E /* FocusTipView.m in Sources */,
 				9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */,
+				9F660567208F7FB600E829CA /* RegisteFlowViewController.m in Sources */,
 				9F2713FF20779BB7000FC8E5 /* BYNavigationBar.m in Sources */,
 				9F66054F208EF09200E829CA /* MockSearchBar.m in Sources */,
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
@@ -676,9 +692,11 @@
 				9FC4460A208CCC54009BF75E /* ChoosePublishView.m in Sources */,
 				9F2713F620774E5F000FC8E5 /* MainCollectionViewCell.m in Sources */,
 				9FC445F52089DB14009BF75E /* BYBasePopView.m in Sources */,
+				9F660570208F8DF800E829CA /* RegisteMobileFlowView.m in Sources */,
 				9FCA49352081D8CC008DF13F /* CommentTableViewCell.m in Sources */,
 				9F2713FC20779AD4000FC8E5 /* LostorDetaiViewController.m in Sources */,
 				9FFC1832205E66CA00CCAEC3 /* BaseTabBarController.m in Sources */,
+				9F66056D208F8B6B00E829CA /* RegisteFlowBaseView.m in Sources */,
 				9FDA92AD207899F50086C583 /* LostorFocusInfoTableViewCell.m in Sources */,
 				9FC445EE2089CEE4009BF75E /* FireworksView.m in Sources */,
 				9F2714042077AEA1000FC8E5 /* LostorBirefView.m in Sources */,
