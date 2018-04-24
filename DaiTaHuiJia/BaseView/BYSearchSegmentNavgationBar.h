@@ -19,14 +19,12 @@ typedef NS_ENUM(NSUInteger,BYSearchSegmentNavgationBarStyle){
 
 typedef NS_ENUM(NSUInteger,BYSearchSegmentNavgationBarEvent){
     BYSearchSegmentNavgationBarEventSort = 0,
-    BYSearchSegmentNavgationBarEventExitSearch
+    BYSearchSegmentNavgationBarEventSearch
 };
 
 @interface BYSearchSegmentNavgationBar : UINavigationBar
-@property (nonatomic,strong) UITextField *searchTextField;
 @property (nonatomic,strong) BYSegmentControl *segmentControl;
 @property (nonatomic,strong) UIButton *sortButton;
-@property (nonatomic,strong) UIButton *exitSearchButton;
 @property (nonatomic,assign) CGFloat beginDragingOffsetY;
 @property (nonatomic,assign) BYSearchSegmentNavgationBarStyle by_searchSegmentBarStyle;
 @property (nonatomic,copy) void (^eventBlock) (BYSearchSegmentNavgationBarEvent event);

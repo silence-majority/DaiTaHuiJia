@@ -13,7 +13,7 @@
 #import <Masonry/Masonry.h>
 CGFloat const NavBarHeight = 106;
 
-@interface MainPageViewController ()<BYSegmentControlDelegate,UIScrollViewDelegate,UITextFieldDelegate>
+@interface MainPageViewController ()<BYSegmentControlDelegate,UIScrollViewDelegate>
 @property (nonatomic,strong) BYSearchSegmentNavgationBar *navigationBar;
 @property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) SearchPopView *popView;
@@ -28,16 +28,14 @@ CGFloat const NavBarHeight = 106;
     self.navigationBar.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, NavBarHeight);
     _navigationBar.translucent = false;
     _navigationBar.segmentControl.delegate = self;
-    _navigationBar.searchTextField.delegate = self;
     __weak typeof(self) weakSelf = self;
     [_navigationBar setEventBlock:^(BYSearchSegmentNavgationBarEvent event) {
         switch (event) {
             case BYSearchSegmentNavgationBarEventSort:
                 
                 break;
-            case BYSearchSegmentNavgationBarEventExitSearch:
-                weakSelf.navigationBar.by_searchSegmentBarStyle = BYSearchSegmentNavgationBarStyleNormal;
-                [weakSelf.popView removeFromSuperview];
+            case BYSearchSegmentNavgationBarEventSearch:
+                [weakSelf searchAction];
                 break;
         }
     }];
@@ -104,14 +102,19 @@ CGFloat const NavBarHeight = 106;
     [_scrollView setContentOffset:CGPointMake(screenW*index, _scrollView.contentOffset.y) animated:true];
 }
 
-#pragma UITextViewDelegate
-- (void)textFieldDidBeginEditing:(UITextField *)textField{
+- (void)searchAction{
     _navigationBar.by_searchSegmentBarStyle = BYSearchSegmentNavgationBarStyleSearching;
     _popView = nil;
     if (!_popView) {
-         _popView = [[SearchPopView alloc] initWithFrame:CGRectMake(0,0, screenW, screenH)];
+        _popView = [[SearchPopView alloc] initWithFrame:CGRectMake(0,0, screenW, screenH)];
         _popView.curtainView.backgroundColor = [UIColor whiteColor];
         _popView.curtainView.alpha = 1;
+        __weak typeof(self) weakSelf = self;
+        [_popView setEventBlock:^(NSInteger eventId, NSDictionary *eventParamDic) {
+            if (eventId == 0) {
+                weakSelf.navigationBar.by_searchSegmentBarStyle = BYSearchSegmentNavgationBarStyleNormal;
+            }
+        }];
     }
     [[UIApplication sharedApplication].keyWindow addSubview:_popView];
 }

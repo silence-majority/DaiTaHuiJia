@@ -37,8 +37,10 @@
         [self setAnimationBlock:^(NSInteger animationId) {
             if (animationId == 0) {
                 weakSelf.contentView.transform = CGAffineTransformIdentity;
+                weakSelf.exitSearchButton.alpha = 1;
             } else {
                 weakSelf.contentView.alpha = 0;
+                weakSelf.exitSearchButton.alpha = 0;
             }
         }];
         
@@ -78,7 +80,7 @@
         _searchTextField.layer.cornerRadius = 6;
         _searchTextField.backgroundColor = [UIColor colorWithHexString:@"0xEDEEEF"];
         _searchTextField.leftViewMode = UITextFieldViewModeAlways;
-        
+        [_searchTextField becomeFirstResponder];
         UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
         _searchTextField.leftView = leftView;
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 7, 16, 16)];

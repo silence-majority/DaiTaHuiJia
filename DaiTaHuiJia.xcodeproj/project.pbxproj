@@ -15,6 +15,7 @@
 		9F3FF75920679B6B006DBA49 /* UIColor+UIColor_Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */; };
 		9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75B20679F59006DBA49 /* FunctionTableViewCell.m */; };
 		9F3FF75F2067D13C006DBA49 /* UserBriefTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */; };
+		9F66054F208EF09200E829CA /* MockSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F66054E208EF09200E829CA /* MockSearchBar.m */; };
 		9F828EE0206FE16600E440F2 /* BYSearchSegmentNavgationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */; };
 		9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE6206FF6E600E440F2 /* BYSegmentBadgeButton.m */; };
 		9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */; };
@@ -77,6 +78,8 @@
 		9F3FF75B20679F59006DBA49 /* FunctionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionTableViewCell.m; sourceTree = "<group>"; };
 		9F3FF75D2067D13C006DBA49 /* UserBriefTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserBriefTableViewCell.h; sourceTree = "<group>"; };
 		9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserBriefTableViewCell.m; sourceTree = "<group>"; };
+		9F66054D208EF09200E829CA /* MockSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockSearchBar.h; sourceTree = "<group>"; };
+		9F66054E208EF09200E829CA /* MockSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockSearchBar.m; sourceTree = "<group>"; };
 		9F828EDE206FE16600E440F2 /* BYSearchSegmentNavgationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYSearchSegmentNavgationBar.h; sourceTree = "<group>"; };
 		9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYSearchSegmentNavgationBar.m; sourceTree = "<group>"; };
 		9F828EE4206FF6E600E440F2 /* BYSegmentBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYSegmentBadgeButton.h; sourceTree = "<group>"; };
@@ -385,6 +388,8 @@
 				9FFC183E205EAC0100CCAEC3 /* MainTabBar.m */,
 				9F828EDE206FE16600E440F2 /* BYSearchSegmentNavgationBar.h */,
 				9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */,
+				9F66054D208EF09200E829CA /* MockSearchBar.h */,
+				9F66054E208EF09200E829CA /* MockSearchBar.m */,
 				9F2713FD20779BB7000FC8E5 /* BYNavigationBar.h */,
 				9F2713FE20779BB7000FC8E5 /* BYNavigationBar.m */,
 			);
@@ -601,6 +606,7 @@
 				9FC44603208C3387009BF75E /* FocusTipView.m in Sources */,
 				9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */,
 				9F2713FF20779BB7000FC8E5 /* BYNavigationBar.m in Sources */,
+				9F66054F208EF09200E829CA /* MockSearchBar.m in Sources */,
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
 				9FC44607208C65B7009BF75E /* LostorDetailViewModel.m in Sources */,
 				9FDA92B62078CAD30086C583 /* ClueChainTableViewCell.m in Sources */,

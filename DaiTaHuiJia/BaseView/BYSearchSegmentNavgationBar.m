@@ -8,10 +8,11 @@
 
 #import "BYSearchSegmentNavgationBar.h"
 #import "UIColor+UIColor_Hex.h"
+#import "MockSearchBar.h"
 extern CGFloat const NavBarHeight;
 
 @interface BYSearchSegmentNavgationBar()
-
+@property (nonatomic,strong) MockSearchBar *mockSearchBar;
 @property (nonatomic,assign) BOOL animationExecuting;
 @property (nonatomic,assign) BOOL isDownDrag;
 
@@ -22,18 +23,18 @@ extern CGFloat const NavBarHeight;
 - (instancetype) initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
 
-        [self addSubview:self.searchTextField];
-        self.searchTextField.text = @"搜索";
-        self.searchTextField.frame = CGRectMake(10, 25, screenW - 60, 30);
+        _mockSearchBar = [[MockSearchBar alloc] initWithFrame:CGRectMake(10, 25, screenW - 60, 30)];
+        [self addSubview:_mockSearchBar];
+        __weak typeof (self) weakSelf = self;
+        [_mockSearchBar setBeTouchBlock:^{
+            [weakSelf searchAction];
+        }];
+    
         
         [self addSubview:self.sortButton];
         _sortButton.frame = CGRectMake(screenW - 40, 25, 30, 30);
         [_sortButton addTarget:self action:@selector(sortAction) forControlEvents:UIControlEventTouchUpInside];
         
-        [self addSubview:self.exitSearchButton];
-        _exitSearchButton.frame = CGRectMake(screenW - 40, 25, 30, 30);
-        _exitSearchButton.hidden = true;
-        [_exitSearchButton addTarget:self action:@selector(exitSearchAction) forControlEvents:UIControlEventTouchUpInside];
         self.segmentControl = [[BYSegmentControl alloc] initWithFrame:CGRectMake(0, 65, [UIScreen mainScreen].bounds.size.width, 40)segmentTitles:@[@"广场",@"寻人",@"寻家"]];
         self.segmentControl.horizontalMargin = 50;
         self.segmentControl.focusSegmentColor = COLOR_THEME;
@@ -46,24 +47,6 @@ extern CGFloat const NavBarHeight;
     return self;
 }
 
-- (UITextField *)searchTextField{
-    if (!_searchTextField) {
-        _searchTextField = [[UITextField alloc] initWithFrame:CGRectZero];
-        _searchTextField.textColor = [UIColor darkGrayColor];
-        _searchTextField.font = [UIFont systemFontOfSize:13];
-        _searchTextField.layer.cornerRadius = 6;
-        _searchTextField.backgroundColor = [UIColor colorWithHexString:@"0xEDEEEF"];
-        _searchTextField.leftViewMode = UITextFieldViewModeAlways;
-        
-        UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-        _searchTextField.leftView = leftView;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 7, 16, 16)];
-        imageView.image = [UIImage imageNamed:@"搜索"];
-        [_searchTextField addSubview:imageView];
-    }
-    return _searchTextField;
-}
-
 - (UIButton *)sortButton{
     if (!_sortButton) {
         UIButton *button = [[UIButton alloc] init];
@@ -71,17 +54,6 @@ extern CGFloat const NavBarHeight;
         _sortButton = button;
     }
     return _sortButton;
-}
-
-- (UIButton *)exitSearchButton{
-    if (!_exitSearchButton) {
-        UIButton *button = [[UIButton alloc] init];
-        [button setTitle:@"返回" forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:14];
-        [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-        _exitSearchButton = button;
-    }
-    return _exitSearchButton;
 }
 
 - (void)updateFrameWithOffset:(CGFloat)offset{
@@ -103,7 +75,7 @@ extern CGFloat const NavBarHeight;
                 CGRect frame = self.frame;
                 frame.origin.y = offset-_beginDragingOffsetY;
                 self.frame = frame;
-                self.searchTextField.alpha = 1 - -(offset-_beginDragingOffsetY)/(NavBarHeight-64);
+                self.mockSearchBar.alpha = 1 - -(offset-_beginDragingOffsetY)/(NavBarHeight-64);
                 self.sortButton.alpha = 1 - -(offset-_beginDragingOffsetY)/(NavBarHeight-64);
                 return;
             }
@@ -119,7 +91,7 @@ extern CGFloat const NavBarHeight;
         CGRect frame = self.frame;
         frame.origin.y = offset;
         self.frame = frame;
-        self.searchTextField.alpha = 1 - (-offset)/(NavBarHeight-64);
+        self.mockSearchBar.alpha = 1 - (-offset)/(NavBarHeight-64);
         self.sortButton.alpha = 1 - (-offset)/(NavBarHeight-64);
     }
     previousOffset = offset;
@@ -132,7 +104,7 @@ extern CGFloat const NavBarHeight;
             CGRect frame = self.frame;
             frame.origin.y = 0;
             self.frame = frame;
-            self.searchTextField.alpha = 1;
+            self.mockSearchBar.alpha = 1;
             self.sortButton.alpha = 1;
         } completion:^(BOOL finished) {
             self.animationExecuting = false;
@@ -144,7 +116,7 @@ extern CGFloat const NavBarHeight;
             CGRect frame = self.frame;
             frame.origin.y = -(NavBarHeight-64);
             self.frame = frame;
-            self.searchTextField.alpha = 0;
+            self.mockSearchBar.alpha = 0;
             self.sortButton.alpha = 0;
         } completion:^(BOOL finished) {
             self.animationExecuting = false;
@@ -158,7 +130,7 @@ extern CGFloat const NavBarHeight;
                     CGRect frame = self.frame;
                     frame.origin.y = 0;
                     self.frame = frame;
-                    self.searchTextField.alpha = 1;
+                    self.mockSearchBar.alpha = 1;
                     self.sortButton.alpha = 1;
                 } completion:^(BOOL finished) {
                     self.animationExecuting = false;
@@ -171,7 +143,7 @@ extern CGFloat const NavBarHeight;
                     CGRect frame = self.frame;
                     frame.origin.y = -(NavBarHeight-64);
                     self.frame = frame;
-                    self.searchTextField.alpha = 0;
+                    self.mockSearchBar.alpha = 0;
                     self.sortButton.alpha = 1;
                 } completion:^(BOOL finished) {
                     self.animationExecuting = false;
@@ -185,20 +157,17 @@ extern CGFloat const NavBarHeight;
     if (_by_searchSegmentBarStyle != by_searchSegmentBarStyle) {
         switch (by_searchSegmentBarStyle) {
             case BYSearchSegmentNavgationBarStyleNormal:{
-                _exitSearchButton.hidden = true;
                 _sortButton.hidden = false;
                 [UIView animateWithDuration:0.4 animations:^{
                     _sortButton.alpha = 1;
                 } completion:^(BOOL finished) {
-                    _exitSearchButton.alpha = 0;
                 }];
             }
                 break;
             case BYSearchSegmentNavgationBarStyleSearching:{
-                _exitSearchButton.hidden = false;
                 _sortButton.hidden = true;
                 [UIView animateWithDuration:0.4 animations:^{
-                    _exitSearchButton.alpha = 1;
+    
                 } completion:^(BOOL finished) {
                     _sortButton.alpha = 0;
                 }];
@@ -215,10 +184,9 @@ extern CGFloat const NavBarHeight;
     }
 }
 
-- (void)exitSearchAction{
-    [_searchTextField resignFirstResponder];
+- (void)searchAction{
     if (_eventBlock) {
-        _eventBlock(BYSearchSegmentNavgationBarEventExitSearch);
+        _eventBlock(BYSearchSegmentNavgationBarEventSearch);
     }
 }
 
