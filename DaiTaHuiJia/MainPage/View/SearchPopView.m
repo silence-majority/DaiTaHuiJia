@@ -16,7 +16,7 @@
 @property (nonatomic,strong) UIView *contentView;
 @property (nonatomic,strong) BYTagsView *tagsView;
 @property (nonatomic,strong) UICollectionView *collectionView;
-@property (nonatomic,strong) NSArray <BYTag *> *tags;
+@property (nonatomic,strong) NSArray < NSArray <BYTag *> *> *tags;
 @property (nonatomic,strong) UITextField *searchTextField;
 @property (nonatomic,strong) UIButton *exitSearchButton;
 @end
@@ -80,6 +80,9 @@
         _searchTextField.layer.cornerRadius = 6;
         _searchTextField.backgroundColor = [UIColor colorWithHexString:@"0xEDEEEF"];
         _searchTextField.leftViewMode = UITextFieldViewModeAlways;
+//        _searchTextField.keyboardType = UIKeyboardTypeWebSearch;
+//        _searchTextField.keyboardAppearance =
+        _searchTextField.returnKeyType = UIReturnKeySearch;
         [_searchTextField becomeFirstResponder];
         UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
         _searchTextField.leftView = leftView;
@@ -111,7 +114,7 @@
         layout.minimumInteritemSpacing = 10.0f;
         layout.sectionInset = UIEdgeInsetsMake(10.0f, 18.0f, 10.0f, 18.0f);
         layout.itemSize = CGSizeMake(100, 30);
-        layout.tagFont = [UIFont systemFontOfSize:14];
+        layout.tagFont = [UIFont systemFontOfSize:13];
         layout.verticalFreeSpecs = 40;
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         collectionView.delegate = self;
@@ -146,11 +149,47 @@
     tagd.byTagTitle = @"百度网盘";
     tagd.byTagisSeleted = false;
     
-    _tags = @[taga,tagb,tagc,tagd];
+    BYTag *tagd1 = [[BYTag alloc] init];
+    tagd1.byTagId = @1;
+    tagd1.byTagTitle = @"京东";
+    tagd1.byTagisSeleted = false;
+    NSArray *hotTags = @[taga,tagb,tagc,tagd,tagd1];
+    
+    BYTag *tage = [[BYTag alloc] init];
+    tage.byTagId = @1;
+    tage.byTagTitle = @"智力障碍";
+    tage.byTagisSeleted = false;
+    
+    BYTag *tagf = [[BYTag alloc] init];
+    tagf.byTagId = @1;
+    tagf.byTagTitle = @"脸部胎记";
+    tagf.byTagisSeleted = false;
+    
+    BYTag *tagg = [[BYTag alloc] init];
+    tagg.byTagId = @1;
+    tagg.byTagTitle = @"轻微身体残疾";
+    tagg.byTagisSeleted = false;
+    
+    BYTag *tagh = [[BYTag alloc] init];
+    tagh.byTagId = @1;
+    tagh.byTagTitle = @"短头发";
+    tagh.byTagisSeleted = false;
+    
+    BYTag *tagi = [[BYTag alloc] init];
+    tagi.byTagId = @1;
+    tagi.byTagTitle = @"失明";
+    tagi.byTagisSeleted = false;
+    
+    BYTag *tagj = [[BYTag alloc] init];
+    tagj.byTagId = @1;
+    tagj.byTagTitle = @"智力正常";
+    tagj.byTagisSeleted = false;
+    NSArray *recentTags = @[tage,tagf,tagg,tagh,tagi,tagj];
+    _tags = @[hotTags,recentTags];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return _tags.count;
+    return _tags[section].count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -159,17 +198,17 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
     BYTagCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BYTagCellId" forIndexPath:indexPath];
-    cell.titleLabel.text = _tags[indexPath.row].tagTitle;
+    cell.titleLabel.text = _tags[indexPath.section][indexPath.item].tagTitle;
     BYCollectionViewFlowLayout *layout = (BYCollectionViewFlowLayout *)(collectionView.collectionViewLayout);
     cell.titleLabel.font = layout.tagFont;
-    [cell setBackColor:[UIColor colorWithHexString:@"0xF7F7F7"] forStyle:(BYTagStyleNormal)];
+    [cell setBackColor:[UIColor colorWithHexString:@"0xEEEEEE"] forStyle:(BYTagStyleNormal)];
     [cell setBackColor:[UIColor colorWithHexString:COLOR_THEME_STR] forStyle:(BYTagStyleFocus)];
-    [cell setTitleColor:[UIColor colorWithHexString:@"0x666666"] forStyle:BYTagStyleNormal];
+    [cell setTitleColor:[UIColor darkGrayColor] forStyle:BYTagStyleNormal];
     [cell setTitleColor:[UIColor whiteColor] forStyle:BYTagStyleFocus];
 //    if ([_selectedTags containsObject:_tags[indexPath.item]]){
-        cell.tagStyle = BYTagStyleFocus;
+//        cell.tagStyle = BYTagStyleFocus;
 //    }else{
-//        cell.tagStyle = BYTagStyleNormal;
+        cell.tagStyle = BYTagStyleNormal;
 //    }
     
     return cell;
@@ -178,9 +217,8 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     BYCollectionViewFlowLayout *layout = (BYCollectionViewFlowLayout *)collectionView.collectionViewLayout;
     CGSize maxSize = CGSizeMake(collectionView.frame.size.width - layout.sectionInset.left - layout.sectionInset.right, layout.itemSize.height);
-    CGRect titleLabelFrame = [_tags[indexPath.item].tagTitle boundingRectWithSize:maxSize options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: layout.tagFont}  context:nil];
-    //    return CGSizeMake(titleLabelFrame.size.width + 40, titleLabelFrame.size.height + 12);
-    return CGSizeMake(titleLabelFrame.size.width + layout.verticalFreeSpecs, layout.itemSize.height);
+    CGRect titleLabelFrame = [_tags[indexPath.section][indexPath.item].tagTitle boundingRectWithSize:maxSize options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: layout.tagFont}  context:nil];
+    return CGSizeMake(titleLabelFrame.size.width + 30, layout.itemSize.height);
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
@@ -189,6 +227,11 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     SearchCollectionHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SearchCollectionHeaderViewId" forIndexPath:indexPath];
+    if (indexPath.section == 0) {
+        header.titleLabel.text = @"热门搜索";
+    } else {
+        header.titleLabel.text = @"历史搜索";
+    }
     return header;
 }
 

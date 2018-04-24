@@ -11,8 +11,6 @@
 #import "UIColor+UIColor_Hex.h"
 @interface SearchCollectionHeaderView()
 
-@property (nonatomic,strong) UILabel *titleLabel;
-
 @end
 
 @implementation SearchCollectionHeaderView
@@ -21,7 +19,7 @@
         [self addSubview:self.titleLabel];
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.offset(0);
-            make.left.offset(12);
+            make.left.offset(4);
         }];
     }
     _titleLabel.text = @"历史搜索";
@@ -32,7 +30,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         UILabel *label = [[UILabel alloc] init];
-        label.font = [UIFont systemFontOfSize:14];
+        label.font = [UIFont boldSystemFontOfSize:15];
         label.textColor = [UIColor colorWithHexString:@"0x222222"];
         _titleLabel = label;
     }
