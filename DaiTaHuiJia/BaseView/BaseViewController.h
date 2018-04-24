@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "BYNavigationBar.h"
+typedef NS_ENUM(NSUInteger,BackType){
+    BackTypePop = 0,
+    BackTypeDismiss
+};
 @interface BaseViewController : UIViewController
 @property (nonatomic,strong) UIView *by_navigationBar;
+@property (nonatomic,assign) BackType backType;
 @property (nonatomic,strong) UIButton *backButton;
 @property (nonatomic,strong) UILabel *navTitleLabel;
 @property (nonatomic,copy) NSString *navTitle;
+
+- (void)presentLoginViewController;
 @end

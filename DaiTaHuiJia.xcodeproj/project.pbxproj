@@ -16,6 +16,7 @@
 		9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75B20679F59006DBA49 /* FunctionTableViewCell.m */; };
 		9F3FF75F2067D13C006DBA49 /* UserBriefTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */; };
 		9F66054F208EF09200E829CA /* MockSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F66054E208EF09200E829CA /* MockSearchBar.m */; };
+		9F660556208F14F400E829CA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F660555208F14F400E829CA /* LoginViewController.m */; };
 		9F828EE0206FE16600E440F2 /* BYSearchSegmentNavgationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */; };
 		9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE6206FF6E600E440F2 /* BYSegmentBadgeButton.m */; };
 		9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */; };
@@ -80,6 +81,8 @@
 		9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserBriefTableViewCell.m; sourceTree = "<group>"; };
 		9F66054D208EF09200E829CA /* MockSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockSearchBar.h; sourceTree = "<group>"; };
 		9F66054E208EF09200E829CA /* MockSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockSearchBar.m; sourceTree = "<group>"; };
+		9F660554208F14F400E829CA /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9F660555208F14F400E829CA /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9F828EDE206FE16600E440F2 /* BYSearchSegmentNavgationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYSearchSegmentNavgationBar.h; sourceTree = "<group>"; };
 		9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYSearchSegmentNavgationBar.m; sourceTree = "<group>"; };
 		9F828EE4206FF6E600E440F2 /* BYSegmentBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYSegmentBadgeButton.h; sourceTree = "<group>"; };
@@ -254,6 +257,39 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9F660550208F14B800E829CA /* RegistAndLogin */ = {
+			isa = PBXGroup;
+			children = (
+				9F660553208F14DD00E829CA /* Model */,
+				9F660552208F14D300E829CA /* Controller */,
+				9F660551208F14CD00E829CA /* View */,
+			);
+			path = RegistAndLogin;
+			sourceTree = "<group>";
+		};
+		9F660551208F14CD00E829CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F660552208F14D300E829CA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9F660554208F14F400E829CA /* LoginViewController.h */,
+				9F660555208F14F400E829CA /* LoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9F660553208F14DD00E829CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9F828EE3206FF68E00E440F2 /* BYSegement */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +384,7 @@
 		9FFC1818205E637100CCAEC3 /* DaiTaHuiJia */ = {
 			isa = PBXGroup;
 			children = (
+				9F660550208F14B800E829CA /* RegistAndLogin */,
 				9FFC18502066C9E200CCAEC3 /* Mine */,
 				9FFC184F2066C9D300CCAEC3 /* MainPage */,
 				9FFC18452066501000CCAEC3 /* publish */,
@@ -602,6 +639,7 @@
 				9FC44612208DB3EF009BF75E /* BYTagsView.m in Sources */,
 				9FC445F12089CF40009BF75E /* PraiseButton.m in Sources */,
 				9FC44620208DE9D1009BF75E /* SearchCollectionHeaderView.m in Sources */,
+				9F660556208F14F400E829CA /* LoginViewController.m in Sources */,
 				9FFC18562066CA0500CCAEC3 /* MineViewController.m in Sources */,
 				9FC44603208C3387009BF75E /* FocusTipView.m in Sources */,
 				9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */,

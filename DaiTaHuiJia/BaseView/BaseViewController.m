@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "BaseNavigationController.h"
+#import "LoginViewController.h"
 #import <Masonry/Masonry.h>
 @interface BaseViewController ()
 
@@ -72,9 +73,32 @@
     return _backButton;
 }
 
-- (void)back{
-    [self.navigationController popViewControllerAnimated:true];
+- (void)setBackType:(BackType)backType{
+    _backType = backType;
+    switch (_backType) {
+        case BackTypePop:
+            [_backButton setImage:[UIImage imageNamed:@"back_b"] forState:UIControlStateNormal];
+            break;
+         case BackTypeDismiss:
+            [_backButton setImage:[UIImage imageNamed:@"fork"] forState:UIControlStateNormal];
+            break;
+    }
 }
 
+- (void)back{
+    switch (_backType) {
+        case BackTypePop:
+            [self.navigationController popViewControllerAnimated:true];
+            break;
+        case BackTypeDismiss:
+            [self dismissViewControllerAnimated:true completion:nil];
+            break;
+    }
+}
+
+- (void)presentLoginViewController{
+    LoginViewController *target = [[LoginViewController alloc] init];
+    [self presentViewController:target animated:true completion:nil];
+}
 
 @end
