@@ -9,7 +9,11 @@
 #import "LoginViewController.h"
 #import <Masonry/Masonry.h>
 #import "UIColor+UIColor_Hex.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "LoginViewModel.h"
+#import "RegisteViewController.h"
 @interface LoginViewController ()<UIScrollViewDelegate>
+@property (nonatomic,strong) LoginViewModel *viewModel;
 @property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UILabel *describeLabel;
@@ -28,12 +32,58 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self makeUI];
+    [self bindViewModel];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+
+- (void)bindViewModel{
+    _viewModel = [[LoginViewModel alloc] init];
+    [RACObserve(_viewModel, loginAvailable) subscribeNext:^(id x) {
+        if ([x boolValue]) {
+            _loginButton.backgroundColor = [UIColor colorWithHexString:COLOR_THEME_STR alpha:1];
+            _loginButton.enabled = true;
+        } else {
+            _loginButton.backgroundColor = [UIColor colorWithHexString:COLOR_THEME_STR alpha:0.7];
+            _loginButton.enabled = false;
+        }
+    }];
+    
+    RAC(_viewModel,loginAvailable) = [RACSignal combineLatest:@[RACObserve(_viewModel, accountAvailable),RACObserve(_viewModel, passwordAvailable)] reduce:^id(NSNumber *account, NSNumber *password){
+        return @([account boolValue] && [password boolValue]);
+    }];
+    
+    [_accountTextfield.rac_textSignal subscribeNext:^(NSString *text) {
+        if (text.length >= 11) {
+            
+            self.viewModel.accountAvailable = true;
+            self.accountTextfield.text = [text substringToIndex:11];
+            self.viewModel.account = [text substringToIndex:11];
+        } else {
+            NSLog(@"%@", text);
+            self.viewModel.accountAvailable = false;
+        }
+    }];
+    
+    [_passwordTextfield.rac_textSignal subscribeNext:^(NSString *text) {
+        if (text.length >= 1) {
+            self.viewModel.passwordAvailable = true;
+            self.viewModel.password = text;
+        } else {
+            NSLog(@"%@", text);
+            self.viewModel.passwordAvailable = false;
+        }
+    }];
+    
+    [[_registeButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        RegisteViewController *target = [[RegisteViewController alloc] init];
+        [self.navigationController pushViewController:target animated:true];
+    }];
 }
 
 - (void)makeUI{
@@ -77,7 +127,7 @@
     
     [_accoutContainer addSubview:self.accountTextfield];
     [_accountTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_areaCodeLabel.mas_right).offset(8);
+        make.left.mas_equalTo(_areaCodeLabel.mas_right).offset(12);
         make.top.offset(0);
         make.bottom.offset(0);
         make.right.offset(0);
@@ -93,7 +143,7 @@
     
     [_passwordContainer addSubview:self.passwordTextfield];
     [_passwordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 8, 0, 0));
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 15, 0, 0));
     }];
     
     [_scrollView addSubview:self.loginButton];
@@ -124,10 +174,10 @@
     _accountTextfield.placeholder = @"请输入手机号";
     _passwordTextfield.placeholder = @"请输入密码";
     
-    NSString *plainText = @"为了保证你和平台上的其他用户的信息及财产安全，部分功能需要登录之后才能使用。";
+      NSString *plainText = @"为了保证你和平台上的其他用户的信息及财产安全，部分功能需要登录之后才能使用。";
     NSMutableAttributedString *attributeText = [[NSMutableAttributedString alloc] initWithString:plainText];
     NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
-    paraStyle.lineSpacing = 8;
+    paraStyle.lineSpacing = 5;
     [attributeText addAttribute:NSParagraphStyleAttributeName value:paraStyle range:NSMakeRange(0, plainText.length)];
     _describeLabel.attributedText = attributeText;
 }
@@ -253,9 +303,6 @@
 - (UIButton *)registeButton{
     if (!_registeButton) {
         UIButton *button = [[UIButton alloc] init];
-//        button.backgroundColor = [UIColor clearColor];
-//        [button setTitleColor:[UIColor colorWithHexString:COLOR_THEME_STR] forState:UIControlStateNormal];
-//        button.titleLabel.font = [UIFont systemFontOfSize:14];
         button.layer.cornerRadius = 8;
         button.backgroundColor = [UIColor colorWithHexString:COLOR_THEME_STR alpha:1];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -269,9 +316,6 @@
 - (UIButton *)forgetPasswordButton{
     if (!_forgetPasswordButton) {
         UIButton *button = [[UIButton alloc] init];
-//        button.backgroundColor = [UIColor clearColor];
-//        [button setTitleColor:[UIColor colorWithHexString:COLOR_THEME_STR] forState:UIControlStateNormal];
-//        button.titleLabel.font = [UIFont systemFontOfSize:14];
         button.layer.cornerRadius = 8;
         button.backgroundColor = [UIColor colorWithHexString:COLOR_THEME_STR alpha:1];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

@@ -17,6 +17,9 @@
 		9F3FF75F2067D13C006DBA49 /* UserBriefTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */; };
 		9F66054F208EF09200E829CA /* MockSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F66054E208EF09200E829CA /* MockSearchBar.m */; };
 		9F660556208F14F400E829CA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F660555208F14F400E829CA /* LoginViewController.m */; };
+		9F660559208F574D00E829CA /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F660558208F574D00E829CA /* LoginViewModel.m */; };
+		9F660561208F635600E829CA /* VerifyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F660560208F635600E829CA /* VerifyCodeViewController.m */; };
+		9F660564208F68F700E829CA /* RegisteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F660563208F68F700E829CA /* RegisteViewController.m */; };
 		9F828EE0206FE16600E440F2 /* BYSearchSegmentNavgationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */; };
 		9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE6206FF6E600E440F2 /* BYSegmentBadgeButton.m */; };
 		9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */; };
@@ -83,6 +86,12 @@
 		9F66054E208EF09200E829CA /* MockSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockSearchBar.m; sourceTree = "<group>"; };
 		9F660554208F14F400E829CA /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9F660555208F14F400E829CA /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9F660557208F574D00E829CA /* LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
+		9F660558208F574D00E829CA /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+		9F66055F208F635600E829CA /* VerifyCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerifyCodeViewController.h; sourceTree = "<group>"; };
+		9F660560208F635600E829CA /* VerifyCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifyCodeViewController.m; sourceTree = "<group>"; };
+		9F660562208F68F700E829CA /* RegisteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteViewController.h; sourceTree = "<group>"; };
+		9F660563208F68F700E829CA /* RegisteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteViewController.m; sourceTree = "<group>"; };
 		9F828EDE206FE16600E440F2 /* BYSearchSegmentNavgationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYSearchSegmentNavgationBar.h; sourceTree = "<group>"; };
 		9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYSearchSegmentNavgationBar.m; sourceTree = "<group>"; };
 		9F828EE4206FF6E600E440F2 /* BYSegmentBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYSegmentBadgeButton.h; sourceTree = "<group>"; };
@@ -260,6 +269,7 @@
 		9F660550208F14B800E829CA /* RegistAndLogin */ = {
 			isa = PBXGroup;
 			children = (
+				9F66055A208F575500E829CA /* ViewModel */,
 				9F660553208F14DD00E829CA /* Model */,
 				9F660552208F14D300E829CA /* Controller */,
 				9F660551208F14CD00E829CA /* View */,
@@ -279,6 +289,10 @@
 			children = (
 				9F660554208F14F400E829CA /* LoginViewController.h */,
 				9F660555208F14F400E829CA /* LoginViewController.m */,
+				9F66055F208F635600E829CA /* VerifyCodeViewController.h */,
+				9F660560208F635600E829CA /* VerifyCodeViewController.m */,
+				9F660562208F68F700E829CA /* RegisteViewController.h */,
+				9F660563208F68F700E829CA /* RegisteViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -288,6 +302,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9F66055A208F575500E829CA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9F660557208F574D00E829CA /* LoginViewModel.h */,
+				9F660558208F574D00E829CA /* LoginViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9F828EE3206FF68E00E440F2 /* BYSegement */ = {
@@ -646,6 +669,8 @@
 				9F2713FF20779BB7000FC8E5 /* BYNavigationBar.m in Sources */,
 				9F66054F208EF09200E829CA /* MockSearchBar.m in Sources */,
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
+				9F660561208F635600E829CA /* VerifyCodeViewController.m in Sources */,
+				9F660559208F574D00E829CA /* LoginViewModel.m in Sources */,
 				9FC44607208C65B7009BF75E /* LostorDetailViewModel.m in Sources */,
 				9FDA92B62078CAD30086C583 /* ClueChainTableViewCell.m in Sources */,
 				9FC4460A208CCC54009BF75E /* ChoosePublishView.m in Sources */,
@@ -666,6 +691,7 @@
 				9F828EE0206FE16600E440F2 /* BYSearchSegmentNavgationBar.m in Sources */,
 				9FC445FD208B0EBE009BF75E /* BYCenterTitleTableViewCell.m in Sources */,
 				9FFC1838205E671000CCAEC3 /* BaseViewController.m in Sources */,
+				9F660564208F68F700E829CA /* RegisteViewController.m in Sources */,
 				9FC44600208B8783009BF75E /* BYContentTableViewCell.m in Sources */,
 				9FFC181E205E637100CCAEC3 /* ViewController.m in Sources */,
 				9FFC1829205E637100CCAEC3 /* main.m in Sources */,

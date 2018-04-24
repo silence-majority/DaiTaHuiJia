@@ -98,7 +98,9 @@
 
 - (void)presentLoginViewController{
     LoginViewController *target = [[LoginViewController alloc] init];
-    [self presentViewController:target animated:true completion:nil];
+    BaseNavigationController *baseNav = [[BaseNavigationController alloc] initWithRootViewController:target];
+    [baseNav setNavigationBarHidden:true];
+    [self presentViewController:baseNav animated:true completion:nil];
 }
 
 @end
