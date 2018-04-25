@@ -8,17 +8,24 @@
 
 #import "RegisteFlowViewController.h"
 #import "RegisteMobileFlowView.h"
+#import "VerifyCodeFlowView.h"
+#import "SetPasswordFlowView.h"
+#import "PersonalInfoFlowView.h"
 #import <Masonry/Masonry.h>
 @interface RegisteFlowViewController ()
 @property (nonatomic,strong) UIView *progressLineView;
 @property (nonatomic,strong) RegisteMobileFlowView *mobileFlowView;
-@property (nonatomic,strong) RegisteMobileFlowView *verifyCodeFlowView;
+@property (nonatomic,strong) VerifyCodeFlowView *verifyCodeFlowView;
+@property (nonatomic,strong) SetPasswordFlowView *setPasswordFlowView;
+@property (nonatomic,strong) PersonalInfoFlowView *personalInfoFlowView;
+
 @end
 
 @implementation RegisteFlowViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self.view addSubview:self.mobileFlowView];
     [_mobileFlowView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(80, 0, 0, 0));
@@ -31,6 +38,23 @@
         make.bottom.offset(0);
         make.width.mas_equalTo(screenW);
     }];
+    
+    [self.view addSubview:self.setPasswordFlowView];
+    [_setPasswordFlowView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.offset(80);
+        make.left.offset(screenW);
+        make.bottom.offset(0);
+        make.width.mas_equalTo(screenW);
+    }];
+    
+    [self.view addSubview:self.personalInfoFlowView];
+    [_personalInfoFlowView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.offset(80);
+        make.left.offset(screenW);
+        make.bottom.offset(0);
+        make.width.mas_equalTo(screenW);
+    }];
+
     __weak typeof(self) weakSelf = self;
     [_mobileFlowView setNextStepBlock:^{
         weakSelf.verifyCodeFlowView.alpha = 0;
@@ -44,6 +68,30 @@
             weakSelf.verifyCodeFlowView.alpha = 1;
         }];
     }];
+    
+    [_verifyCodeFlowView setNextStepBlock:^{
+        weakSelf.setPasswordFlowView.alpha = 0;
+        [weakSelf moveProgressLineWithStep:3];
+        [UIView animateWithDuration:0.4 animations:^{
+            weakSelf.verifyCodeFlowView.transform = CGAffineTransformMakeTranslation(-screenW, 0);
+            weakSelf.verifyCodeFlowView.alpha = 0;
+            weakSelf.setPasswordFlowView.transform = CGAffineTransformMakeTranslation(-screenW, 0);
+            weakSelf.setPasswordFlowView.alpha = 1;
+        }];
+    }];
+    
+    [_setPasswordFlowView setNextStepBlock:^{
+        weakSelf.personalInfoFlowView.alpha = 0;
+        [weakSelf moveProgressLineWithStep:4];
+        [UIView animateWithDuration:0.4 animations:^{
+            weakSelf.setPasswordFlowView.transform = CGAffineTransformMakeTranslation(-screenW, 0);
+            weakSelf.setPasswordFlowView.alpha = 0;
+            weakSelf.personalInfoFlowView.transform = CGAffineTransformMakeTranslation(-screenW, 0);
+            weakSelf.personalInfoFlowView.alpha = 1;
+        }];
+    }];
+    
+    
     
     [self.view addSubview:self.progressLineView];
     [self moveProgressLineWithStep:1];
@@ -61,11 +109,25 @@
     return _mobileFlowView;
 }
 
-- (RegisteMobileFlowView *)verifyCodeFlowView{
+- (VerifyCodeFlowView *)verifyCodeFlowView{
     if (!_verifyCodeFlowView) {
-        _verifyCodeFlowView = [[RegisteMobileFlowView alloc] initWithFrame:CGRectZero];
+        _verifyCodeFlowView = [[VerifyCodeFlowView alloc] initWithFrame:CGRectZero];
     }
     return _verifyCodeFlowView;
+}
+
+- (SetPasswordFlowView *)setPasswordFlowView{
+    if (!_setPasswordFlowView) {
+        _setPasswordFlowView = [[SetPasswordFlowView alloc] initWithFrame:CGRectZero];
+    }
+    return _setPasswordFlowView;
+}
+
+- (PersonalInfoFlowView *)personalInfoFlowView{
+    if (!_personalInfoFlowView) {
+        _personalInfoFlowView = [[PersonalInfoFlowView alloc] initWithFrame:CGRectZero];
+    }
+    return _personalInfoFlowView;
 }
 
 - (UIView *)progressLineView{

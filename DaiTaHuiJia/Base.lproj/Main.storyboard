@@ -25,6 +25,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="邮箱" translatesAutoresizingMaskIntoConstraints="NO" id="gUb-tH-Y3X">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="152"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.81176470588235294" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

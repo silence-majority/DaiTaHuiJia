@@ -14,4 +14,5 @@
 @property (nonatomic,copy) NSString *title;
 @property (nonatomic,strong) UIColor *themeColor;
 @property (nonatomic,copy) void (^nextStepBlock)(void);
+- (void)nextStepAction;
 @end

@@ -23,6 +23,10 @@
 		9F660567208F7FB600E829CA /* RegisteFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F660566208F7FB600E829CA /* RegisteFlowViewController.m */; };
 		9F66056D208F8B6B00E829CA /* RegisteFlowBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F66056C208F8B6B00E829CA /* RegisteFlowBaseView.m */; };
 		9F660570208F8DF800E829CA /* RegisteMobileFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F66056F208F8DF800E829CA /* RegisteMobileFlowView.m */; };
+		9F6605732090505F00E829CA /* VerifyCodeFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6605722090505F00E829CA /* VerifyCodeFlowView.m */; };
+		9F6605762090616D00E829CA /* SetPasswordFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6605752090616D00E829CA /* SetPasswordFlowView.m */; };
+		9F66057920906B8500E829CA /* PersonalInfoFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F66057820906B8500E829CA /* PersonalInfoFlowView.m */; };
+		9F66057C20907D9D00E829CA /* UploadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F66057B20907D9D00E829CA /* UploadImageView.m */; };
 		9F828EE0206FE16600E440F2 /* BYSearchSegmentNavgationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */; };
 		9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE6206FF6E600E440F2 /* BYSegmentBadgeButton.m */; };
 		9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */; };
@@ -101,6 +105,14 @@
 		9F66056C208F8B6B00E829CA /* RegisteFlowBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteFlowBaseView.m; sourceTree = "<group>"; };
 		9F66056E208F8DF800E829CA /* RegisteMobileFlowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteMobileFlowView.h; sourceTree = "<group>"; };
 		9F66056F208F8DF800E829CA /* RegisteMobileFlowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteMobileFlowView.m; sourceTree = "<group>"; };
+		9F6605712090505F00E829CA /* VerifyCodeFlowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerifyCodeFlowView.h; sourceTree = "<group>"; };
+		9F6605722090505F00E829CA /* VerifyCodeFlowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifyCodeFlowView.m; sourceTree = "<group>"; };
+		9F6605742090616D00E829CA /* SetPasswordFlowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordFlowView.h; sourceTree = "<group>"; };
+		9F6605752090616D00E829CA /* SetPasswordFlowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetPasswordFlowView.m; sourceTree = "<group>"; };
+		9F66057720906B8500E829CA /* PersonalInfoFlowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalInfoFlowView.h; sourceTree = "<group>"; };
+		9F66057820906B8500E829CA /* PersonalInfoFlowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoFlowView.m; sourceTree = "<group>"; };
+		9F66057A20907D9D00E829CA /* UploadImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadImageView.h; sourceTree = "<group>"; };
+		9F66057B20907D9D00E829CA /* UploadImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadImageView.m; sourceTree = "<group>"; };
 		9F828EDE206FE16600E440F2 /* BYSearchSegmentNavgationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYSearchSegmentNavgationBar.h; sourceTree = "<group>"; };
 		9F828EDF206FE16600E440F2 /* BYSearchSegmentNavgationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYSearchSegmentNavgationBar.m; sourceTree = "<group>"; };
 		9F828EE4206FF6E600E440F2 /* BYSegmentBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYSegmentBadgeButton.h; sourceTree = "<group>"; };
@@ -293,6 +305,14 @@
 				9F66056C208F8B6B00E829CA /* RegisteFlowBaseView.m */,
 				9F66056E208F8DF800E829CA /* RegisteMobileFlowView.h */,
 				9F66056F208F8DF800E829CA /* RegisteMobileFlowView.m */,
+				9F6605712090505F00E829CA /* VerifyCodeFlowView.h */,
+				9F6605722090505F00E829CA /* VerifyCodeFlowView.m */,
+				9F6605742090616D00E829CA /* SetPasswordFlowView.h */,
+				9F6605752090616D00E829CA /* SetPasswordFlowView.m */,
+				9F66057720906B8500E829CA /* PersonalInfoFlowView.h */,
+				9F66057820906B8500E829CA /* PersonalInfoFlowView.m */,
+				9F66057A20907D9D00E829CA /* UploadImageView.h */,
+				9F66057B20907D9D00E829CA /* UploadImageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -668,7 +688,10 @@
 			files = (
 				9FDA92BA2078E0910086C583 /* UITableViewCell+BottomLine.m in Sources */,
 				9FFC18492066504000CCAEC3 /* PublishItemView.m in Sources */,
+				9F6605732090505F00E829CA /* VerifyCodeFlowView.m in Sources */,
+				9F66057C20907D9D00E829CA /* UploadImageView.m in Sources */,
 				9FC44613208DB3EF009BF75E /* BYTagCollectionViewCell.m in Sources */,
+				9F66057920906B8500E829CA /* PersonalInfoFlowView.m in Sources */,
 				9FDA92BD2078F3390086C583 /* BottomOperateTableViewCell.m in Sources */,
 				9F828EEC2070B6D300E440F2 /* DataListViewController.m in Sources */,
 				9FFC184E2066A62500CCAEC3 /* ChoosePublishViewController.m in Sources */,
@@ -680,6 +703,7 @@
 				9F660556208F14F400E829CA /* LoginViewController.m in Sources */,
 				9FFC18562066CA0500CCAEC3 /* MineViewController.m in Sources */,
 				9FC44603208C3387009BF75E /* FocusTipView.m in Sources */,
+				9F6605762090616D00E829CA /* SetPasswordFlowView.m in Sources */,
 				9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */,
 				9F660567208F7FB600E829CA /* RegisteFlowViewController.m in Sources */,
 				9F2713FF20779BB7000FC8E5 /* BYNavigationBar.m in Sources */,
