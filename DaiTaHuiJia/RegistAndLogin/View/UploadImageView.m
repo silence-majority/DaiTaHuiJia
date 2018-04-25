@@ -10,7 +10,7 @@
 #import <Masonry/Masonry.h>
 @interface UploadImageView()
 @property (nonatomic,strong) UIImageView *addImageView;
-@property (nonatomic,strong) UILabel *titleLabel;
+
 @end
 
 @implementation UploadImageView

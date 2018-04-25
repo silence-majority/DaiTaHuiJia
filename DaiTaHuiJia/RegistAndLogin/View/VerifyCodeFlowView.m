@@ -47,6 +47,8 @@
      _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTime) userInfo:nil repeats:true];
     [_timer fire];
     _textfield.placeholder = @"请输入验证码";
+    [self setTitle:@"2 / 5 输入验证码"];
+    self.subTitle.text = @"短信验证码已经发送至+86*******6065";
     return self;
 }
 - (UITextField *)textfield{

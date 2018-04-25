@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UploadImageView : UIView
-
+@property (nonatomic,strong) UILabel *titleLabel;
 @end
