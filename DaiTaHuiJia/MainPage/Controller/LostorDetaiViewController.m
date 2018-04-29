@@ -31,6 +31,7 @@ extern CGFloat NavBarHeight;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navTitleLabel.text = @"正男";
     [self.view addSubview:self.tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
@@ -41,6 +42,9 @@ extern CGFloat NavBarHeight;
     [self bindViewModel];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+//    self.tabBarController.tabBar.hidden = true;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
    
@@ -100,7 +104,7 @@ extern CGFloat NavBarHeight;
     } else if (section == 1) {
         return 1;
     } else if (section == 2) {
-        return 5+1;
+        return _viewModel.clueList.count+1;
     } else {
         return 3+1;
     }
@@ -141,6 +145,7 @@ extern CGFloat NavBarHeight;
         } else if (indexPath.row <= 5){
             ClueChainTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"ClueChainTableViewCellId" forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            [cell configureWithModel:_viewModel.clueList[indexPath.row-1]];
             return cell;
         } else {
             BottomOperateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BottomOperateTableViewCellId" forIndexPath:indexPath];
@@ -157,6 +162,7 @@ extern CGFloat NavBarHeight;
         } else {
             CommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentTableViewCellId" forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            [cell configureWithModel:_viewModel.commentList[indexPath.row-1]];
             return cell;
         }
     }
@@ -171,10 +177,13 @@ extern CGFloat NavBarHeight;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (scrollView.contentOffset.y < -64) {
          self.by_navigationBar.backgroundColor = [UIColor colorWithHexString:@"0xFFFFFF" alpha:0];
+        self.navTitleLabel.alpha = 0;
     } else if (scrollView.contentOffset.y >= -64 && scrollView.contentOffset.y <= 0) {
         self.by_navigationBar.backgroundColor = [UIColor colorWithHexString:@"0xFFFFFF" alpha:1 - (-scrollView.contentOffset.y)/64.0];
+        self.navTitleLabel.alpha = 1 - (-scrollView.contentOffset.y)/64.0;
     } else {
          self.by_navigationBar.backgroundColor = [UIColor colorWithHexString:@"0xFFFFFF" alpha:1];
+        self.navTitleLabel.alpha = 1;
     }
 }
 

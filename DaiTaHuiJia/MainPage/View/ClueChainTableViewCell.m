@@ -9,7 +9,7 @@
 #import "ClueChainTableViewCell.h"
 #import <Masonry/Masonry.h>
 #import "UIColor+UIColor_Hex.h"
-
+#import "ClueModel.h"
 @interface ClueChainTableViewCell()
 @property (nonatomic,strong) UILabel *dateLabel;
 @property (nonatomic,strong) UILabel *timeLabel;
@@ -18,6 +18,7 @@
 @property (nonatomic,strong) UIImageView *chainImageView;
 @property (nonatomic,strong) CAShapeLayer *topLineLayer;
 @property (nonatomic,strong) CAShapeLayer *bottomLineLayer;
+@property (nonatomic,strong) NSDateFormatter *formatter;
 @end
 
 @implementation ClueChainTableViewCell
@@ -62,12 +63,32 @@
         [self.contentView addSubview:self.chainImageView];
         [_chainImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.mas_equalTo(_dateLabel);
-            make.left.mas_equalTo(_dateLabel.mas_right).offset(12);
+            make.left.mas_offset(95);
             make.size.mas_equalTo(CGSizeMake(12, 12));
         }];
     }
     [self testData];
     return self;
+}
+
+- (void)configureWithModel:(ClueModel *)model{
+    if (!_formatter) {
+        _formatter = [[NSDateFormatter alloc] init];
+        _formatter.dateFormat = @"YYYY/MM/dd-HH:MM";
+    }
+    NSString *dateStr = [_formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:model.gmtDate.integerValue]];
+    NSArray *dateComponent = [dateStr componentsSeparatedByString:@"-"];
+    _dateLabel.text = dateComponent.firstObject;
+    _timeLabel.text = dateComponent.lastObject;
+    _providerLabel.text = model.userName;
+    _describeLabel.text = model.describe;
+    _chainImageView.image = [UIImage imageNamed:@"up_dark"];
+    if (model.clueType == ClueTypePublish) {
+        self.bottomLineLayer.hidden = true;
+        _providerLabel.textColor = [UIColor colorWithHexString:COLOR_THEME_STR];
+    } else {
+        _providerLabel.textColor = [UIColor colorWithHexString:@"0x008CF2"];
+    }
 }
 
 - (void)testData{

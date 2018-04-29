@@ -45,7 +45,7 @@
 }
 
 - (void)setContent:(NSString *)content{
-    NSString *plainText = @"孩子当天下午在家门口玩耍，玩到傍晚还没回来，家里人就去找孩子，找到夜晚还没找到。据路人回忆说，一个中年陌生男人抱着一个小孩迅速钻进车里然后消失了，恳请知道线索的好心人告知我，感激不尽！";
+    NSString *plainText = @"我是正男的奶奶，孩子学校刚刚放暑假，我要上班没有时间照顾他，正男就一个人学校踢足球，在回家的路上被一个叫菊次郎的怪大叔骗去找妈妈，希望好心人看到他们两请告诉我，感激不尽！";
     NSMutableAttributedString *attributeText = [[NSMutableAttributedString alloc] initWithString:plainText];
     NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
     paraStyle.lineSpacing = 8;

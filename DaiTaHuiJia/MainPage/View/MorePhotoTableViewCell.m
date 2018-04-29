@@ -118,7 +118,7 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     ImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ImageCollectionViewCellId" forIndexPath:indexPath];
-    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"sun-%ld",(long)indexPath.item]];
+    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"ju-%ld",(long)indexPath.item]];
     return cell;
 }
 

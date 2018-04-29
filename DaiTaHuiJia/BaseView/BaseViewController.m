@@ -11,13 +11,14 @@
 #import "LoginViewController.h"
 #import <Masonry/Masonry.h>
 @interface BaseViewController ()
-
+@property (nonatomic,strong) CAShapeLayer *bottomLineLayer;
 @end
 
 @implementation BaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setHidesBottomBarWhenPushed:true];
     CGRect frame = self.view.frame;
     frame.size = [UIScreen mainScreen].bounds.size;
     self.view.frame = frame;
@@ -37,8 +38,16 @@
         make.left.offset(16);
         make.size.mas_equalTo(CGSizeMake(25, 25));
     }];
+    
+    [_by_navigationBar addSubview:self.navTitleLabel];
+    [_navTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.offset(0);
+        make.centerY.mas_equalTo(_backButton);
+    }];
 
     _by_navigationBar.backgroundColor = [UIColor whiteColor];
+    
+//    [_by_navigationBar.layer addSublayer:self.bottomLineLayer];
 //    [self.view bringSubviewToFront:_by_navigationBar];
 }
 
@@ -63,6 +72,16 @@
     return _by_navigationBar;
 }
 
+- (UILabel *)navTitleLabel{
+    if (!_navTitleLabel) {
+        UILabel *label = [UILabel new];
+        label.font = [UIFont boldSystemFontOfSize:16];
+        label.textColor = [UIColor blackColor];
+        _navTitleLabel = label;
+    }
+    return _navTitleLabel;
+}
+
 - (UIButton *)backButton{
     if (!_backButton) {
         UIButton *button = [[UIButton alloc] init];
@@ -71,6 +90,21 @@
         _backButton = button;
     }
     return _backButton;
+}
+
+- (CAShapeLayer *)bottomLineLayer{
+    if (!_bottomLineLayer) {
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        [path moveToPoint:CGPointMake(0, 64)];
+        [path addLineToPoint:CGPointMake(screenW, 64)];
+        [path closePath];
+        CAShapeLayer *layer = [CAShapeLayer layer];
+        layer.path = path.CGPath;
+        layer.lineWidth = 0.5;
+        layer.strokeColor = [UIColor colorWithHexString:@"0xC8C8C8"].CGColor;
+        _bottomLineLayer = layer;
+    }
+    return _bottomLineLayer;
 }
 
 - (void)setBackType:(BackType)backType{

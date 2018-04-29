@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class ClueModel;
 @interface ClueChainTableViewCell : UITableViewCell
-
+- (void)configureWithModel:(ClueModel *)model;
 @end

@@ -14,6 +14,7 @@
 #import "BYDialogBox.h"
 #import "PraiseButton.h"
 #import "ReportPopView.h"
+#import "CommentModel.h"
 @interface CommentTableViewCell()
 @property (nonatomic,strong) UIImageView *portraitImageView;
 @property (nonatomic,strong) UILabel *nameLabel;
@@ -26,6 +27,7 @@
 @property (nonatomic,strong) UIButton *moreOperateBtn;
 @property (nonatomic,strong) BYEvaluateStar *evaluateStar;
 @property (nonatomic,strong) BYDialogBox *dialogBox;
+@property (nonatomic,strong) NSDateFormatter *formatter;
 @end
 
 @implementation CommentTableViewCell
@@ -116,6 +118,37 @@
     return self;
 }
 
+- (void)configureWithModel:(CommentModel *)model{
+    _portraitImageView.image = [UIImage imageNamed:model.portrait];
+    _nameLabel.text = model.name;
+    NSMutableAttributedString *attributeText = [[NSMutableAttributedString alloc] initWithString:model.comment];
+    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
+    paraStyle.lineSpacing = 8;
+    [attributeText addAttribute:NSParagraphStyleAttributeName value:paraStyle range:NSMakeRange(0, model.comment.length)];
+    _contentLabel.attributedText = attributeText;
+    if (!_formatter) {
+        _formatter = [[NSDateFormatter alloc] init];
+        _formatter.dateFormat = @"YYYY/MM/dd HH:MM";
+    }
+    NSString *dateStr = [_formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:model.gmtDate.integerValue]];
+    _dateLabel.text = dateStr;
+    
+    _appriseCountLabel.text = model.priseCount.stringValue;
+    _creditTitleLabel.text = @"信用分";
+    _evaluateStar.score = model.authScore.floatValue/100.0 * 5;
+    _creditScoreLabel.text = model.authScore.stringValue;
+    __weak typeof(self) weakSelf = self;
+    [_dialogBox setTouchBlock:^{
+        [weakSelf moreOperateAction];
+        ReportPopView *popView = [[ReportPopView alloc] init];
+        [popView setEventBlock:^(NSInteger eventId, NSDictionary *eventParamDic) {
+            
+        }];
+        [[UIApplication sharedApplication].keyWindow addSubview:popView];
+    }];
+
+}
+
 - (void)testData{
     _portraitImageView.image = [UIImage imageNamed:@"defaultPortrait"];
     _nameLabel.text = @"找孩子的母亲";
@@ -144,6 +177,9 @@
 - (UIImageView *)portraitImageView{
     if (!_portraitImageView) {
         UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.layer.cornerRadius = 4;
+        imageView.layer.masksToBounds = true;
         _portraitImageView = imageView;
     }
     return _portraitImageView;

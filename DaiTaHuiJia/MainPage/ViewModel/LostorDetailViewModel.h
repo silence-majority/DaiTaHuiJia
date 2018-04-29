@@ -8,7 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+@class ClueModel;
+@class CommentModel;
 @interface LostorDetailViewModel : NSObject
 // 关注框是否展开
 @property (nonatomic,assign) BOOL isFocusTipSpread;
+
+@property (nonatomic,strong) NSArray <ClueModel *> *clueList;
+@property (nonatomic,strong) NSArray <CommentModel *> *commentList;
 @end

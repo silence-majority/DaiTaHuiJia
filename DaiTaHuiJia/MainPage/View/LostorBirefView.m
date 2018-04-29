@@ -68,9 +68,9 @@
 }
 
 - (void)testData{
-    _nameLabel.text = @"林枚章";
-    _imageView.image = [UIImage imageNamed:@"sunyizhen"];
-    _firstLineLabel.text = @"男 / 13岁";
+    _nameLabel.text = @"正男";
+    _imageView.image = [UIImage imageNamed:@"ju-main"];
+    _firstLineLabel.text = @"男 / 10岁";
     _secondLineLabel.text = @"智力正常 / 无残疾";
     
     NSString *plainText = @"2017年12月27日在\n云南省淄川市南通县山口镇走失";

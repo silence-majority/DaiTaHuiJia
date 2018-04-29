@@ -33,6 +33,8 @@
 		9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */; };
 		9F828EEC2070B6D300E440F2 /* DataListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EEB2070B6D300E440F2 /* DataListViewController.m */; };
 		9F8657272095CFEC00A94728 /* LostBriefModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8657262095CFEC00A94728 /* LostBriefModel.m */; };
+		9F86572A209600F000A94728 /* ClueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F865729209600F000A94728 /* ClueModel.m */; };
+		9F86572D20960D1700A94728 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F86572C20960D1700A94728 /* CommentModel.m */; };
 		9FC445EE2089CEE4009BF75E /* FireworksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445ED2089CEE4009BF75E /* FireworksView.m */; };
 		9FC445F12089CF40009BF75E /* PraiseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F02089CF40009BF75E /* PraiseButton.m */; };
 		9FC445F52089DB14009BF75E /* BYBasePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F42089DB14009BF75E /* BYBasePopView.m */; };
@@ -127,6 +129,10 @@
 		9F828EEB2070B6D300E440F2 /* DataListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataListViewController.m; sourceTree = "<group>"; };
 		9F8657252095CFEC00A94728 /* LostBriefModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostBriefModel.h; sourceTree = "<group>"; };
 		9F8657262095CFEC00A94728 /* LostBriefModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostBriefModel.m; sourceTree = "<group>"; };
+		9F865728209600F000A94728 /* ClueModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClueModel.h; sourceTree = "<group>"; };
+		9F865729209600F000A94728 /* ClueModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClueModel.m; sourceTree = "<group>"; };
+		9F86572B20960D1700A94728 /* CommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		9F86572C20960D1700A94728 /* CommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
 		9FC445EC2089CEE4009BF75E /* FireworksView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FireworksView.h; sourceTree = "<group>"; };
 		9FC445ED2089CEE4009BF75E /* FireworksView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FireworksView.m; sourceTree = "<group>"; };
 		9FC445EF2089CF40009BF75E /* PraiseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PraiseButton.h; sourceTree = "<group>"; };
@@ -280,6 +286,10 @@
 			children = (
 				9F8657252095CFEC00A94728 /* LostBriefModel.h */,
 				9F8657262095CFEC00A94728 /* LostBriefModel.m */,
+				9F865728209600F000A94728 /* ClueModel.h */,
+				9F865729209600F000A94728 /* ClueModel.m */,
+				9F86572B20960D1700A94728 /* CommentModel.h */,
+				9F86572C20960D1700A94728 /* CommentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -736,6 +746,7 @@
 				9FDA92AD207899F50086C583 /* LostorFocusInfoTableViewCell.m in Sources */,
 				9FC445EE2089CEE4009BF75E /* FireworksView.m in Sources */,
 				9F2714042077AEA1000FC8E5 /* LostorBirefView.m in Sources */,
+				9F86572A209600F000A94728 /* ClueModel.m in Sources */,
 				9FFC183C205E9AFC00CCAEC3 /* BYPublishTabBar.m in Sources */,
 				9FDA92B02078B2FE0086C583 /* MorePhotoTableViewCell.m in Sources */,
 				9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */,
@@ -743,6 +754,7 @@
 				9FC44619208DBAB7009BF75E /* SearchPopView.m in Sources */,
 				9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */,
 				9F828EE0206FE16600E440F2 /* BYSearchSegmentNavgationBar.m in Sources */,
+				9F86572D20960D1700A94728 /* CommentModel.m in Sources */,
 				9FC445FD208B0EBE009BF75E /* BYCenterTitleTableViewCell.m in Sources */,
 				9FFC1838205E671000CCAEC3 /* BaseViewController.m in Sources */,
 				9F660564208F68F700E829CA /* RegisteViewController.m in Sources */,
