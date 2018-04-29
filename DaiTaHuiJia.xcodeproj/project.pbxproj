@@ -32,6 +32,7 @@
 		9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE6206FF6E600E440F2 /* BYSegmentBadgeButton.m */; };
 		9F828EE9206FF6E700E440F2 /* BYSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */; };
 		9F828EEC2070B6D300E440F2 /* DataListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F828EEB2070B6D300E440F2 /* DataListViewController.m */; };
+		9F8657272095CFEC00A94728 /* LostBriefModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8657262095CFEC00A94728 /* LostBriefModel.m */; };
 		9FC445EE2089CEE4009BF75E /* FireworksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445ED2089CEE4009BF75E /* FireworksView.m */; };
 		9FC445F12089CF40009BF75E /* PraiseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F02089CF40009BF75E /* PraiseButton.m */; };
 		9FC445F52089DB14009BF75E /* BYBasePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F42089DB14009BF75E /* BYBasePopView.m */; };
@@ -124,6 +125,8 @@
 		9F828EE7206FF6E700E440F2 /* BYSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYSegmentControl.m; sourceTree = "<group>"; };
 		9F828EEA2070B6D300E440F2 /* DataListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataListViewController.h; sourceTree = "<group>"; };
 		9F828EEB2070B6D300E440F2 /* DataListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataListViewController.m; sourceTree = "<group>"; };
+		9F8657252095CFEC00A94728 /* LostBriefModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostBriefModel.h; sourceTree = "<group>"; };
+		9F8657262095CFEC00A94728 /* LostBriefModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostBriefModel.m; sourceTree = "<group>"; };
 		9FC445EC2089CEE4009BF75E /* FireworksView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FireworksView.h; sourceTree = "<group>"; };
 		9FC445ED2089CEE4009BF75E /* FireworksView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FireworksView.m; sourceTree = "<group>"; };
 		9FC445EF2089CF40009BF75E /* PraiseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PraiseButton.h; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 		9F2713F920774E75000FC8E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9F8657252095CFEC00A94728 /* LostBriefModel.h */,
+				9F8657262095CFEC00A94728 /* LostBriefModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -711,6 +716,7 @@
 				9F6605762090616D00E829CA /* SetPasswordFlowView.m in Sources */,
 				9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */,
 				9F660567208F7FB600E829CA /* RegisteFlowViewController.m in Sources */,
+				9F8657272095CFEC00A94728 /* LostBriefModel.m in Sources */,
 				9F2713FF20779BB7000FC8E5 /* BYNavigationBar.m in Sources */,
 				9F66054F208EF09200E829CA /* MockSearchBar.m in Sources */,
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,

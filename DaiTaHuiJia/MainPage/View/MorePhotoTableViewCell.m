@@ -112,12 +112,13 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 10;
+    return 8;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     ImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ImageCollectionViewCellId" forIndexPath:indexPath];
+    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"sun-%ld",(long)indexPath.item]];
     return cell;
 }
 

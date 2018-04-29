@@ -8,6 +8,7 @@
 
 #import "MainCollectionViewCell.h"
 #import <Masonry/Masonry.h>
+#import "LostBriefModel.h"
 @interface MainCollectionViewCell()
 
 @property (nonatomic,strong) UIImageView *imageView;
@@ -121,6 +122,13 @@
     _distanceTagLabel.text = @"35公里";
     _dateLabel.text = @"2017年12月27日";
 //    _addressLabel.text = @"云南省淄川市临江县山口镇";
+}
+- (void)configureWithModel:(LostBriefModel *)model{
+    _imageView.image = [UIImage imageNamed:model.imageName];
+    _nameLabel.text = model.name;
+    _describeLabel.text = [NSString stringWithFormat:@"与%@走失",model.address];
+    _dateTagLabel.text = [NSString stringWithFormat:@"%.0f天前",model.lostTime];
+    _distanceTagLabel.text = [NSString stringWithFormat:@"%.0f公里",model.lostDistance];
 }
 
 - (UIImageView *)imageView{

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class LostBriefModel;
 @interface MainCollectionViewCell : UICollectionViewCell
-
+- (void)configureWithModel:(LostBriefModel *)model;
 @end

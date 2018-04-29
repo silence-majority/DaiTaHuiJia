@@ -10,19 +10,52 @@
 #import <Masonry/Masonry.h>
 #import "MainCollectionViewCell.h"
 #import "LostorDetaiViewController.h"
+#import "LostBriefModel.h"
 extern CGFloat NavBarHeight;
 @interface DataListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong) UICollectionView *collecitonView;
+@property (nonatomic,strong) NSArray <LostBriefModel *> *lists;
 @end
 
 @implementation DataListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self testData];
     [self.view addSubview:self.collecitonView];
     [_collecitonView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
+}
+
+- (void)testData{
+    LostBriefModel *model = [LostBriefModel new];
+    model.name = @"正男";
+    model.address = @"云南省淄川市江口县临川镇";
+    model.lostTime = 2;
+    model.lostDistance = 135;
+    model.imageName = @"ju-main";
+    
+    LostBriefModel *modelB = [LostBriefModel new];
+    modelB.name = @"宋珠喜";
+    modelB.address = @"吉林省延边市府山镇韩村";
+    modelB.lostTime = 1;
+    modelB.lostDistance = 200;
+    modelB.imageName = @"sun-main";
+    _lists = @[model,modelB];
+//    LostBriefModel *modelC = [LostBriefModel new];
+//    modelC.name = @"";
+//    modelC.address = @"";
+//    modelC.lostTime = 1;
+//    modelC.lostDistance = 100;
+//    modelC.imageName = @"";
+//
+//    LostBriefModel *modelD = [LostBriefModel new];
+//    modelD.name = @"";
+//    modelD.address = @"";
+//    modelD.lostTime = 1;
+//    modelD.lostDistance = 100;
+//    modelD.imageName = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,11 +84,12 @@ extern CGFloat NavBarHeight;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 15;
+    return _lists.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     MainCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MainCollectionViewCellId" forIndexPath:indexPath];
+    [cell configureWithModel:_lists[indexPath.item]];
     return cell;
 }
 
