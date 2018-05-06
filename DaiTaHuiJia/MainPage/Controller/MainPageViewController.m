@@ -24,7 +24,6 @@ CGFloat const NavBarHeight = 106;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    
     self.navigationBar.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, NavBarHeight);
     _navigationBar.translucent = false;
     _navigationBar.segmentControl.delegate = self;

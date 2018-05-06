@@ -7,7 +7,7 @@
 //
 
 #import "BaseNavigationController.h"
-
+#import "BaseViewController.h"
 @interface BaseNavigationController ()
 @property (strong, nonatomic) UIScreenEdgePanGestureRecognizer *edgePanGestureRecognizer;
 @end
@@ -37,5 +37,14 @@
     }
 }
 
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    if (self.viewControllers.count == 1) {
+        [self.viewControllers.firstObject setHidesBottomBarWhenPushed:true];
+        [super pushViewController:viewController animated:true];
+        [self.viewControllers.firstObject setHidesBottomBarWhenPushed:false];
+    } else {
+        [super pushViewController:viewController animated:animated];
+    }
+}
 
 @end

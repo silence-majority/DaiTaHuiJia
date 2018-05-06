@@ -131,12 +131,12 @@
 - (void)makeTag{
     BYTag *taga = [[BYTag alloc] init];
     taga.byTagId = @1;
-    taga.byTagTitle = @"网易云音乐";
+    taga.byTagTitle = @"正男";
     taga.byTagisSeleted = false;
     
     BYTag *tagb = [[BYTag alloc] init];
     tagb.byTagId = @1;
-    tagb.byTagTitle = @"阿里云";
+    tagb.byTagTitle = @"宋珠喜";
     tagb.byTagisSeleted = false;
     
     BYTag *tagc = [[BYTag alloc] init];
@@ -153,7 +153,8 @@
     tagd1.byTagId = @1;
     tagd1.byTagTitle = @"京东";
     tagd1.byTagisSeleted = false;
-    NSArray *hotTags = @[taga,tagb,tagc,tagd,tagd1];
+//    NSArray *hotTags = @[taga,tagb,tagc,tagd,tagd1];
+    NSArray *hotTags = @[taga,tagb];
     
     BYTag *tage = [[BYTag alloc] init];
     tage.byTagId = @1;

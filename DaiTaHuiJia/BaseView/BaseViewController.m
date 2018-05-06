@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setHidesBottomBarWhenPushed:true];
     CGRect frame = self.view.frame;
     frame.size = [UIScreen mainScreen].bounds.size;
     self.view.frame = frame;

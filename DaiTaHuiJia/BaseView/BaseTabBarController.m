@@ -32,7 +32,6 @@
     BaseNavigationController *baseNavA = [[BaseNavigationController alloc] initWithRootViewController:baseVCA];
     UITabBarItem *homeBarItem = [self tabBarItemWithTitle:@"主页" TitleColor:[UIColor redColor] image:@"homeBarItem_normal" selectedImage:@"homeBarItem_focu"];
     baseNavA.tabBarItem = homeBarItem;
-    
     MineViewController *baseVCB = [[MineViewController alloc] init];
     BaseNavigationController *baseNavB = [[BaseNavigationController alloc] initWithRootViewController:baseVCB];
     UITabBarItem *mineBarItem = [self tabBarItemWithTitle:@"我的" TitleColor:[UIColor redColor] image:@"mineBarItem_normal" selectedImage:@"mineBarItem_focu"];

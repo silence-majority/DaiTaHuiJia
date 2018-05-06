@@ -42,9 +42,6 @@ extern CGFloat NavBarHeight;
     [self bindViewModel];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-//    self.tabBarController.tabBar.hidden = true;
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
    
