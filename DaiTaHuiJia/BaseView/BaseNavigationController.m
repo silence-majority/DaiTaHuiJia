@@ -37,14 +37,18 @@
     }
 }
 
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    if (self.viewControllers.count == 1) {
-        [self.viewControllers.firstObject setHidesBottomBarWhenPushed:true];
-        [super pushViewController:viewController animated:true];
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated{
+    if (self.viewControllers.count == 2) {
         [self.viewControllers.firstObject setHidesBottomBarWhenPushed:false];
-    } else {
-        [super pushViewController:viewController animated:animated];
     }
+    return [super popViewControllerAnimated:animated];
+}
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    if (self.viewControllers.count >= 1) {
+        [self.viewControllers.firstObject setHidesBottomBarWhenPushed:true];
+    }
+    [super pushViewController:viewController animated:true];
 }
 
 @end

@@ -12,4 +12,5 @@
 - (void)configureWithImage:(NSString *)name
                      title:(NSString *)title
                   describe:(NSString *)text;
+@property (nonatomic,copy) void (^selected)(void);
 @end

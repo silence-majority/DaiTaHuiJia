@@ -16,6 +16,7 @@ typedef NS_ENUM(NSUInteger,BackType){
 @property (nonatomic,strong) UIView *by_navigationBar;
 @property (nonatomic,assign) BackType backType;
 @property (nonatomic,strong) UIButton *backButton;
+@property (nonatomic,strong) UIButton *rigthButton;
 @property (nonatomic,strong) UILabel *navTitleLabel;
 @property (nonatomic,copy) NSString *navTitle;
 

@@ -12,7 +12,7 @@
 @property (nonatomic,strong) UIImageView *imageView;
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UILabel *describeLabel;
-
+@property (nonatomic,strong) UITapGestureRecognizer *tapGesture;
 @end
 @implementation PublishItemView
 
@@ -39,6 +39,7 @@
             make.top.mas_equalTo(_imageView.mas_bottom).offset(2);
             make.bottom.offset(-8);
         }];
+        [self addGestureRecognizer:self.tapGesture];
     }
     return self;
 }
@@ -86,6 +87,20 @@
     self.layer.shadowOffset = CGSizeZero;
     self.layer.shadowRadius = 3;
     self.layer.shadowOpacity = 0.6;
+}
+
+- (UITapGestureRecognizer *)tapGesture{
+    if (!_tapGesture) {
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectedAction)];
+        _tapGesture = gesture;
+    }
+    return _tapGesture;
+}
+
+- (void)selectedAction{
+    if (self.selected) {
+        _selected();
+    }
 }
 
 @end

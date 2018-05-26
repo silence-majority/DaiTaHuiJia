@@ -9,7 +9,7 @@
 #import "ChoosePublishView.h"
 #import "PublishItemView.h"
 #import <Masonry/Masonry.h>
-
+#import "LostorBaseInfoViewController.h"
 #define publishItemSize CGSizeMake(160, 100)
 #define horizentalHalf 15
 #define verticalHalf 75
@@ -75,6 +75,10 @@
         }];
         [self prepareAnimation];
         [self appearAnimation];
+        __weak typeof(self) weakSelf = self;
+        _seekPeoplePublishView.selected = ^{
+            [weakSelf didSelectedWithIndex:0];
+        };
     }
     return self;
 }
@@ -155,11 +159,29 @@
 }
 
 - (void)exitBtnAction{
+    [self exitWithCompletion:^{
+        
+    }];
+}
+
+-(void)didSelectedWithIndex:(NSUInteger)index{
+    UITabBarController *tabVC = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    UINavigationController *nav = tabVC.viewControllers[0];
+
+    [self exitWithCompletion:^{
+        if (index == 0) {
+            LostorBaseInfoViewController *target = [LostorBaseInfoViewController new];
+            [nav pushViewController:target animated:true];
+        }
+    }];
+}
+
+- (void)exitWithCompletion:(void (^)(void))completion{
     [self disappearAnimation];
     dispatch_time_t timer = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
     dispatch_after(timer, dispatch_get_main_queue(), ^{
-//        [self dismissViewControllerAnimated:false completion:nil];
         [self removeFromSuperview];
+        completion();
     });
 }
 

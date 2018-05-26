@@ -27,11 +27,11 @@
 }
 
 - (void)drawBottomLineWithGap:(CGFloat)gap{
-    [self drawBottomLineWithLineWidth:0.6 lineColor:[UIColor colorWithHexString:@"0xC8C8C8"] gap:gap];
+    [self drawBottomLineWithLineWidth:0.4 lineColor:[UIColor colorWithHexString:@"0xC8C8C8"] gap:gap];
 }
 
 - (void)drawBottomLine{
-    [self drawBottomLineWithLineWidth:0.6 lineColor:[UIColor colorWithHexString:@"0xC8C8C8"] gap:0];
+    [self drawBottomLineWithLineWidth:0.4 lineColor:[UIColor colorWithHexString:@"0xC8C8C8"] gap:0];
 }
 
 
@@ -40,11 +40,11 @@
 }
 
 - (void)drawTopLineWithGap:(CGFloat)gap{
-    [self drawTopLineWithLineWidth:0.6 lineColor:[UIColor colorWithHexString:@"0xC8C8C8"] gap:gap];
+    [self drawTopLineWithLineWidth:0.4 lineColor:[UIColor colorWithHexString:@"0xC8C8C8"] gap:gap];
 }
 
 - (void)drawTopLine{
-    [self drawTopLineWithLineWidth:0.6 lineColor:[UIColor colorWithHexString:@"0xC8C8C8"] gap:0];
+    [self drawTopLineWithLineWidth:0.4 lineColor:[UIColor colorWithHexString:@"0xC8C8C8"] gap:0];
 }
 
 @end

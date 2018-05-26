@@ -12,6 +12,12 @@
 		9F2713FC20779AD4000FC8E5 /* LostorDetaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2713FB20779AD4000FC8E5 /* LostorDetaiViewController.m */; };
 		9F2713FF20779BB7000FC8E5 /* BYNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2713FE20779BB7000FC8E5 /* BYNavigationBar.m */; };
 		9F2714042077AEA1000FC8E5 /* LostorBirefView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2714032077AEA1000FC8E5 /* LostorBirefView.m */; };
+		9F337BCF20B95ACA00F91EBC /* LostorBaseInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BCE20B95ACA00F91EBC /* LostorBaseInfoViewController.m */; };
+		9F337BD220B9698D00F91EBC /* BaseInfoHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BD120B9698D00F91EBC /* BaseInfoHeader.m */; };
+		9F337BD520B9909A00F91EBC /* ContentFillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BD420B9909A00F91EBC /* ContentFillTableViewCell.m */; };
+		9F337BD820B9A43800F91EBC /* BaseInfoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BD720B9A43800F91EBC /* BaseInfoFooter.m */; };
+		9F337BDE20B9A4E200F91EBC /* BYLimitTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BDD20B9A4E200F91EBC /* BYLimitTextView.m */; };
+		9F337BE120B9B5E300F91EBC /* LostorHealthInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BE020B9B5E300F91EBC /* LostorHealthInfoViewController.m */; };
 		9F3FF75920679B6B006DBA49 /* UIColor+UIColor_Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */; };
 		9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75B20679F59006DBA49 /* FunctionTableViewCell.m */; };
 		9F3FF75F2067D13C006DBA49 /* UserBriefTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */; };
@@ -87,6 +93,18 @@
 		9F2713FE20779BB7000FC8E5 /* BYNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYNavigationBar.m; sourceTree = "<group>"; };
 		9F2714022077AEA1000FC8E5 /* LostorBirefView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostorBirefView.h; sourceTree = "<group>"; };
 		9F2714032077AEA1000FC8E5 /* LostorBirefView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostorBirefView.m; sourceTree = "<group>"; };
+		9F337BCD20B95ACA00F91EBC /* LostorBaseInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostorBaseInfoViewController.h; sourceTree = "<group>"; };
+		9F337BCE20B95ACA00F91EBC /* LostorBaseInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostorBaseInfoViewController.m; sourceTree = "<group>"; };
+		9F337BD020B9698D00F91EBC /* BaseInfoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseInfoHeader.h; sourceTree = "<group>"; };
+		9F337BD120B9698D00F91EBC /* BaseInfoHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseInfoHeader.m; sourceTree = "<group>"; };
+		9F337BD320B9909A00F91EBC /* ContentFillTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentFillTableViewCell.h; sourceTree = "<group>"; };
+		9F337BD420B9909A00F91EBC /* ContentFillTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentFillTableViewCell.m; sourceTree = "<group>"; };
+		9F337BD620B9A43800F91EBC /* BaseInfoFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseInfoFooter.h; sourceTree = "<group>"; };
+		9F337BD720B9A43800F91EBC /* BaseInfoFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseInfoFooter.m; sourceTree = "<group>"; };
+		9F337BDC20B9A4E200F91EBC /* BYLimitTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYLimitTextView.h; sourceTree = "<group>"; };
+		9F337BDD20B9A4E200F91EBC /* BYLimitTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYLimitTextView.m; sourceTree = "<group>"; };
+		9F337BDF20B9B5E300F91EBC /* LostorHealthInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostorHealthInfoViewController.h; sourceTree = "<group>"; };
+		9F337BE020B9B5E300F91EBC /* LostorHealthInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostorHealthInfoViewController.m; sourceTree = "<group>"; };
 		9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColor_Hex.m"; sourceTree = "<group>"; };
 		9F3FF75820679B6B006DBA49 /* UIColor+UIColor_Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColor_Hex.h"; sourceTree = "<group>"; };
 		9F3FF75A20679F59006DBA49 /* FunctionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionTableViewCell.h; sourceTree = "<group>"; };
@@ -294,6 +312,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9F337BDB20B9A4C000F91EBC /* BYLimitTextView */ = {
+			isa = PBXGroup;
+			children = (
+				9F337BDC20B9A4E200F91EBC /* BYLimitTextView.h */,
+				9F337BDD20B9A4E200F91EBC /* BYLimitTextView.m */,
+			);
+			path = BYLimitTextView;
+			sourceTree = "<group>";
+		};
 		9F3FF74E206793BB006DBA49 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,6 +512,7 @@
 		9FFC182F205E667800CCAEC3 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
+				9F337BDB20B9A4C000F91EBC /* BYLimitTextView */,
 				9FC4460D208DB3A3009BF75E /* BYTagsView */,
 				9FC445F22089DAEF009BF75E /* BYBasePopView */,
 				9FC445EB2089CEBB009BF75E /* FireworksView */,
@@ -536,6 +564,12 @@
 			children = (
 				9FFC18472066504000CCAEC3 /* PublishItemView.h */,
 				9FFC18482066504000CCAEC3 /* PublishItemView.m */,
+				9F337BD020B9698D00F91EBC /* BaseInfoHeader.h */,
+				9F337BD120B9698D00F91EBC /* BaseInfoHeader.m */,
+				9F337BD620B9A43800F91EBC /* BaseInfoFooter.h */,
+				9F337BD720B9A43800F91EBC /* BaseInfoFooter.m */,
+				9F337BD320B9909A00F91EBC /* ContentFillTableViewCell.h */,
+				9F337BD420B9909A00F91EBC /* ContentFillTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -547,6 +581,10 @@
 				9FFC184D2066A62500CCAEC3 /* ChoosePublishViewController.m */,
 				9FC44608208CCC54009BF75E /* ChoosePublishView.h */,
 				9FC44609208CCC54009BF75E /* ChoosePublishView.m */,
+				9F337BCD20B95ACA00F91EBC /* LostorBaseInfoViewController.h */,
+				9F337BCE20B95ACA00F91EBC /* LostorBaseInfoViewController.m */,
+				9F337BDF20B9B5E300F91EBC /* LostorHealthInfoViewController.h */,
+				9F337BE020B9B5E300F91EBC /* LostorHealthInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -714,6 +752,7 @@
 				9F66057920906B8500E829CA /* PersonalInfoFlowView.m in Sources */,
 				9FDA92BD2078F3390086C583 /* BottomOperateTableViewCell.m in Sources */,
 				9F828EEC2070B6D300E440F2 /* DataListViewController.m in Sources */,
+				9F337BCF20B95ACA00F91EBC /* LostorBaseInfoViewController.m in Sources */,
 				9FFC184E2066A62500CCAEC3 /* ChoosePublishViewController.m in Sources */,
 				9FFC18532066C9F800CCAEC3 /* MainPageViewController.m in Sources */,
 				9FDA92B32078C6860086C583 /* TitleTableViewCell.m in Sources */,
@@ -728,6 +767,8 @@
 				9F660567208F7FB600E829CA /* RegisteFlowViewController.m in Sources */,
 				9F8657272095CFEC00A94728 /* LostBriefModel.m in Sources */,
 				9F2713FF20779BB7000FC8E5 /* BYNavigationBar.m in Sources */,
+				9F337BD520B9909A00F91EBC /* ContentFillTableViewCell.m in Sources */,
+				9F337BD820B9A43800F91EBC /* BaseInfoFooter.m in Sources */,
 				9F66054F208EF09200E829CA /* MockSearchBar.m in Sources */,
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
 				9F660561208F635600E829CA /* VerifyCodeViewController.m in Sources */,
@@ -767,7 +808,10 @@
 				9F3FF75920679B6B006DBA49 /* UIColor+UIColor_Hex.m in Sources */,
 				9FCA493D2082014A008DF13F /* BYEvaluateStar.m in Sources */,
 				9FFC181B205E637100CCAEC3 /* AppDelegate.m in Sources */,
+				9F337BD220B9698D00F91EBC /* BaseInfoHeader.m in Sources */,
 				9F3FF75F2067D13C006DBA49 /* UserBriefTableViewCell.m in Sources */,
+				9F337BDE20B9A4E200F91EBC /* BYLimitTextView.m in Sources */,
+				9F337BE120B9B5E300F91EBC /* LostorHealthInfoViewController.m in Sources */,
 				9FFC1835205E66FB00CCAEC3 /* BaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

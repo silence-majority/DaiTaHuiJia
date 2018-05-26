@@ -50,6 +50,9 @@
 //    [self.view bringSubviewToFront:_by_navigationBar];
 }
 
+- (void)setNavTitle:(NSString *)navTitle{
+    _navTitleLabel.text = navTitle;
+}
 
 - (void)setIsNaviInteractivePopGestureRecognizerEnable:(BOOL)isNaviInteractivePopGestureRecognizerEnable{
     if (!isNaviInteractivePopGestureRecognizerEnable) {
@@ -66,9 +69,30 @@
 - (UIView *)by_navigationBar{
     if (!_by_navigationBar) {
         UIView *navigationBar = [[UIView alloc] init];
+    
         _by_navigationBar = navigationBar;
     }
     return _by_navigationBar;
+}
+
+- (UIButton *)rigthButton{
+    if (!_rigthButton) {
+        UIButton *button = [[UIButton alloc] init];
+        _rigthButton = button;
+        [self.by_navigationBar addSubview:_rigthButton];
+        [_rigthButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.offset(-16);
+            make.centerY.mas_equalTo(_navTitleLabel);
+        }];
+    }
+    return _rigthButton;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    _by_navigationBar.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    _by_navigationBar.layer.shadowOffset = CGSizeMake(0, 0.5);
+    _by_navigationBar.layer.shadowRadius = 4;
+    _by_navigationBar.layer.shadowOpacity = 0.4;
 }
 
 - (UILabel *)navTitleLabel{
