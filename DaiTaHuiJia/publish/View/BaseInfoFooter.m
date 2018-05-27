@@ -38,6 +38,11 @@
     return self;
 }
 
+- (void)setTitle:(NSString *)title placeHolder:(NSString *)holder{
+    _titleLabel.text = title;
+    _textView.placeHolderLabel.text = holder;
+}
+
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
         UILabel *label = [[UILabel alloc] init];

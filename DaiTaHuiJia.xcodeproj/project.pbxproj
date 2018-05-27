@@ -18,6 +18,14 @@
 		9F337BD820B9A43800F91EBC /* BaseInfoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BD720B9A43800F91EBC /* BaseInfoFooter.m */; };
 		9F337BDE20B9A4E200F91EBC /* BYLimitTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BDD20B9A4E200F91EBC /* BYLimitTextView.m */; };
 		9F337BE120B9B5E300F91EBC /* LostorHealthInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BE020B9B5E300F91EBC /* LostorHealthInfoViewController.m */; };
+		9F337BE420BA805600F91EBC /* HealthInfoHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BE320BA805600F91EBC /* HealthInfoHeader.m */; };
+		9F337BE720BA88A300F91EBC /* HealthTagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BE620BA88A300F91EBC /* HealthTagTableViewCell.m */; };
+		9F337BEA20BA8C2100F91EBC /* HealthTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BE920BA8C2100F91EBC /* HealthTagCell.m */; };
+		9F337BEE20BA9F8300F91EBC /* HealthTagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BED20BA9F8300F91EBC /* HealthTagModel.m */; };
+		9F337BF220BAA09E00F91EBC /* HealthTagViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BF120BAA09E00F91EBC /* HealthTagViewModel.m */; };
+		9F337BF520BAAAB900F91EBC /* LostorLostInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BF420BAAAB900F91EBC /* LostorLostInfoViewController.m */; };
+		9F337BFA20BB056500F91EBC /* LostorBaseInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BF920BB056500F91EBC /* LostorBaseInfoViewModel.m */; };
+		9F337BFD20BB177600F91EBC /* DatePickerPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F337BFC20BB177600F91EBC /* DatePickerPopView.m */; };
 		9F3FF75920679B6B006DBA49 /* UIColor+UIColor_Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */; };
 		9F3FF75C20679F59006DBA49 /* FunctionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75B20679F59006DBA49 /* FunctionTableViewCell.m */; };
 		9F3FF75F2067D13C006DBA49 /* UserBriefTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF75E2067D13C006DBA49 /* UserBriefTableViewCell.m */; };
@@ -105,6 +113,22 @@
 		9F337BDD20B9A4E200F91EBC /* BYLimitTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYLimitTextView.m; sourceTree = "<group>"; };
 		9F337BDF20B9B5E300F91EBC /* LostorHealthInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostorHealthInfoViewController.h; sourceTree = "<group>"; };
 		9F337BE020B9B5E300F91EBC /* LostorHealthInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostorHealthInfoViewController.m; sourceTree = "<group>"; };
+		9F337BE220BA805600F91EBC /* HealthInfoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthInfoHeader.h; sourceTree = "<group>"; };
+		9F337BE320BA805600F91EBC /* HealthInfoHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthInfoHeader.m; sourceTree = "<group>"; };
+		9F337BE520BA88A300F91EBC /* HealthTagTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthTagTableViewCell.h; sourceTree = "<group>"; };
+		9F337BE620BA88A300F91EBC /* HealthTagTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthTagTableViewCell.m; sourceTree = "<group>"; };
+		9F337BE820BA8C2100F91EBC /* HealthTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthTagCell.h; sourceTree = "<group>"; };
+		9F337BE920BA8C2100F91EBC /* HealthTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthTagCell.m; sourceTree = "<group>"; };
+		9F337BEC20BA9F8300F91EBC /* HealthTagModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthTagModel.h; sourceTree = "<group>"; };
+		9F337BED20BA9F8300F91EBC /* HealthTagModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthTagModel.m; sourceTree = "<group>"; };
+		9F337BF020BAA09E00F91EBC /* HealthTagViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthTagViewModel.h; sourceTree = "<group>"; };
+		9F337BF120BAA09E00F91EBC /* HealthTagViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthTagViewModel.m; sourceTree = "<group>"; };
+		9F337BF320BAAAB900F91EBC /* LostorLostInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostorLostInfoViewController.h; sourceTree = "<group>"; };
+		9F337BF420BAAAB900F91EBC /* LostorLostInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostorLostInfoViewController.m; sourceTree = "<group>"; };
+		9F337BF820BB056500F91EBC /* LostorBaseInfoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostorBaseInfoViewModel.h; sourceTree = "<group>"; };
+		9F337BF920BB056500F91EBC /* LostorBaseInfoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostorBaseInfoViewModel.m; sourceTree = "<group>"; };
+		9F337BFB20BB177600F91EBC /* DatePickerPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatePickerPopView.h; sourceTree = "<group>"; };
+		9F337BFC20BB177600F91EBC /* DatePickerPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatePickerPopView.m; sourceTree = "<group>"; };
 		9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColor_Hex.m"; sourceTree = "<group>"; };
 		9F3FF75820679B6B006DBA49 /* UIColor+UIColor_Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColor_Hex.h"; sourceTree = "<group>"; };
 		9F3FF75A20679F59006DBA49 /* FunctionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionTableViewCell.h; sourceTree = "<group>"; };
@@ -319,6 +343,26 @@
 				9F337BDD20B9A4E200F91EBC /* BYLimitTextView.m */,
 			);
 			path = BYLimitTextView;
+			sourceTree = "<group>";
+		};
+		9F337BEB20BA9F6F00F91EBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9F337BEC20BA9F8300F91EBC /* HealthTagModel.h */,
+				9F337BED20BA9F8300F91EBC /* HealthTagModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9F337BEF20BAA07600F91EBC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9F337BF020BAA09E00F91EBC /* HealthTagViewModel.h */,
+				9F337BF120BAA09E00F91EBC /* HealthTagViewModel.m */,
+				9F337BF820BB056500F91EBC /* LostorBaseInfoViewModel.h */,
+				9F337BF920BB056500F91EBC /* LostorBaseInfoViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9F3FF74E206793BB006DBA49 /* View */ = {
@@ -553,6 +597,8 @@
 		9FFC18452066501000CCAEC3 /* publish */ = {
 			isa = PBXGroup;
 			children = (
+				9F337BEF20BAA07600F91EBC /* ViewModel */,
+				9F337BEB20BA9F6F00F91EBC /* Model */,
 				9FFC184A2066A5F700CCAEC3 /* Controller */,
 				9FFC18462066501C00CCAEC3 /* View */,
 			);
@@ -570,6 +616,14 @@
 				9F337BD720B9A43800F91EBC /* BaseInfoFooter.m */,
 				9F337BD320B9909A00F91EBC /* ContentFillTableViewCell.h */,
 				9F337BD420B9909A00F91EBC /* ContentFillTableViewCell.m */,
+				9F337BE220BA805600F91EBC /* HealthInfoHeader.h */,
+				9F337BE320BA805600F91EBC /* HealthInfoHeader.m */,
+				9F337BE520BA88A300F91EBC /* HealthTagTableViewCell.h */,
+				9F337BE620BA88A300F91EBC /* HealthTagTableViewCell.m */,
+				9F337BE820BA8C2100F91EBC /* HealthTagCell.h */,
+				9F337BE920BA8C2100F91EBC /* HealthTagCell.m */,
+				9F337BFB20BB177600F91EBC /* DatePickerPopView.h */,
+				9F337BFC20BB177600F91EBC /* DatePickerPopView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -585,6 +639,8 @@
 				9F337BCE20B95ACA00F91EBC /* LostorBaseInfoViewController.m */,
 				9F337BDF20B9B5E300F91EBC /* LostorHealthInfoViewController.h */,
 				9F337BE020B9B5E300F91EBC /* LostorHealthInfoViewController.m */,
+				9F337BF320BAAAB900F91EBC /* LostorLostInfoViewController.h */,
+				9F337BF420BAAAB900F91EBC /* LostorLostInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -728,9 +784,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DaiTaHuiJia/Pods-DaiTaHuiJia-resources.sh",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -745,19 +804,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FDA92BA2078E0910086C583 /* UITableViewCell+BottomLine.m in Sources */,
+				9F337BEE20BA9F8300F91EBC /* HealthTagModel.m in Sources */,
+				9F337BFA20BB056500F91EBC /* LostorBaseInfoViewModel.m in Sources */,
 				9FFC18492066504000CCAEC3 /* PublishItemView.m in Sources */,
 				9F6605732090505F00E829CA /* VerifyCodeFlowView.m in Sources */,
 				9F66057C20907D9D00E829CA /* UploadImageView.m in Sources */,
+				9F337BEA20BA8C2100F91EBC /* HealthTagCell.m in Sources */,
 				9FC44613208DB3EF009BF75E /* BYTagCollectionViewCell.m in Sources */,
 				9F66057920906B8500E829CA /* PersonalInfoFlowView.m in Sources */,
 				9FDA92BD2078F3390086C583 /* BottomOperateTableViewCell.m in Sources */,
 				9F828EEC2070B6D300E440F2 /* DataListViewController.m in Sources */,
 				9F337BCF20B95ACA00F91EBC /* LostorBaseInfoViewController.m in Sources */,
+				9F337BF220BAA09E00F91EBC /* HealthTagViewModel.m in Sources */,
 				9FFC184E2066A62500CCAEC3 /* ChoosePublishViewController.m in Sources */,
 				9FFC18532066C9F800CCAEC3 /* MainPageViewController.m in Sources */,
 				9FDA92B32078C6860086C583 /* TitleTableViewCell.m in Sources */,
 				9FC44612208DB3EF009BF75E /* BYTagsView.m in Sources */,
 				9FC445F12089CF40009BF75E /* PraiseButton.m in Sources */,
+				9F337BFD20BB177600F91EBC /* DatePickerPopView.m in Sources */,
 				9FC44620208DE9D1009BF75E /* SearchCollectionHeaderView.m in Sources */,
 				9F660556208F14F400E829CA /* LoginViewController.m in Sources */,
 				9FFC18562066CA0500CCAEC3 /* MineViewController.m in Sources */,
@@ -778,6 +842,7 @@
 				9FC4460A208CCC54009BF75E /* ChoosePublishView.m in Sources */,
 				9F2713F620774E5F000FC8E5 /* MainCollectionViewCell.m in Sources */,
 				9FC445F52089DB14009BF75E /* BYBasePopView.m in Sources */,
+				9F337BF520BAAAB900F91EBC /* LostorLostInfoViewController.m in Sources */,
 				9F660570208F8DF800E829CA /* RegisteMobileFlowView.m in Sources */,
 				9FCA49352081D8CC008DF13F /* CommentTableViewCell.m in Sources */,
 				9F2713FC20779AD4000FC8E5 /* LostorDetaiViewController.m in Sources */,
@@ -806,12 +871,14 @@
 				9FCA4944208216EA008DF13F /* BYDialogBox.m in Sources */,
 				9FCA493E2082014A008DF13F /* BYStarButton.m in Sources */,
 				9F3FF75920679B6B006DBA49 /* UIColor+UIColor_Hex.m in Sources */,
+				9F337BE420BA805600F91EBC /* HealthInfoHeader.m in Sources */,
 				9FCA493D2082014A008DF13F /* BYEvaluateStar.m in Sources */,
 				9FFC181B205E637100CCAEC3 /* AppDelegate.m in Sources */,
 				9F337BD220B9698D00F91EBC /* BaseInfoHeader.m in Sources */,
 				9F3FF75F2067D13C006DBA49 /* UserBriefTableViewCell.m in Sources */,
 				9F337BDE20B9A4E200F91EBC /* BYLimitTextView.m in Sources */,
 				9F337BE120B9B5E300F91EBC /* LostorHealthInfoViewController.m in Sources */,
+				9F337BE720BA88A300F91EBC /* HealthTagTableViewCell.m in Sources */,
 				9FFC1835205E66FB00CCAEC3 /* BaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

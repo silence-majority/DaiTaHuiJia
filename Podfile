@@ -10,4 +10,5 @@ target 'DaiTaHuiJia' do
   pod 'SDWebImage'
   pod 'AFNetworking'
   pod 'ReactiveCocoa', '~> 2.3.0'
+  pod 'TZImagePickerController'
 end

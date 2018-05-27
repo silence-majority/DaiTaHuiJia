@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseInfoFooter : UIView
-
+- (void)setTitle:(NSString *)title placeHolder:(NSString *)holder;
 @end
