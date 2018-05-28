@@ -49,6 +49,15 @@
 		9F8657272095CFEC00A94728 /* LostBriefModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8657262095CFEC00A94728 /* LostBriefModel.m */; };
 		9F86572A209600F000A94728 /* ClueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F865729209600F000A94728 /* ClueModel.m */; };
 		9F86572D20960D1700A94728 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F86572C20960D1700A94728 /* CommentModel.m */; };
+		9FB8727E20BC2A93002512AC /* GenderPickerPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8727D20BC2A93002512AC /* GenderPickerPopView.m */; };
+		9FB8728320BC348C002512AC /* NSDictionary+ValueForKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8728220BC348C002512AC /* NSDictionary+ValueForKey.m */; };
+		9FB8728820BC3D75002512AC /* regionOfThreeLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FB8728520BC3D75002512AC /* regionOfThreeLevel.plist */; };
+		9FB8728920BC3D75002512AC /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FB8728620BC3D75002512AC /* citydict.plist */; };
+		9FB8728A20BC3D75002512AC /* regionGroupByThreeLevelUseOringinType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FB8728720BC3D75002512AC /* regionGroupByThreeLevelUseOringinType.plist */; };
+		9FB8728D20BC3ECE002512AC /* RegionPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8728C20BC3ECE002512AC /* RegionPickerView.m */; };
+		9FB8729620BC473E002512AC /* DistrictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8729520BC473E002512AC /* DistrictModel.m */; };
+		9FB8729920BC474C002512AC /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8729820BC474C002512AC /* CityModel.m */; };
+		9FB8729C20BC475B002512AC /* ProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8729B20BC475B002512AC /* ProvinceModel.m */; };
 		9FC445EE2089CEE4009BF75E /* FireworksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445ED2089CEE4009BF75E /* FireworksView.m */; };
 		9FC445F12089CF40009BF75E /* PraiseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F02089CF40009BF75E /* PraiseButton.m */; };
 		9FC445F52089DB14009BF75E /* BYBasePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F42089DB14009BF75E /* BYBasePopView.m */; };
@@ -175,6 +184,21 @@
 		9F865729209600F000A94728 /* ClueModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClueModel.m; sourceTree = "<group>"; };
 		9F86572B20960D1700A94728 /* CommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
 		9F86572C20960D1700A94728 /* CommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		9FB8727C20BC2A93002512AC /* GenderPickerPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GenderPickerPopView.h; sourceTree = "<group>"; };
+		9FB8727D20BC2A93002512AC /* GenderPickerPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenderPickerPopView.m; sourceTree = "<group>"; };
+		9FB8728120BC348C002512AC /* NSDictionary+ValueForKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ValueForKey.h"; sourceTree = "<group>"; };
+		9FB8728220BC348C002512AC /* NSDictionary+ValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ValueForKey.m"; sourceTree = "<group>"; };
+		9FB8728520BC3D75002512AC /* regionOfThreeLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = regionOfThreeLevel.plist; sourceTree = "<group>"; };
+		9FB8728620BC3D75002512AC /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict.plist; sourceTree = "<group>"; };
+		9FB8728720BC3D75002512AC /* regionGroupByThreeLevelUseOringinType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = regionGroupByThreeLevelUseOringinType.plist; sourceTree = "<group>"; };
+		9FB8728B20BC3ECE002512AC /* RegionPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegionPickerView.h; sourceTree = "<group>"; };
+		9FB8728C20BC3ECE002512AC /* RegionPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegionPickerView.m; sourceTree = "<group>"; };
+		9FB8729420BC473E002512AC /* DistrictModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DistrictModel.h; sourceTree = "<group>"; };
+		9FB8729520BC473E002512AC /* DistrictModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DistrictModel.m; sourceTree = "<group>"; };
+		9FB8729720BC474C002512AC /* CityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityModel.h; sourceTree = "<group>"; };
+		9FB8729820BC474C002512AC /* CityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
+		9FB8729A20BC475B002512AC /* ProvinceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProvinceModel.h; sourceTree = "<group>"; };
+		9FB8729B20BC475B002512AC /* ProvinceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProvinceModel.m; sourceTree = "<group>"; };
 		9FC445EC2089CEE4009BF75E /* FireworksView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FireworksView.h; sourceTree = "<group>"; };
 		9FC445ED2089CEE4009BF75E /* FireworksView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FireworksView.m; sourceTree = "<group>"; };
 		9FC445EF2089CF40009BF75E /* PraiseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PraiseButton.h; sourceTree = "<group>"; };
@@ -450,6 +474,22 @@
 			path = BYSegement;
 			sourceTree = "<group>";
 		};
+		9FB8728420BC3D5F002512AC /* Region */ = {
+			isa = PBXGroup;
+			children = (
+				9FB8728620BC3D75002512AC /* citydict.plist */,
+				9FB8728720BC3D75002512AC /* regionGroupByThreeLevelUseOringinType.plist */,
+				9FB8728520BC3D75002512AC /* regionOfThreeLevel.plist */,
+				9FB8729420BC473E002512AC /* DistrictModel.h */,
+				9FB8729520BC473E002512AC /* DistrictModel.m */,
+				9FB8729720BC474C002512AC /* CityModel.h */,
+				9FB8729820BC474C002512AC /* CityModel.m */,
+				9FB8729A20BC475B002512AC /* ProvinceModel.h */,
+				9FB8729B20BC475B002512AC /* ProvinceModel.m */,
+			);
+			path = Region;
+			sourceTree = "<group>";
+		};
 		9FC445EB2089CEBB009BF75E /* FireworksView */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +573,7 @@
 		9FFC1818205E637100CCAEC3 /* DaiTaHuiJia */ = {
 			isa = PBXGroup;
 			children = (
+				9FB8728420BC3D5F002512AC /* Region */,
 				9F660550208F14B800E829CA /* RegistAndLogin */,
 				9FFC18502066C9E200CCAEC3 /* Mine */,
 				9FFC184F2066C9D300CCAEC3 /* MainPage */,
@@ -586,6 +627,8 @@
 		9FFC1839205E672200CCAEC3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9FB8728120BC348C002512AC /* NSDictionary+ValueForKey.h */,
+				9FB8728220BC348C002512AC /* NSDictionary+ValueForKey.m */,
 				9F3FF75820679B6B006DBA49 /* UIColor+UIColor_Hex.h */,
 				9F3FF75720679B6B006DBA49 /* UIColor+UIColor_Hex.m */,
 				9FDA92B82078E0910086C583 /* UITableViewCell+BottomLine.h */,
@@ -624,6 +667,10 @@
 				9F337BE920BA8C2100F91EBC /* HealthTagCell.m */,
 				9F337BFB20BB177600F91EBC /* DatePickerPopView.h */,
 				9F337BFC20BB177600F91EBC /* DatePickerPopView.m */,
+				9FB8727C20BC2A93002512AC /* GenderPickerPopView.h */,
+				9FB8727D20BC2A93002512AC /* GenderPickerPopView.m */,
+				9FB8728B20BC3ECE002512AC /* RegionPickerView.h */,
+				9FB8728C20BC3ECE002512AC /* RegionPickerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -736,9 +783,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB8728920BC3D75002512AC /* citydict.plist in Resources */,
 				9FFC1826205E637100CCAEC3 /* LaunchScreen.storyboard in Resources */,
 				9FFC1823205E637100CCAEC3 /* Assets.xcassets in Resources */,
 				9FFC1821205E637100CCAEC3 /* Main.storyboard in Resources */,
+				9FB8728A20BC3D75002512AC /* regionGroupByThreeLevelUseOringinType.plist in Resources */,
+				9FB8728820BC3D75002512AC /* regionOfThreeLevel.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,7 +864,9 @@
 				9F66057920906B8500E829CA /* PersonalInfoFlowView.m in Sources */,
 				9FDA92BD2078F3390086C583 /* BottomOperateTableViewCell.m in Sources */,
 				9F828EEC2070B6D300E440F2 /* DataListViewController.m in Sources */,
+				9FB8729C20BC475B002512AC /* ProvinceModel.m in Sources */,
 				9F337BCF20B95ACA00F91EBC /* LostorBaseInfoViewController.m in Sources */,
+				9FB8729620BC473E002512AC /* DistrictModel.m in Sources */,
 				9F337BF220BAA09E00F91EBC /* HealthTagViewModel.m in Sources */,
 				9FFC184E2066A62500CCAEC3 /* ChoosePublishViewController.m in Sources */,
 				9FFC18532066C9F800CCAEC3 /* MainPageViewController.m in Sources */,
@@ -826,6 +878,7 @@
 				9F660556208F14F400E829CA /* LoginViewController.m in Sources */,
 				9FFC18562066CA0500CCAEC3 /* MineViewController.m in Sources */,
 				9FC44603208C3387009BF75E /* FocusTipView.m in Sources */,
+				9FB8728320BC348C002512AC /* NSDictionary+ValueForKey.m in Sources */,
 				9F6605762090616D00E829CA /* SetPasswordFlowView.m in Sources */,
 				9F828EE8206FF6E700E440F2 /* BYSegmentBadgeButton.m in Sources */,
 				9F660567208F7FB600E829CA /* RegisteFlowViewController.m in Sources */,
@@ -838,13 +891,16 @@
 				9F660561208F635600E829CA /* VerifyCodeViewController.m in Sources */,
 				9F660559208F574D00E829CA /* LoginViewModel.m in Sources */,
 				9FC44607208C65B7009BF75E /* LostorDetailViewModel.m in Sources */,
+				9FB8727E20BC2A93002512AC /* GenderPickerPopView.m in Sources */,
 				9FDA92B62078CAD30086C583 /* ClueChainTableViewCell.m in Sources */,
 				9FC4460A208CCC54009BF75E /* ChoosePublishView.m in Sources */,
 				9F2713F620774E5F000FC8E5 /* MainCollectionViewCell.m in Sources */,
 				9FC445F52089DB14009BF75E /* BYBasePopView.m in Sources */,
 				9F337BF520BAAAB900F91EBC /* LostorLostInfoViewController.m in Sources */,
+				9FB8728D20BC3ECE002512AC /* RegionPickerView.m in Sources */,
 				9F660570208F8DF800E829CA /* RegisteMobileFlowView.m in Sources */,
 				9FCA49352081D8CC008DF13F /* CommentTableViewCell.m in Sources */,
+				9FB8729920BC474C002512AC /* CityModel.m in Sources */,
 				9F2713FC20779AD4000FC8E5 /* LostorDetaiViewController.m in Sources */,
 				9FFC1832205E66CA00CCAEC3 /* BaseTabBarController.m in Sources */,
 				9F66057F2090A1CE00E829CA /* AuthFlowView.m in Sources */,

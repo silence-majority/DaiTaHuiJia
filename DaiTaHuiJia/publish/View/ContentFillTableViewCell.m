@@ -52,6 +52,19 @@
     return self;
 }
 
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    switch (_fillStyle) {
+        case ContentFillTableViewCellStyleInput:
+            self.textField.hidden = false;
+            break;
+    
+        case ContentFillTableViewCellStylePick:
+            self.textField.hidden = true;
+            break;
+    }
+}
+
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
         UILabel *label = [[UILabel alloc] init];
@@ -79,6 +92,7 @@
         [textField addTarget:self action:@selector(textFieldDidChanged) forControlEvents:UIControlEventEditingChanged];
         textField.textAlignment = NSTextAlignmentRight;
         textField.textColor = [UIColor colorWithHexString:@"0x373937"];
+        textField.font = [UIFont systemFontOfSize:14];
         _textField = textField;
     }
     return _textField;
@@ -94,6 +108,16 @@
         if (!_indicateLabel.hidden) {
             _indicateLabel.hidden = true;
         }
+    }
+}
+
+- (void)setDescribeText:(NSString *)describeText{
+    if ([describeText isEqualToString:@""]) {
+        _indicateLabel.textColor =  [UIColor colorWithHexString:@"0x373937"];
+        _indicateLabel.text = @"请选择";
+    } else {
+        _indicateLabel.textColor = [UIColor colorWithHexString:@"0x101110"];
+        _indicateLabel.text = describeText;
     }
 }
 

@@ -19,6 +19,9 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "TZImagePickerController/TZImagePickerController.h"
 #import "DatePickerPopView.h"
+#import "GenderPickerPopView.h"
+#import "NSDictionary+ValueForKey.h"
+#import "RegionPickerView.h"
 @interface LostorBaseInfoViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,TZImagePickerControllerDelegate>
 @property (nonatomic,strong) LostorBaseInfoViewModel *viewModel;
 @property (nonatomic,strong) UITableView *tableView;
@@ -108,32 +111,64 @@
     if (indexPath.row == 0){
         cell.titleLabel.text = @"姓名";
         cell.indicateLabel.text = @"请填写";
+        cell.fillStyle = ContentFillTableViewCellStyleInput;
     } else if (indexPath.row == 1){
         cell.titleLabel.text = @"性别";
         cell.indicateLabel.text = @"请选择";
+        cell.fillStyle = ContentFillTableViewCellStylePick;
     } else if (indexPath.row == 2){
         cell.titleLabel.text = @"出生日期";
         cell.indicateLabel.text = @"请选择";
+        cell.fillStyle = ContentFillTableViewCellStylePick;
     } else if (indexPath.row == 3){
         cell.titleLabel.text = @"身份证号";
         cell.indicateLabel.text = @"请填写";
+        cell.fillStyle = ContentFillTableViewCellStyleInput;
     } else if (indexPath.row == 4){
         cell.titleLabel.text = @"区县";
         cell.indicateLabel.text = @"请选择";
+        cell.fillStyle = ContentFillTableViewCellStylePick;
     } else {
         cell.titleLabel.text = @"详细地址";
         cell.indicateLabel.text = @"请填写";
+        cell.fillStyle = ContentFillTableViewCellStyleInput;
     }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    ContentFillTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    [cell.textField becomeFirstResponder];
+    ContentFillTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (cell.fillStyle == ContentFillTableViewCellStyleInput) {
+        [cell.textField becomeFirstResponder];
+    }
+    if (indexPath.row == 1) {
+        GenderPickerPopView *popView = [[GenderPickerPopView alloc] init];
+        [[UIApplication sharedApplication].keyWindow addSubview:popView];
+        [popView setEventBlock:^(NSInteger eventId, NSDictionary *eventParamDic) {
+            if (eventId == 1) {
+                UserGender gender = [[eventParamDic numberOrNilForKey:@"gender"] integerValue];
+                cell.describeText = gender == UserGenderMale ? @"男" : @"女";
+            }
+        }];
+    }
     if (indexPath.row == 2) {
         DatePickerPopView *popView = [[DatePickerPopView alloc] init];
         [[UIApplication sharedApplication].keyWindow addSubview:popView];
+        [popView setEventBlock:^(NSInteger eventId, NSDictionary *eventParamDic) {
+            if (eventId == 1) {
+                cell.describeText = [eventParamDic stringOrNilForKey:@"dateText"];
+            }
+        }];
+    }
+    if (indexPath.row == 4) {
+        RegionPickerView *popView = [[RegionPickerView alloc] init];
+        [[UIApplication sharedApplication].keyWindow addSubview:popView];
+        [popView setEventBlock:^(NSInteger eventId, NSDictionary *eventParamDic) {
+            if (eventId == 1) {
+                cell.describeText = [eventParamDic stringOrNilForKey:@"regionName"];
+            }
+        }];
     }
 }
 
@@ -207,7 +242,6 @@
     if ([type isEqualToString:@"public.image"]) {
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
         self.viewModel.portrait = image;
-        
     }
     [picker dismissViewControllerAnimated:true completion:nil];
 }

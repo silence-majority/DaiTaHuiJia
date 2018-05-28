@@ -1,24 +1,24 @@
 //
-//  DatePickerPopView.m
+//  GenderPickerPopView.m
 //  DaiTaHuiJia
 //
 //  Created by 徐小平 on 2018/5/28.
 //  Copyright © 2018年 徐谦. All rights reserved.
 //
 
-#import "DatePickerPopView.h"
+#import "GenderPickerPopView.h"
 #import <Masonry/Masonry.h>
-@interface DatePickerPopView()
+@interface GenderPickerPopView()<UIPickerViewDelegate,UIPickerViewDataSource>
 @property (nonatomic,strong) UIView *contentView;
-@property (nonatomic,strong) UIDatePicker *datePicker;
+@property (nonatomic,strong) UIPickerView *pickerView;
 @property (nonatomic,strong) UIButton *cancelButton;
 @property (nonatomic,strong) UIButton *sureButton;
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UIView *operateView;
-@property (nonatomic,strong) NSDateFormatter *formatter;
+@property (nonatomic,assign) UserGender gender;
 @end
 
-@implementation DatePickerPopView
+@implementation GenderPickerPopView
 
 - (instancetype)init{
     if (self = [super init]) {
@@ -30,10 +30,11 @@
             make.height.mas_equalTo(260);
         }];
         
-        [_contentView addSubview:self.datePicker];
-        [_datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_contentView addSubview:self.pickerView];
+        [_pickerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.offset(0);
             make.centerX.offset(0);
-            make.top.offset(60);
+            make.top.offset(70);
             make.bottom.offset(-20);
         }];
         
@@ -42,7 +43,7 @@
             make.top.offset(0);
             make.left.offset(0);
             make.right.offset(0);
-            make.height.offset(40);
+            make.height.offset(50);
         }];
         
         [_operateView addSubview:self.cancelButton];
@@ -71,10 +72,11 @@
                 
             }
         }];
+        
+        [_cancelButton addTarget:self action:@selector(dismissPopView) forControlEvents:UIControlEventTouchUpInside];
+        [_sureButton addTarget:self action:@selector(sureButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
-    _titleLabel.text = @"请选择出生日期";
-    [_cancelButton addTarget:self action:@selector(dismissPopView) forControlEvents:UIControlEventTouchUpInside];
-    [_sureButton addTarget:self action:@selector(sureButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    _titleLabel.text = @"请选择性别";
     return self;
 }
 
@@ -87,14 +89,14 @@
     return _contentView;
 }
 
-- (UIDatePicker *)datePicker{
-    if (!_datePicker) {
-        UIDatePicker *datePicker = [[UIDatePicker alloc] init];
-        datePicker.datePickerMode = UIDatePickerModeDate;
-        datePicker.maximumDate = [NSDate date];
-        _datePicker = datePicker;
+- (UIPickerView *)pickerView{
+    if (!_pickerView) {
+        UIPickerView *pickerView = [[UIPickerView alloc] init];
+        pickerView.delegate = self;
+        pickerView.dataSource = self;
+        _pickerView = pickerView;
     }
-    return _datePicker;
+    return _pickerView;
 }
 
 - (UIView *)operateView {
@@ -139,20 +141,31 @@
     return _titleLabel;
 }
 
-- (void)sureButtonAction{
-    if(!_formatter){
-        _formatter = [[NSDateFormatter alloc] init];
-        _formatter.dateFormat = @"YYYY-MM-dd";
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return 2;
+}
+
+- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    if (row == 0) {
+        return @"男";
+    } else {
+        return @"女";
     }
-    NSString *dateText = [_formatter stringFromDate:_datePicker.date];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    _gender = row;
+}
+
+- (void)sureButtonAction{
     if (self.eventBlock) {
-        self.eventBlock(1, @{@"date"    :_datePicker.date,
-                             @"dateText":dateText
-                             });
+        self.eventBlock(1, @{@"gender":@(_gender)});
     }
     [self dismissPopView];
 }
-
-
 
 @end
