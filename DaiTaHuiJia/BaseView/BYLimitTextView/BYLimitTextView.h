@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol BYLimitTextViewDelegate
+@protocol BYLimitTextViewDelegate <NSObject>
+@optional
 - (void)limitTextViewDidBeginEdit;
 - (void)limitTextViewDidEndEdit;
 @end

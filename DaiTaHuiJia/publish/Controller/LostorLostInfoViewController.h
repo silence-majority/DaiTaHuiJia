@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import "LostorBaseInfoViewModel.h"
+
 @interface LostorLostInfoViewController : BaseViewController
-@property (nonatomic,strong) LostorBaseInfoViewModel *viewModel;
+
 @end

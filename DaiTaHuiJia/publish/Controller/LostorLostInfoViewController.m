@@ -15,16 +15,19 @@
 #import "GenderPickerPopView.h"
 #import "NSDictionary+ValueForKey.h"
 #import "RegionPickerView.h"
+#import "PublishManager.h"
 @interface LostorLostInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) BaseInfoHeader *tableHeader;
 @property (nonatomic,strong) BaseInfoFooter *tableFooter;
+@property (nonatomic,strong) LostInfoModel *lostInfo;
 @end
 
 @implementation LostorLostInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _lostInfo = [PublishManager sharedService].lostorModel.lostInfoModel;
     self.navTitle = @"完善信息（3/3）";
     [self.view addSubview:self.tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -65,7 +68,7 @@
         [_tableFooter setTitle:@"其他描述" placeHolder:@"请输入有关他走失的额外信息，请不要在这里透漏个人信息，以免被不法分子利用"];
         __weak typeof(self) weakSelf = self;
         [_tableFooter setInputFinished:^(NSString *text) {
-            weakSelf.viewModel.lostInfoModel.describe = text;
+            weakSelf.lostInfo.describe = text;
         }];
         tableView.tableFooterView = _tableFooter;
         _tableView = tableView;
@@ -86,24 +89,24 @@
     if (indexPath.row == 0){
         cell.titleLabel.text = @"走失日期";
         cell.fillStyle = ContentFillTableViewCellStylePick;
-        if (self.viewModel.lostInfoModel.lostDate) {
-            cell.describeText = self.viewModel.lostInfoModel.lostDate;
+        if (self.lostInfo.lostDate) {
+            cell.describeText = self.lostInfo.lostDate;
         } else {
             cell.indicateLabel.text = @"请选择";
         }
     } else if (indexPath.row == 1){
         cell.titleLabel.text = @"走失区县";
         cell.fillStyle = ContentFillTableViewCellStylePick;
-        if (self.viewModel.lostInfoModel.district) {
-            cell.describeText = self.viewModel.lostInfoModel.district;
+        if (self.lostInfo.district) {
+            cell.describeText = self.lostInfo.district;
         } else {
             cell.indicateLabel.text = @"请选择";
         }
     } else {
         cell.titleLabel.text = @"走失详细地址";
         cell.fillStyle = ContentFillTableViewCellStyleInput;
-        if (self.viewModel.lostInfoModel.address) {
-            cell.describeText = self.viewModel.lostInfoModel.address;
+        if (self.lostInfo.address) {
+            cell.describeText = self.lostInfo.address;
         } else {
             cell.indicateLabel.text = @"请输入";
         }
@@ -126,7 +129,7 @@
         [popView setEventBlock:^(NSInteger eventId, NSDictionary *eventParamDic) {
             if (eventId == 1) {
                 cell.describeText = [eventParamDic stringOrNilForKey:@"dateText"];
-                weakSelf.viewModel.lostInfoModel.lostDate = [eventParamDic stringOrNilForKey:@"dateText"];
+                weakSelf.lostInfo.lostDate = [eventParamDic stringOrNilForKey:@"dateText"];
             }
         }];
     }
@@ -136,7 +139,7 @@
         [popView setEventBlock:^(NSInteger eventId, NSDictionary *eventParamDic) {
             if (eventId == 1) {
                 cell.describeText = [eventParamDic stringOrNilForKey:@"regionName"];
-                weakSelf.viewModel.lostInfoModel.district = [eventParamDic stringOrNilForKey:@"regionName"];
+                weakSelf.lostInfo.district = [eventParamDic stringOrNilForKey:@"regionName"];
             }
         }];
     }

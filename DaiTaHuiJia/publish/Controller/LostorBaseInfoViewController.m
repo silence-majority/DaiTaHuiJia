@@ -58,13 +58,13 @@
 
 - (void)bindViewModel{
     __weak typeof(self) weakSelf = self;
-    [RACObserve(self.viewModel.lostDetailModel, portrait) subscribeNext:^(UIImage *image) {
+    [RACObserve(self.detailModel, portrait) subscribeNext:^(UIImage *image) {
         if (image) {
             weakSelf.tableHeader.imageView.image = image;
         }
     }];
     
-    [RACObserve(self.viewModel.lostDetailModel, photos) subscribeNext:^(NSArray <UIImage *> *photos) {
+    [RACObserve(self.detailModel, photos) subscribeNext:^(NSArray <UIImage *> *photos) {
         if (photos) {
             weakSelf.tableFooter.imagesList = photos;
         }
@@ -127,60 +127,60 @@
     ContentFillTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ContentFillTableViewCellId" forIndexPath:indexPath];
     if (indexPath.row == 0){
         cell.titleLabel.text = @"姓名";
-        if (self.viewModel.lostDetailModel.name) {
-            cell.describeText = self.viewModel.lostDetailModel.name;
+        if (self.detailModel.name) {
+            cell.describeText = self.detailModel.name;
         } else {
             cell.indicateLabel.text = @"请填写";
         }
         cell.fillStyle = ContentFillTableViewCellStyleInput;
         [cell setInputFinshed:^(NSString *text) {
-            weakSelf.viewModel.lostDetailModel.name = text;
+            weakSelf.detailModel.name = text;
         }];
     } else if (indexPath.row == 1){
         cell.titleLabel.text = @"性别";
-        if (self.viewModel.lostDetailModel.gender) {
-            cell.describeText = self.viewModel.lostDetailModel.gender;
+        if (self.detailModel.gender) {
+            cell.describeText = self.detailModel.gender;
         } else {
             cell.indicateLabel.text = @"请选择";
         }
         cell.fillStyle = ContentFillTableViewCellStylePick;
     } else if (indexPath.row == 2){
         cell.titleLabel.text = @"出生日期";
-        if (self.viewModel.lostDetailModel.birthDay) {
-            cell.describeText = self.viewModel.lostDetailModel.birthDay;
+        if (self.detailModel.birthDay) {
+            cell.describeText = self.detailModel.birthDay;
         } else {
             cell.indicateLabel.text = @"请选择";
         }
         cell.fillStyle = ContentFillTableViewCellStylePick;
     } else if (indexPath.row == 3){
         cell.titleLabel.text = @"身份证号";
-        if (self.viewModel.lostDetailModel.IDNumber) {
-            cell.describeText = self.viewModel.lostDetailModel.IDNumber;
+        if (self.detailModel.IDNumber) {
+            cell.describeText = self.detailModel.IDNumber;
         } else {
             cell.indicateLabel.text = @"请填写";
         }
         cell.fillStyle = ContentFillTableViewCellStyleInput;
         [cell setInputFinshed:^(NSString *text) {
-            weakSelf.viewModel.lostDetailModel.IDNumber = text;
+            weakSelf.detailModel.IDNumber = text;
         }];
     } else if (indexPath.row == 4){
         cell.titleLabel.text = @"区县";
-        if (self.viewModel.lostDetailModel.district) {
-            cell.describeText = self.viewModel.lostDetailModel.district;
+        if (self.detailModel.district) {
+            cell.describeText = self.detailModel.district;
         } else {
             cell.indicateLabel.text = @"请选择";
         }
         cell.fillStyle = ContentFillTableViewCellStylePick;
     } else {
         cell.titleLabel.text = @"详细地址";
-        if (self.viewModel.lostDetailModel.address) {
-            cell.describeText = self.viewModel.lostDetailModel.address;
+        if (self.detailModel.address) {
+            cell.describeText = self.detailModel.address;
         } else {
             cell.indicateLabel.text = @"请填写";
         }
         cell.fillStyle = ContentFillTableViewCellStyleInput;
         [cell setInputFinshed:^(NSString *text) {
-            weakSelf.viewModel.lostDetailModel.address = text;
+            weakSelf.detailModel.address = text;
         }];
     }
     
@@ -202,7 +202,7 @@
             if (eventId == 1) {
                 UserGender gender = [[eventParamDic numberOrNilForKey:@"gender"] integerValue];
                 cell.describeText = gender == UserGenderMale ? @"男" : @"女";
-                weakSelf.viewModel.lostDetailModel.gender = gender == UserGenderMale ? @"男" : @"女";
+                weakSelf.detailModel.gender = gender == UserGenderMale ? @"男" : @"女";
             }
         }];
     }
@@ -212,7 +212,7 @@
         [popView setEventBlock:^(NSInteger eventId, NSDictionary *eventParamDic) {
             if (eventId == 1) {
                 cell.describeText = [eventParamDic stringOrNilForKey:@"dateText"];
-                weakSelf.viewModel.lostDetailModel.birthDay = [eventParamDic stringOrNilForKey:@"dateText"];
+                weakSelf.detailModel.birthDay = [eventParamDic stringOrNilForKey:@"dateText"];
             }
         }];
     }
@@ -222,7 +222,7 @@
         [popView setEventBlock:^(NSInteger eventId, NSDictionary *eventParamDic) {
             if (eventId == 1) {
                 cell.describeText = [eventParamDic stringOrNilForKey:@"regionName"];
-                weakSelf.viewModel.lostDetailModel.district = [eventParamDic stringOrNilForKey:@"regionName"];
+                weakSelf.detailModel.district = [eventParamDic stringOrNilForKey:@"regionName"];
             }
         }];
     }
@@ -292,9 +292,9 @@
         TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:maxCount delegate:self];
         [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
             if (maxCount == 1) {
-                self.viewModel.lostDetailModel.portrait = photos.firstObject;
+                self.detailModel.portrait = photos.firstObject;
             } else {
-                self.viewModel.lostDetailModel.photos = photos;
+                self.detailModel.photos = photos;
             }
         }];
         [self presentViewController:imagePickerVc animated:YES completion:nil];
@@ -305,7 +305,7 @@
     NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
     if ([type isEqualToString:@"public.image"]) {
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-        self.viewModel.lostDetailModel.portrait = image;
+        self.detailModel.portrait = image;
     }
     [picker dismissViewControllerAnimated:true completion:nil];
 }

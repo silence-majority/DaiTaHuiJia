@@ -92,7 +92,7 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView{
     [self remvePlaceHolder];
-    if (_delegate){
+    if (_delegate && [_delegate respondsToSelector:@selector(limitTextViewDidBeginEdit)]){
         [_delegate limitTextViewDidBeginEdit];
     }
 }
@@ -128,7 +128,7 @@
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView{
-    if (_delegate){
+    if (_delegate && [_delegate respondsToSelector:@selector(limitTextViewDidEndEdit)]){
         [_delegate limitTextViewDidEndEdit];
     }
 }

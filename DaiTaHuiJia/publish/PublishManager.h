@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "LostorBaseInfoViewModel.h"
 @interface PublishManager : NSObject
 + (instancetype) sharedService;
 - (void)cleanLostorModel;
