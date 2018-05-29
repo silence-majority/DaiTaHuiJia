@@ -11,4 +11,5 @@ target 'DaiTaHuiJia' do
   pod 'AFNetworking'
   pod 'ReactiveCocoa', '~> 2.3.0'
   pod 'TZImagePickerController'
+  pod 'MBProgressHUD'
 end

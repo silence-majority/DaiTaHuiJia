@@ -16,6 +16,7 @@
 #import "NSDictionary+ValueForKey.h"
 #import "RegionPickerView.h"
 #import "PublishManager.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 @interface LostorLostInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) BaseInfoHeader *tableHeader;
@@ -41,7 +42,11 @@
 }
 
 - (void)nextStepAction{
-
+    [MBProgressHUD showHUDAddedTo:self.view animated:true];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUDForView:self.view animated:true];
+        [self.navigationController popToRootViewControllerAnimated:true];
+    });
 }
 
 - (UITableView *)tableView{

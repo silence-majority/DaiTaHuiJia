@@ -17,7 +17,7 @@
 #import "CommentTableViewCell.h"
 #import "ReportPopView.h"
 #import "BYContentTableViewCell.h"
-
+#import "SharePopView.h"
 #import "LostorDetailViewModel.h"
 
 extern CGFloat NavBarHeight;
@@ -60,6 +60,11 @@ extern CGFloat NavBarHeight;
             }];
         } else {
         }
+    }];
+    
+    [_viewModel.shareSubject subscribeNext:^(id x) {
+        SharePopView *popView = [[SharePopView alloc] init];
+        [[UIApplication sharedApplication].keyWindow addSubview:popView];
     }];
 }
 

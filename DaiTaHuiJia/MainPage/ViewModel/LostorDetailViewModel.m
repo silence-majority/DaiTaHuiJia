@@ -12,6 +12,7 @@
 @implementation LostorDetailViewModel
 - (instancetype)init{
     if (self = [super init]) {
+        _shareSubject = [RACSubject subject];
         [self makeClueTestData];
         [self makeCommentTestData];
     }

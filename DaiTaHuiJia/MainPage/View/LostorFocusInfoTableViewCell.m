@@ -271,6 +271,9 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (collectionView == _operateCollecitonView) {
+        if (indexPath.item == 0) {
+            [self.viewModel.shareSubject sendNext:@(true)];
+        }
         if (indexPath.item == 1) {
             self.viewModel.isFocusTipSpread = !self.viewModel.isFocusTipSpread;
         }

@@ -63,6 +63,7 @@
 		9FB872A520BD125F002512AC /* LostDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB872A420BD125F002512AC /* LostDetailModel.m */; };
 		9FB872A820BD2D0A002512AC /* LostInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB872A720BD2D0A002512AC /* LostInfoModel.m */; };
 		9FB872AD20BD3D58002512AC /* PublishManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB872AC20BD3D58002512AC /* PublishManager.m */; };
+		9FB872B020BD4A95002512AC /* SharePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB872AF20BD4A95002512AC /* SharePopView.m */; };
 		9FC445EE2089CEE4009BF75E /* FireworksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445ED2089CEE4009BF75E /* FireworksView.m */; };
 		9FC445F12089CF40009BF75E /* PraiseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F02089CF40009BF75E /* PraiseButton.m */; };
 		9FC445F52089DB14009BF75E /* BYBasePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F42089DB14009BF75E /* BYBasePopView.m */; };
@@ -214,6 +215,8 @@
 		9FB872A720BD2D0A002512AC /* LostInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostInfoModel.m; sourceTree = "<group>"; };
 		9FB872AB20BD3D58002512AC /* PublishManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublishManager.h; sourceTree = "<group>"; };
 		9FB872AC20BD3D58002512AC /* PublishManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublishManager.m; sourceTree = "<group>"; };
+		9FB872AE20BD4A95002512AC /* SharePopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharePopView.h; sourceTree = "<group>"; };
+		9FB872AF20BD4A95002512AC /* SharePopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharePopView.m; sourceTree = "<group>"; };
 		9FC445EC2089CEE4009BF75E /* FireworksView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FireworksView.h; sourceTree = "<group>"; };
 		9FC445ED2089CEE4009BF75E /* FireworksView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FireworksView.m; sourceTree = "<group>"; };
 		9FC445EF2089CF40009BF75E /* PraiseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PraiseButton.h; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 				9FC44618208DBAB7009BF75E /* SearchPopView.m */,
 				9FC4461E208DE9D1009BF75E /* SearchCollectionHeaderView.h */,
 				9FC4461F208DE9D1009BF75E /* SearchCollectionHeaderView.m */,
+				9FB872AE20BD4A95002512AC /* SharePopView.h */,
+				9FB872AF20BD4A95002512AC /* SharePopView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -879,6 +884,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FDA92BA2078E0910086C583 /* UITableViewCell+BottomLine.m in Sources */,
+				9FB872B020BD4A95002512AC /* SharePopView.m in Sources */,
 				9F337BEE20BA9F8300F91EBC /* HealthTagModel.m in Sources */,
 				9F337BFA20BB056500F91EBC /* LostorBaseInfoViewModel.m in Sources */,
 				9FFC18492066504000CCAEC3 /* PublishItemView.m in Sources */,
