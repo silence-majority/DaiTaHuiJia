@@ -16,16 +16,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DaiTaHuiJia/publish/View/RegionPickerView.m"
-            timestampString = "549216299.50762"
+            filePath = "DaiTaHuiJia/publish/View/BaseInfoFooter.m"
+            timestampString = "549271222.655256"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "-sureButtonAction"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-limitTextViewDidEndEdit"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

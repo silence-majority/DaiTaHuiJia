@@ -10,7 +10,7 @@
 #import "BYLimitTextView.h"
 #import <Masonry/Masonry.h>
 
-@interface BaseInfoFooter()
+@interface BaseInfoFooter()<BYLimitTextViewDelegate>
 @property (nonatomic,strong)UILabel *titleLabel;
 @property (nonatomic,strong)BYLimitTextView *textView;
 @end
@@ -58,11 +58,17 @@
     if (!_textView) {
         BYLimitTextView *textView = [[BYLimitTextView alloc] init];
         textView.maxCount = 0;
+        textView.delegate = self;
         textView.backgroundColor = [UIColor colorWithHexString:@"0xF5F8F9"];
         _textView = textView;
     }
     return _textView;
 }
 
+- (void)limitTextViewDidEndEdit{
+    if (_inputFinished) {
+        _inputFinished(_textView.textView.text);
+    }
+}
 
 @end

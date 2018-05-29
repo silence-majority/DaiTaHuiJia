@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImageCollectionViewCell : UICollectionViewCell
-@property (nonatomic,strong) UIImageView *imageView;
-@end
-
 @interface MorePhotoTableViewCell : UITableViewCell
 
 @end

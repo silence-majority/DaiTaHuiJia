@@ -10,36 +10,7 @@
 #import <Masonry/Masonry.h>
 #import "UIColor+UIColor_Hex.h"
 #import "UITableViewCell+BottomLine.h"
-@interface ImageCollectionViewCell()
-
-@end
-
-@implementation ImageCollectionViewCell
-
-- (instancetype)initWithFrame:(CGRect)frame{
-    if (self = [super initWithFrame:frame]) {
-        [self.contentView addSubview:self.imageView];
-        [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsZero);
-        }];
-    }
-    _imageView.image = [UIImage imageNamed:@"sunyizhen"];
-    return self;
-}
-
-
-- (UIImageView *)imageView{
-    if (!_imageView) {
-        UIImageView *imageView =  [[UIImageView alloc] init];
-        imageView.contentMode = UIViewContentModeScaleAspectFill;
-        imageView.layer.cornerRadius = 4;
-        imageView.clipsToBounds = true;
-        _imageView = imageView;
-    }
-    return _imageView;
-}
-
-@end
+#import "ImageCollectionViewCell.h"
 
 @interface MorePhotoTableViewCell()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong) UILabel *titleLabel;
@@ -119,6 +90,7 @@
 
     ImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ImageCollectionViewCellId" forIndexPath:indexPath];
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"ju-%ld",(long)indexPath.item]];
+    cell.imageView.layer.cornerRadius = 4;
     return cell;
 }
 

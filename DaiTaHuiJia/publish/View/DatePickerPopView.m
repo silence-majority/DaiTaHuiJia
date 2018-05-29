@@ -72,7 +72,7 @@
             }
         }];
     }
-    _titleLabel.text = @"请选择出生日期";
+    _titleLabel.text = @"请选择日期";
     [_cancelButton addTarget:self action:@selector(dismissPopView) forControlEvents:UIControlEventTouchUpInside];
     [_sureButton addTarget:self action:@selector(sureButtonAction) forControlEvents:UIControlEventTouchUpInside];
     return self;

@@ -10,4 +10,5 @@
 
 @interface HealthTagCell : UICollectionViewCell
 @property (nonatomic,strong) UILabel *titleLabel;
+@property (nonatomic,assign) BOOL isSelected;
 @end

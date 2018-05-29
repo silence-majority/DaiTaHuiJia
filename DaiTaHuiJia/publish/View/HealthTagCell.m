@@ -10,7 +10,7 @@
 #import <Masonry/Masonry.h>
 #import "UIColor+UIColor_Hex.h"
 @interface HealthTagCell()
-
+@property (nonatomic,strong) CAShapeLayer *triangleLayer;
 @end
 
 @implementation HealthTagCell
@@ -37,5 +37,14 @@
     return _titleLabel;
 }
 
+- (void)setIsSelected:(BOOL)isSelected{
+    if (isSelected) {
+        self.backgroundColor = [UIColor colorWithHexString:COLOR_THEME_STR alpha:0.15];
+        _titleLabel.textColor = [UIColor colorWithHexString:COLOR_THEME_STR];
+    } else {
+        self.backgroundColor = [UIColor colorWithHexString:@"0xF4F4F3"];
+        _titleLabel.textColor = [UIColor colorWithHexString:@"0x3B383C"];
+    }
+}
 
 @end

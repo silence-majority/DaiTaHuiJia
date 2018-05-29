@@ -48,7 +48,7 @@
     if (!_placeHolderLabel){
         UILabel *label = [[UILabel alloc] init];
         label.numberOfLines = 0;
-        label.font = [UIFont boldSystemFontOfSize:14];
+        label.font = [UIFont systemFontOfSize:14];
         label.textColor = [UIColor lightGrayColor];
         _placeHolderLabel = label;
     }

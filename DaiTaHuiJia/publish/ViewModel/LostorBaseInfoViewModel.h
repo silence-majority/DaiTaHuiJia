@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "LostDetailModel.h"
+#import "LostInfoModel.h"
 @interface LostorBaseInfoViewModel : NSObject
-@property (nonatomic,strong) UIImage *portrait;
+@property (nonatomic,strong) LostDetailModel *lostDetailModel;
+@property (nonatomic,strong) LostInfoModel *lostInfoModel;
 @end

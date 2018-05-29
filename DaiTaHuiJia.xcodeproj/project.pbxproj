@@ -58,6 +58,11 @@
 		9FB8729620BC473E002512AC /* DistrictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8729520BC473E002512AC /* DistrictModel.m */; };
 		9FB8729920BC474C002512AC /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8729820BC474C002512AC /* CityModel.m */; };
 		9FB8729C20BC475B002512AC /* ProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8729B20BC475B002512AC /* ProvinceModel.m */; };
+		9FB8729F20BCEF90002512AC /* UploadImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8729E20BCEF90002512AC /* UploadImagesView.m */; };
+		9FB872A220BCF734002512AC /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB872A120BCF734002512AC /* ImageCollectionViewCell.m */; };
+		9FB872A520BD125F002512AC /* LostDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB872A420BD125F002512AC /* LostDetailModel.m */; };
+		9FB872A820BD2D0A002512AC /* LostInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB872A720BD2D0A002512AC /* LostInfoModel.m */; };
+		9FB872AD20BD3D58002512AC /* PublishManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB872AC20BD3D58002512AC /* PublishManager.m */; };
 		9FC445EE2089CEE4009BF75E /* FireworksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445ED2089CEE4009BF75E /* FireworksView.m */; };
 		9FC445F12089CF40009BF75E /* PraiseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F02089CF40009BF75E /* PraiseButton.m */; };
 		9FC445F52089DB14009BF75E /* BYBasePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC445F42089DB14009BF75E /* BYBasePopView.m */; };
@@ -199,6 +204,16 @@
 		9FB8729820BC474C002512AC /* CityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
 		9FB8729A20BC475B002512AC /* ProvinceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProvinceModel.h; sourceTree = "<group>"; };
 		9FB8729B20BC475B002512AC /* ProvinceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProvinceModel.m; sourceTree = "<group>"; };
+		9FB8729D20BCEF90002512AC /* UploadImagesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadImagesView.h; sourceTree = "<group>"; };
+		9FB8729E20BCEF90002512AC /* UploadImagesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadImagesView.m; sourceTree = "<group>"; };
+		9FB872A020BCF734002512AC /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
+		9FB872A120BCF734002512AC /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
+		9FB872A320BD125F002512AC /* LostDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostDetailModel.h; sourceTree = "<group>"; };
+		9FB872A420BD125F002512AC /* LostDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostDetailModel.m; sourceTree = "<group>"; };
+		9FB872A620BD2D09002512AC /* LostInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LostInfoModel.h; sourceTree = "<group>"; };
+		9FB872A720BD2D0A002512AC /* LostInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostInfoModel.m; sourceTree = "<group>"; };
+		9FB872AB20BD3D58002512AC /* PublishManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublishManager.h; sourceTree = "<group>"; };
+		9FB872AC20BD3D58002512AC /* PublishManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublishManager.m; sourceTree = "<group>"; };
 		9FC445EC2089CEE4009BF75E /* FireworksView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FireworksView.h; sourceTree = "<group>"; };
 		9FC445ED2089CEE4009BF75E /* FireworksView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FireworksView.m; sourceTree = "<group>"; };
 		9FC445EF2089CF40009BF75E /* PraiseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PraiseButton.h; sourceTree = "<group>"; };
@@ -356,6 +371,10 @@
 				9F865729209600F000A94728 /* ClueModel.m */,
 				9F86572B20960D1700A94728 /* CommentModel.h */,
 				9F86572C20960D1700A94728 /* CommentModel.m */,
+				9FB872A320BD125F002512AC /* LostDetailModel.h */,
+				9FB872A420BD125F002512AC /* LostDetailModel.m */,
+				9FB872A620BD2D09002512AC /* LostInfoModel.h */,
+				9FB872A720BD2D0A002512AC /* LostInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -644,6 +663,8 @@
 				9F337BEB20BA9F6F00F91EBC /* Model */,
 				9FFC184A2066A5F700CCAEC3 /* Controller */,
 				9FFC18462066501C00CCAEC3 /* View */,
+				9FB872AB20BD3D58002512AC /* PublishManager.h */,
+				9FB872AC20BD3D58002512AC /* PublishManager.m */,
 			);
 			path = publish;
 			sourceTree = "<group>";
@@ -671,6 +692,10 @@
 				9FB8727D20BC2A93002512AC /* GenderPickerPopView.m */,
 				9FB8728B20BC3ECE002512AC /* RegionPickerView.h */,
 				9FB8728C20BC3ECE002512AC /* RegionPickerView.m */,
+				9FB8729D20BCEF90002512AC /* UploadImagesView.h */,
+				9FB8729E20BCEF90002512AC /* UploadImagesView.m */,
+				9FB872A020BCF734002512AC /* ImageCollectionViewCell.h */,
+				9FB872A120BCF734002512AC /* ImageCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -890,6 +915,7 @@
 				9FFC183F205EAC0100CCAEC3 /* MainTabBar.m in Sources */,
 				9F660561208F635600E829CA /* VerifyCodeViewController.m in Sources */,
 				9F660559208F574D00E829CA /* LoginViewModel.m in Sources */,
+				9FB872AD20BD3D58002512AC /* PublishManager.m in Sources */,
 				9FC44607208C65B7009BF75E /* LostorDetailViewModel.m in Sources */,
 				9FB8727E20BC2A93002512AC /* GenderPickerPopView.m in Sources */,
 				9FDA92B62078CAD30086C583 /* ClueChainTableViewCell.m in Sources */,
@@ -900,6 +926,7 @@
 				9FB8728D20BC3ECE002512AC /* RegionPickerView.m in Sources */,
 				9F660570208F8DF800E829CA /* RegisteMobileFlowView.m in Sources */,
 				9FCA49352081D8CC008DF13F /* CommentTableViewCell.m in Sources */,
+				9FB872A220BCF734002512AC /* ImageCollectionViewCell.m in Sources */,
 				9FB8729920BC474C002512AC /* CityModel.m in Sources */,
 				9F2713FC20779AD4000FC8E5 /* LostorDetaiViewController.m in Sources */,
 				9FFC1832205E66CA00CCAEC3 /* BaseTabBarController.m in Sources */,
@@ -919,7 +946,9 @@
 				9F86572D20960D1700A94728 /* CommentModel.m in Sources */,
 				9FC445FD208B0EBE009BF75E /* BYCenterTitleTableViewCell.m in Sources */,
 				9FFC1838205E671000CCAEC3 /* BaseViewController.m in Sources */,
+				9FB872A820BD2D0A002512AC /* LostInfoModel.m in Sources */,
 				9F660564208F68F700E829CA /* RegisteViewController.m in Sources */,
+				9FB872A520BD125F002512AC /* LostDetailModel.m in Sources */,
 				9FC44600208B8783009BF75E /* BYContentTableViewCell.m in Sources */,
 				9FFC181E205E637100CCAEC3 /* ViewController.m in Sources */,
 				9FFC1829205E637100CCAEC3 /* main.m in Sources */,
@@ -936,6 +965,7 @@
 				9F337BE120B9B5E300F91EBC /* LostorHealthInfoViewController.m in Sources */,
 				9F337BE720BA88A300F91EBC /* HealthTagTableViewCell.m in Sources */,
 				9FFC1835205E66FB00CCAEC3 /* BaseNavigationController.m in Sources */,
+				9FB8729F20BCEF90002512AC /* UploadImagesView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,4 +10,5 @@
 
 @interface BaseInfoFooter : UIView
 - (void)setTitle:(NSString *)title placeHolder:(NSString *)holder;
+@property (nonatomic,copy) void(^inputFinished)(NSString *text);
 @end

@@ -22,18 +22,23 @@
 #import "GenderPickerPopView.h"
 #import "NSDictionary+ValueForKey.h"
 #import "RegionPickerView.h"
+#import "UploadImagesView.h"
+#import "PublishManager.h"
 @interface LostorBaseInfoViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,TZImagePickerControllerDelegate>
-@property (nonatomic,strong) LostorBaseInfoViewModel *viewModel;
+@property (nonatomic,strong) LostDetailModel *detailModel;
+
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) BaseInfoHeader *tableHeader;
-@property (nonatomic,strong) BaseInfoFooter *tableFooter;
+@property (nonatomic,strong) UploadImagesView *tableFooter;
+@property (nonatomic,strong) UITapGestureRecognizer *gesture;
 @end
 
 @implementation LostorBaseInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _viewModel = [LostorBaseInfoViewModel new];
+//    _viewModel = [LostorBaseInfoViewModel new];
+    _detailModel = [PublishManager sharedService].lostorModel.lostDetailModel;
     self.navTitle = @"完善信息（1/3）";
     [self.view addSubview:self.tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -53,10 +58,20 @@
 
 - (void)bindViewModel{
     __weak typeof(self) weakSelf = self;
-    [RACObserve(self.viewModel, portrait) subscribeNext:^(UIImage *image) {
+    [RACObserve(self.viewModel.lostDetailModel, portrait) subscribeNext:^(UIImage *image) {
         if (image) {
             weakSelf.tableHeader.imageView.image = image;
         }
+    }];
+    
+    [RACObserve(self.viewModel.lostDetailModel, photos) subscribeNext:^(NSArray <UIImage *> *photos) {
+        if (photos) {
+            weakSelf.tableFooter.imagesList = photos;
+        }
+    }];
+    
+    [_tableFooter setAddImageBlock:^(NSUInteger maxCount) {
+        [weakSelf getImageFromAlbumWithMaxCount:maxCount];
     }];
 }
 
@@ -90,7 +105,8 @@
         tableView.tableHeaderView = _tableHeader;
        
         
-        _tableFooter = [[BaseInfoFooter alloc] initWithFrame:CGRectMake(0, 0, screenW, 120)];
+        _tableFooter = [[UploadImagesView alloc] initWithFrame:CGRectMake(0, 0, screenW, 440) style:UploadImagesViewStyleNormal];
+        
         tableView.tableFooterView = _tableFooter;
         _tableView = tableView;
         
@@ -99,7 +115,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 6;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -107,40 +123,77 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    __weak typeof(self) weakSelf = self;
     ContentFillTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ContentFillTableViewCellId" forIndexPath:indexPath];
     if (indexPath.row == 0){
         cell.titleLabel.text = @"姓名";
-        cell.indicateLabel.text = @"请填写";
+        if (self.viewModel.lostDetailModel.name) {
+            cell.describeText = self.viewModel.lostDetailModel.name;
+        } else {
+            cell.indicateLabel.text = @"请填写";
+        }
         cell.fillStyle = ContentFillTableViewCellStyleInput;
+        [cell setInputFinshed:^(NSString *text) {
+            weakSelf.viewModel.lostDetailModel.name = text;
+        }];
     } else if (indexPath.row == 1){
         cell.titleLabel.text = @"性别";
-        cell.indicateLabel.text = @"请选择";
+        if (self.viewModel.lostDetailModel.gender) {
+            cell.describeText = self.viewModel.lostDetailModel.gender;
+        } else {
+            cell.indicateLabel.text = @"请选择";
+        }
         cell.fillStyle = ContentFillTableViewCellStylePick;
     } else if (indexPath.row == 2){
         cell.titleLabel.text = @"出生日期";
-        cell.indicateLabel.text = @"请选择";
+        if (self.viewModel.lostDetailModel.birthDay) {
+            cell.describeText = self.viewModel.lostDetailModel.birthDay;
+        } else {
+            cell.indicateLabel.text = @"请选择";
+        }
         cell.fillStyle = ContentFillTableViewCellStylePick;
     } else if (indexPath.row == 3){
         cell.titleLabel.text = @"身份证号";
-        cell.indicateLabel.text = @"请填写";
+        if (self.viewModel.lostDetailModel.IDNumber) {
+            cell.describeText = self.viewModel.lostDetailModel.IDNumber;
+        } else {
+            cell.indicateLabel.text = @"请填写";
+        }
         cell.fillStyle = ContentFillTableViewCellStyleInput;
+        [cell setInputFinshed:^(NSString *text) {
+            weakSelf.viewModel.lostDetailModel.IDNumber = text;
+        }];
     } else if (indexPath.row == 4){
         cell.titleLabel.text = @"区县";
-        cell.indicateLabel.text = @"请选择";
+        if (self.viewModel.lostDetailModel.district) {
+            cell.describeText = self.viewModel.lostDetailModel.district;
+        } else {
+            cell.indicateLabel.text = @"请选择";
+        }
         cell.fillStyle = ContentFillTableViewCellStylePick;
     } else {
         cell.titleLabel.text = @"详细地址";
-        cell.indicateLabel.text = @"请填写";
+        if (self.viewModel.lostDetailModel.address) {
+            cell.describeText = self.viewModel.lostDetailModel.address;
+        } else {
+            cell.indicateLabel.text = @"请填写";
+        }
         cell.fillStyle = ContentFillTableViewCellStyleInput;
+        [cell setInputFinshed:^(NSString *text) {
+            weakSelf.viewModel.lostDetailModel.address = text;
+        }];
     }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    __weak typeof(self) weakSelf = self;
     ContentFillTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if (cell.fillStyle == ContentFillTableViewCellStyleInput) {
         [cell.textField becomeFirstResponder];
+    } else {
+        [self.view endEditing:true];
     }
     if (indexPath.row == 1) {
         GenderPickerPopView *popView = [[GenderPickerPopView alloc] init];
@@ -149,6 +202,7 @@
             if (eventId == 1) {
                 UserGender gender = [[eventParamDic numberOrNilForKey:@"gender"] integerValue];
                 cell.describeText = gender == UserGenderMale ? @"男" : @"女";
+                weakSelf.viewModel.lostDetailModel.gender = gender == UserGenderMale ? @"男" : @"女";
             }
         }];
     }
@@ -158,6 +212,7 @@
         [popView setEventBlock:^(NSInteger eventId, NSDictionary *eventParamDic) {
             if (eventId == 1) {
                 cell.describeText = [eventParamDic stringOrNilForKey:@"dateText"];
+                weakSelf.viewModel.lostDetailModel.birthDay = [eventParamDic stringOrNilForKey:@"dateText"];
             }
         }];
     }
@@ -167,9 +222,14 @@
         [popView setEventBlock:^(NSInteger eventId, NSDictionary *eventParamDic) {
             if (eventId == 1) {
                 cell.describeText = [eventParamDic stringOrNilForKey:@"regionName"];
+                weakSelf.viewModel.lostDetailModel.district = [eventParamDic stringOrNilForKey:@"regionName"];
             }
         }];
     }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self.view endEditing:true];
 }
 
 - (void)showImageSelectionAction{
@@ -179,7 +239,7 @@
     }];
     
     UIAlertAction *albumAction = [UIAlertAction actionWithTitle:@"从相册中获取" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        [self getImageFromAlbum];
+        [self getImageFromAlbumWithMaxCount:1];
     }];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
@@ -217,7 +277,7 @@
     }
 }
 
-- (void)getImageFromAlbum{
+- (void)getImageFromAlbumWithMaxCount:(NSUInteger)maxCount{
     ALAuthorizationStatus author = [ALAssetsLibrary authorizationStatus];
     if (author == ALAuthorizationStatusRestricted || author ==ALAuthorizationStatusDenied){
         //无权限 做一个友好的提示
@@ -229,9 +289,13 @@
         [alert addAction:sureAction];
         [self presentViewController:alert animated:true completion:nil];
     }else{
-        TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
+        TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:maxCount delegate:self];
         [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
-            self.viewModel.portrait = photos.firstObject;
+            if (maxCount == 1) {
+                self.viewModel.lostDetailModel.portrait = photos.firstObject;
+            } else {
+                self.viewModel.lostDetailModel.photos = photos;
+            }
         }];
         [self presentViewController:imagePickerVc animated:YES completion:nil];
     }
@@ -241,7 +305,7 @@
     NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
     if ([type isEqualToString:@"public.image"]) {
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-        self.viewModel.portrait = image;
+        self.viewModel.lostDetailModel.portrait = image;
     }
     [picker dismissViewControllerAnimated:true completion:nil];
 }

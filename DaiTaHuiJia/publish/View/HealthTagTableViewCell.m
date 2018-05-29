@@ -13,6 +13,7 @@
 #import "HealthTagModel.h"
 @interface HealthTagTableViewCell()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong) UICollectionView *collectionView;
+@property (nonatomic,strong) NSMutableArray <HealthTagModel *> *selectedTags;
 @end
 
 @implementation HealthTagTableViewCell
@@ -33,8 +34,14 @@
         [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsZero);
         }];
+        _selectedTags = @[].mutableCopy;
     }
     return self;
+}
+
+- (void)setTags:(NSArray<HealthTagModel *> *)tags{
+    _tags = tags;
+    [_selectedTags addObject:_tags.firstObject];
 }
 
 - (UICollectionView *)collectionView{
@@ -61,13 +68,45 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     HealthTagCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HealthTagCellId" forIndexPath:indexPath];
     cell.titleLabel.text = _tags[indexPath.item].title;
+    if ([_selectedTags containsObject:_tags[indexPath.item]]) {
+        cell.isSelected = true;
+    } else {
+        cell.isSelected = false;
+    }
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    HealthTagModel *selectedModel = _tags[indexPath.item];
+    if ([_selectedTags containsObject:selectedModel]) {
+        if (_selectedTags.count > 1) {
+            [_selectedTags removeObject:selectedModel];
+            [_collectionView reloadData];
+            return;
+        } else {
+            return;
+        }
+    }
+    
+    if (selectedModel.isExclusive) {
+        [_selectedTags removeAllObjects];
+    }
+    
+    for (HealthTagModel *model in _selectedTags) {
+        if (model.isExclusive) {
+            [_selectedTags removeAllObjects];
+            break;
+        }
+    }
+    
+    [_selectedTags addObject:selectedModel];
+    [_collectionView reloadData];
 }
 
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
     if (_showBottomLine) {
-        [self drawBottomLineWithGap:0];
+//        [self drawBottomLineWithGap:0];
     }
 }
 

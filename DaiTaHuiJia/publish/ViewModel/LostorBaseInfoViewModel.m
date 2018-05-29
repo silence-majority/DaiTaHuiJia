@@ -9,5 +9,10 @@
 #import "LostorBaseInfoViewModel.h"
 
 @implementation LostorBaseInfoViewModel
-
+- (instancetype)init{
+    if (self = [super init]) {
+        _lostDetailModel = [[LostDetailModel alloc] init];
+    }
+    return self;
+}
 @end

@@ -18,4 +18,5 @@ typedef NS_ENUM(NSUInteger,ContentFillTableViewCellStyle){
 @property (nonatomic,strong) UITextField *textField;
 @property (nonatomic,assign) ContentFillTableViewCellStyle fillStyle;
 @property (nonatomic,copy) NSString *describeText;
+@property (nonatomic,copy) void (^inputFinshed)(NSString *text);
 @end

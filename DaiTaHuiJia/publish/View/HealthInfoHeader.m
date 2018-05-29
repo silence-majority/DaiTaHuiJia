@@ -35,8 +35,8 @@
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
         UILabel *label = [[UILabel alloc] init];
-        label.font = [UIFont systemFontOfSize:14];
-        label.textColor = [UIColor colorWithHexString:@"0x3B383C"];
+        label.font = [UIFont boldSystemFontOfSize:15];
+        label.textColor = [UIColor colorWithHexString:@"0x101110"];
         label.numberOfLines = 0;
         _titleLabel = label;
     }

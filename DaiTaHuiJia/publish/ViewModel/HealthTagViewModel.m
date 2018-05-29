@@ -20,18 +20,14 @@
     intellA.title = @"智力正常";
     intellA.isExclusive = true;
     
-    HealthTagModel *intellB = [HealthTagModel new];
-    intellB.title = @"健忘症";
-    intellB.isExclusive = false;
-    
     HealthTagModel *intellC = [HealthTagModel new];
     intellC.title = @"轻度智力障碍";
-    intellC.isExclusive = false;
+    intellC.isExclusive = true;
     
     HealthTagModel *intellD = [HealthTagModel new];
     intellD.title = @"智力障碍";
-    intellD.isExclusive = false;
-    NSArray *intellTags = @[intellA,intellB,intellC,intellD];
+    intellD.isExclusive = true;
+    NSArray *intellTags = @[intellA,intellC,intellD];
     
    
     
@@ -78,13 +74,17 @@
     psyB.isExclusive = false;
     
     HealthTagModel *psyC = [HealthTagModel new];
-    psyC.title = @"暴力倾向";
+    psyC.title = @"自闭症";
     psyC.isExclusive = false;
     
     HealthTagModel *psyD = [HealthTagModel new];
-    psyD.title = @"精神分裂";
+    psyD.title = @"暴力倾向";
     psyD.isExclusive = false;
-    NSArray *psyTags = @[psyA,psyB,psyC,psyD];
+    
+    HealthTagModel *psyE = [HealthTagModel new];
+    psyE.title = @"精神分裂";
+    psyE.isExclusive = false;
+    NSArray *psyTags = @[psyA,psyB,psyC,psyD,psyE];
     
     _healthCategoryList = @[intellTags,bodyTags,psyTags];
 }

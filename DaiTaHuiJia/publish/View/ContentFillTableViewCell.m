@@ -93,6 +93,7 @@
         textField.textAlignment = NSTextAlignmentRight;
         textField.textColor = [UIColor colorWithHexString:@"0x373937"];
         textField.font = [UIFont systemFontOfSize:14];
+        textField.delegate = self;
         _textField = textField;
     }
     return _textField;
@@ -121,6 +122,11 @@
     }
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    if (_inputFinshed) {
+        _inputFinshed(textField.text);
+    }
+}
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
     [self drawBottomLineWithGap:12];
