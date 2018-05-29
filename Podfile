@@ -12,4 +12,5 @@ target 'DaiTaHuiJia' do
   pod 'ReactiveCocoa', '~> 2.3.0'
   pod 'TZImagePickerController'
   pod 'MBProgressHUD'
+  pod 'DZNEmptyDataSet'
 end
